@@ -1,0 +1,23 @@
+﻿<Window x:Class="BfmeOnline.Launcher.View.Updater"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BfmeOnline.Launcher.View"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Updater" Height="150" Width="300" WindowStyle="None" ResizeMode="NoResize">
+    <Border Padding="5">
+        <Grid VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="1">
+                <Label Grid.Column="1" HorizontalContentAlignment="Center" Content="{Binding ProgressMessage}" Margin="10 5"></Label>
+                <ProgressBar Grid.Column="1" Minimum="0" Maximum="100" Value="{Binding DownloadProgress, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Margin="10 10" Height="15"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

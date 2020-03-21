@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  
+  <Fragment>
+    
+    <!-- Product Components -->
+    <ComponentGroup Id="ProductComponents">
+
+      <!-- Test file -->
+      <!--<ComponentRef Id="TestFile" />-->
+
+      <!-- Shortcut -->
+      <ComponentRef Id="MainAppShortcut" />
+
+    </ComponentGroup>
+
+
+    <!-- Install files -->
+    <DirectoryRef Id="INSTALLFOLDER" FileSource="..\bin\netcoreapp3.0\win-$(var.Platform)\publish\">
+      
+      <!--<Component Id="TestFile" Guid="{4C0956A0-FC84-4633-B218-18C3C2563542}">
+        <File Id="FileTestFile" Name="BfmeOnlineLauncher.exe" KeyPath="yes" />-->
+        
+        <!-- Remove start menu items -->
+        <!--<RemoveFolder Id="RemoveStartMenu" Directory="InstallProgramMenuFolder" On="uninstall" />-->
+      <!--</Component>-->
+
+      <Component Id="MainAppShortcut" Guid="{5046247B-5DAC-41F3-A1F6-C2A89FA0F0FE}">
+        <Shortcut Id="ShortcutMainAppShortcut" 
+                  Name="Bfme Online"        
+                  Target="[INSTALLFOLDER]BfmeOnline.BLauncher.exe"
+                  Directory="InstallProgramMenuFolder"
+                  WorkingDirectory="INSTALLFOLDER"
+                  Icon="icon"
+          />
+
+        <!-- Unique key for shortcut -->
+        <RegistryValue Id="RegShortcutKey" Root="HKCU" Key="SOFTWARE\!(loc.ProductFolderName)" Name="Shortcut" Value="1" Type="integer" KeyPath="yes" />
+
+        <RemoveFolder Id="RemoveStartmenu" Directory="InstallProgramMenuFolder" On="uninstall" />
+      </Component>
+      
+    </DirectoryRef>
+
+    <DirectoryRef Id="DesktopFolder">
+      <Component Id="ApplicationShortcutDesktop" Guid="">
+          <Shortcut Id="ApplicationDesktopShortcut" 
+                    Name="Bfme Online"
+                    Description="Bfme Online Launcher"
+                    Target="[INSTALLFOLDER]BfmeOnline.Launcher.exe" 
+                    WorkingDirectory="INSTALLFOLDER" 
+            />
+          <RemoveFolder Id="RemoveDesktopFolder" Directory="DesktopFolder" On="uninstall" />
+          <RegistryValue Root="HKCU" Key="Software\!(loc.ProductFolderName)" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+     
+      </Component>
+    </DirectoryRef>
+
+
+  </Fragment>
+  
+</Wix>
