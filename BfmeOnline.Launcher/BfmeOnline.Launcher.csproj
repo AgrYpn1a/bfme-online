@@ -38,7 +38,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FirebaseAuthentication.net" Version="3.4.0" />
     <PackageReference Include="FluentAssertions" Version="5.9.0" />
     <PackageReference Include="WebSocket4Net" Version="0.15.2" />
     <PackageReference Include="XamlAnimatedGif" Version="1.2.2" />
