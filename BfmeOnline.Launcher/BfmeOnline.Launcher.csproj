@@ -13,6 +13,7 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <OutputPath>$(SolutionDir)\bin</OutputPath>
+    <DefineConstants>TRACE;DEBUG;DEBUG_OPTIONS_WIN</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -30,6 +31,7 @@
     <None Remove="Resources\GIF\Ring.gif" />
     <None Remove="Resources\GIF\ring_loop.gif" />
     <None Remove="Resources\GUI\Logo.png" />
+    <None Remove="Resources\GUI\Main\Main.jpg" />
     <None Remove="Resources\GUI\Main\Main.png" />
     <None Remove="Resources\GUI\SignIn\SignIn_Background.png" />
     <None Remove="Resources\Videos\GollumQMFound.mp4" />
@@ -46,6 +48,9 @@
   <ItemGroup>
     <Resource Include="Resources\GIF\OneRingLoading.gif" />
     <Resource Include="Resources\GUI\Logo.png" />
+    <Resource Include="Resources\GUI\Main\Main.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Content Include="Resources\Videos\GollumQMFound.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

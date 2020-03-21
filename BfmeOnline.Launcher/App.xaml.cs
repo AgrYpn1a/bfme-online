@@ -34,10 +34,13 @@ namespace BfmeOnline.Launcher
         {
             base.OnStartup(e);
 
+            DebugWindows();
+
             // Bind event handlers
             //AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
             //Application.Current.DispatcherUnhandledException += Current_DispatcherUnhandledException;
             //TaskScheduler.UnobservedTaskException += TaskScheduler_UnobservedTaskException;
+
 
             UpdateManager.OnDownloadProgressChange += progress =>
             {
@@ -157,7 +160,20 @@ namespace BfmeOnline.Launcher
                 vpnProcess.ExecuteCommand("SHUTDOWN", (res) => { });
         }
 
-        #endregion
+#if DEBUG
+        private void DebugWindows()
+        {
+#if DEBUG_MAIN_WIN
+            new Main().Show();
+            return;
+#elif DEBUG_OPTIONS_WIN
+            new Main().Show();
+            return;
+#endif
+        }
+#endif
+
+#endregion
 
         private void TaskScheduler_UnobservedTaskException(object sender, UnobservedTaskExceptionEventArgs e)
         {
