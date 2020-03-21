@@ -9,7 +9,7 @@
         Height="527" Width="368" ResizeMode="NoResize"
         WindowStyle="None">
     <Window.Background>
-        <ImageBrush ImageSource="/Resources/GUI/SignIn/SignIn_Background.png" Stretch="Fill"/>
+        <ImageBrush ImageSource="/Resources/GUI/SignIn/SignIn_Background.jpg" Stretch="Fill"/>
     </Window.Background>
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="200"></WindowChrome>

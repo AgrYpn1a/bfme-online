@@ -29,7 +29,6 @@
     <None Remove="Resources\GIF\one_ring.gif" />
     <None Remove="Resources\GIF\Ring.gif" />
     <None Remove="Resources\GIF\ring_loop.gif" />
-    <None Remove="Resources\GIF\Rolling.gif" />
     <None Remove="Resources\GUI\Logo.png" />
     <None Remove="Resources\GUI\Main\Main.png" />
     <None Remove="Resources\GUI\SignIn\SignIn_Background.png" />
@@ -39,17 +38,14 @@
 
   <ItemGroup>
     <PackageReference Include="FluentAssertions" Version="5.9.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="WebSocket4Net" Version="0.15.2" />
     <PackageReference Include="XamlAnimatedGif" Version="1.2.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Resources\Background.png" />
     <Resource Include="Resources\GIF\OneRingLoading.gif" />
-    <Resource Include="Resources\GIF\Rolling.gif" />
     <Resource Include="Resources\GUI\Logo.png" />
-    <Resource Include="Resources\GUI\Main\Main.png" />
-    <Resource Include="Resources\GUI\SignIn\SignIn_Background.png" />
     <Content Include="Resources\Videos\GollumQMFound.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
