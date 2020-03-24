@@ -71,6 +71,9 @@ namespace BfmeOnline.OptionsEditor
         [Attributes.OptionName("AlternateMouseSetup")]
         public YesNoOption AltMouseSetup { get; set; } = YesNoOption.NO;
 
+        [Attributes.OptionName("Resolution ")]
+        public Resolution Resolution { get; set; } = Resolution.res_1920x1080;
+
         // LOD
         [Attributes.OptionName("AudioLOD")]
         public AudioLOD AudioLOD { get; set; } = AudioLOD.HIGH;
