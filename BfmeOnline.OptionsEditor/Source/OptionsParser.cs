@@ -184,7 +184,7 @@ namespace BfmeOnline.OptionsEditor
         }
 
         private static readonly string PATH_OPTIONS_INI =
-            Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Roaming", "My Battle for Middle-earth Files", "Options.ini");
+            Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "My Battle for Middle-earth Files", "Options.ini");
 
         /// <summary>
         /// Takes OptionsINI config object and writes to options.ini file.
@@ -192,7 +192,7 @@ namespace BfmeOnline.OptionsEditor
         /// <param name="options"></param>
         public static void DumpOptionsToFile(OptionsINI optionsIni)
         {
-            if (!File.Exists(PATH_OPTIONS_INI))
+            try
             {
                 // Create a file to write to.
                 using (StreamWriter sw = File.CreateText(PATH_OPTIONS_INI))
@@ -206,7 +206,7 @@ namespace BfmeOnline.OptionsEditor
 
                 MessageBox.Show("Options saved successfully!");
             }
-            else
+            catch (Exception e)
             {
                 MessageBox.Show("Failed to write Options.ini");
             }
