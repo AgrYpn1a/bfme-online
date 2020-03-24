@@ -135,7 +135,8 @@ namespace BfmeOnline.OptionsEditor
 
         public static T GetAttribute<T>(Object property) where T : Attribute
         {
-            return property.GetType().GetCustomAttribute(typeof(T)) as T;
+            var a = property.GetType().GetCustomAttribute(typeof(T)) as T;
+            return a;
         }
 
         public static T GetEnumValue<T>(string value) where T : Enum
@@ -208,7 +209,7 @@ namespace BfmeOnline.OptionsEditor
             }
             catch (Exception e)
             {
-                MessageBox.Show("Failed to write Options.ini");
+                MessageBox.Show($"Error: {e}");
             }
         }
     }

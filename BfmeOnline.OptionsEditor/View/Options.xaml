@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BfmeOnlineLauncher.View"
         mc:Ignorable="d"
-        Title="Options" Height="450" Width="450">
+        Title="Options" Height="500" Width="450">
 
     <Border Padding="5">
         <Grid>
@@ -24,7 +24,7 @@
                     </Grid.ColumnDefinitions>
 
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="3*"></RowDefinition>
+                        <RowDefinition Height="4*"></RowDefinition>
                         <RowDefinition Height="2*"></RowDefinition>
                     </Grid.RowDefinitions>
 
@@ -38,46 +38,45 @@
                                 </Grid.ColumnDefinitions>
                                 <StackPanel Grid.Column="0">
                                     <Label Content="Resolution:"></Label>
-                                    <Label Content="Detail:"></Label>
+                                    <Label Content="Details:"></Label>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1">
-                                    <ComboBox x:Name="cbResoultion" Margin="0 2"></ComboBox>
-                                    <ComboBox x:Name="cbDetail" Margin="0 2"></ComboBox>
+                                    <ComboBox x:Name="cbResoultion" Margin="0 2" SelectedValue="{Binding Resolution, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></ComboBox>
+                                    <ComboBox x:Name="cbDetails" Margin="0 2"></ComboBox>
                                 </StackPanel>
                             </Grid>
                         </Border>
                         <Label Content="Brightness" HorizontalAlignment="Center"></Label>
-                        <Slider Margin="15 5" Maximum="100" Minimum="0"></Slider>
-                        <CheckBox Margin="15 10" Content="Show All Health Bars"></CheckBox>
-                        <CheckBox Margin="15 10" Content="Show Unit Decals"></CheckBox>
+                        <Slider x:Name="sdBrightness" Margin="15 5" Maximum="100" Minimum="0"></Slider>
+                        <CheckBox x:Name="cbShowAllHealthBars" Margin="15 10" Content="Show All Health Bars"></CheckBox>
+                        <CheckBox x:Name="cbShowUnitDecals" Margin="15 10" Content="Show Unit Decals"></CheckBox>
+                        <CheckBox x:Name="cbFrameLimit" Margin="15 10" Content="Frame Limit"></CheckBox>
                     </StackPanel>
                     <StackPanel Grid.Column="0" Grid.Row="1">
                         <Label Content="Controls" Margin="0 0 0 15" HorizontalAlignment="Center"></Label>
                         <Label Content="Scroll Speed" HorizontalAlignment="Center"></Label>
-                        <Slider Margin="15 5" Maximum="100" Minimum="0"></Slider>
-                        <CheckBox Margin="15 10" Content="Alternate Mouse Setup"></CheckBox>
+                        <Slider x:Name="sdScrollSpeed" Margin="15 5" Maximum="100" Minimum="0"></Slider>
+                        <CheckBox x:Name="cbAlternateMouseSetup" Margin="15 10" Content="Alternate Mouse Setup"></CheckBox>
                     </StackPanel>
                 </Grid>
                 <StackPanel Grid.Column="1">
                     <Label Content="Audio Controls" Margin="0 0 0 15" HorizontalAlignment="Center"></Label>
                     <Label Content="Music" HorizontalAlignment="Center"></Label>
-                    <Slider Margin="15 5" Maximum="100" Minimum="0"></Slider>
+                    <Slider x:Name="sdMusic" Margin="15 5" Maximum="100" Minimum="0"></Slider>
                     <Label Content="Sound FX" HorizontalAlignment="Center"></Label>
-                    <Slider Margin="15 5" Maximum="100" Minimum="0"></Slider>
+                    <Slider x:Name="sdSoundFx" Margin="15 5" Maximum="100" Minimum="0"></Slider>
                     <Label Content="Voice" HorizontalAlignment="Center"></Label>
-                    <Slider Margin="15 5" Maximum="100" Minimum="0"></Slider>
+                    <Slider x:Name="sdVoice" Margin="15 5" Maximum="100" Minimum="0"></Slider>
                     <Label Content="Ambient" HorizontalAlignment="Center"></Label>
-                    <Slider Margin="15 5" Maximum="100" Minimum="0"></Slider>
-                    <Label Content="Movie" HorizontalAlignment="Center"></Label>
-                    <Slider Margin="15 5" Maximum="100" Minimum="0"></Slider>
-                    <CheckBox Margin="15 10" Content="EAX3"></CheckBox>
-                    <CheckBox Margin="15 5" Content="High Audio Quality"></CheckBox>
+                    <Slider x:Name="sdAmbient" Margin="15 5" Maximum="100" Minimum="0"></Slider>
+                    <CheckBox x:Name="cbEax3" Margin="15 20" Content="EAX3"></CheckBox>
+
                 </StackPanel>
             </Grid>
             <StackPanel Grid.Row="1" Orientation="Horizontal">
-                <Button Content="Accept Changes" Width="100" Margin="40 5 15 5"></Button>
-                <Button Content="Reset Settings" Width="100" Margin="15 5"></Button>
-                <Button Content="Cancel" Width="100" Margin="15 5"></Button>
+                <Button x:Name="btnAcceptChanges" Content="Accept Changes" Width="100" Margin="40 5 15 5" Click="btnAcceptChanges_Click"></Button>
+                <Button x:Name="btnResetSettings" Content="Reset Settings" Width="100" Margin="15 5" Click="btnResetSettings_Click"></Button>
+                <Button x:Name="btnCancel" Content="Cancel" Width="100" Margin="15 5" Click="btnCancel_Click"></Button>
             </StackPanel>
         </Grid>
     </Border>
