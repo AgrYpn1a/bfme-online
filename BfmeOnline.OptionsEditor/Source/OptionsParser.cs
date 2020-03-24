@@ -88,12 +88,10 @@ namespace BfmeOnline.OptionsEditor
             return property.GetType().GetCustomAttribute(typeof(T)) as T;
         }
 
-        public static void GetAttr()
+        public static T GetEnumValue<T>(string value) where T : Enum
         {
-            //ALL_HEALTH_BARS.Cast<OptionIntConstraintAttribute>().GetEnumerator;
-            //OptionIntConstraintAttribute attr = ALL_HEALTH_BARS.GetType().GetCustomAttribute(typeof(OptionIntConstraintAttribute)) as OptionIntConstraintAttribute;
+            return Enum.GetValues(typeof(T)).Cast<T>().ToList().Find(val => val.ToDescriptionString().Equals(value));
         }
-
     }
 
     public static class OptionsParser
