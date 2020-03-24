@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Windows;
 
 /**
  * Options.ini for Bfme1
@@ -61,27 +63,75 @@ namespace BfmeOnline.OptionsEditor
                 StringName = name;
             }
         }
+
+        [AttributeUsage(AttributeTargets.Field)]
+        public class OptionStringValue : Attribute
+        {
+            public string StringValue { get; private set; }
+
+            public OptionStringValue(string value)
+            {
+                StringValue = value;
+            }
+        }
     }
 
     public sealed class OptionsINI
     {
         [Attributes.OptionName("AllHealthBars")]
-        public YesNoOption AllHealthBars { get; set; } = YesNoOption.YES;
+        public YesNoOption ShowAllHealthBars { get; set; } = YesNoOption.YES;
+
+        [Attributes.OptionName("UnitDecals")]
+        public YesNoOption ShowUnitDecals { get; set; } = YesNoOption.NO;
+
+        [Attributes.OptionName("FPSLimit")]
+        public YesNoOption FPSLimit { get; set; } = YesNoOption.NO;
 
         [Attributes.OptionName("AlternateMouseSetup")]
         public YesNoOption AltMouseSetup { get; set; } = YesNoOption.NO;
 
+
         [Attributes.OptionName("Resolution ")]
         public Resolution Resolution { get; set; } = Resolution.res_1920x1080;
+
+        [Attributes.OptionName("Brightness ")]
+        [Attributes.OptionIntConstraint(0, 100)]
+        public int Brightness { get; set; } = 50;
+
+        [Attributes.OptionName("ScrollFactor")]
+        [Attributes.OptionIntConstraint(0, 100)]
+        public int ScrollSpeed { get; set; } = 50;
 
         // LOD
         [Attributes.OptionName("AudioLOD")]
         public AudioLOD AudioLOD { get; set; } = AudioLOD.HIGH;
 
+        [Attributes.OptionName("StaticGameLOD")]
+        public Details GeneralDetails { get; set; } = Details.ULTRA_HIGH;
+
         // Volume
         [Attributes.OptionName("AmbientVolume")]
         [Attributes.OptionIntConstraint(0, 100)]
         public int VolAmbient { get; set; } = 50;
+
+        [Attributes.OptionName("VoiceVolume")]
+        [Attributes.OptionIntConstraint(0, 100)]
+        public int VolVoice { get; set; } = 50;
+
+        [Attributes.OptionName("MovieVolume")]
+        [Attributes.OptionIntConstraint(0, 100)]
+        public int VolMovie { get; set; } = 50;
+
+        [Attributes.OptionName("MusicVolume")]
+        [Attributes.OptionIntConstraint(0, 100)]
+        public int VolMusic { get; set; } = 50;
+
+        [Attributes.OptionName("SFXVolume")]
+        [Attributes.OptionIntConstraint(0, 100)]
+        public int VolSFX { get; set; } = 50;
+
+        [Attributes.OptionName("UseEAX3")]
+        public YesNoOption UseEAX { get; set; } = YesNoOption.NO;
 
         public static T GetAttribute<T>(Object property) where T : Attribute
         {
@@ -92,6 +142,38 @@ namespace BfmeOnline.OptionsEditor
         {
             return Enum.GetValues(typeof(T)).Cast<T>().ToList().Find(val => val.ToDescriptionString().Equals(value));
         }
+
+        public Dictionary<string, string> GetOptionsDict()
+        {
+            Dictionary<string, string> dict = new Dictionary<string, string>();
+
+            dict.Add(GetAttribute<Attributes.OptionName>(ShowAllHealthBars).StringName, GetAttribute<Attributes.OptionStringValue>(ShowAllHealthBars).StringValue);
+            dict.Add(GetAttribute<Attributes.OptionName>(ShowUnitDecals).StringName, GetAttribute<Attributes.OptionStringValue>(ShowUnitDecals).StringValue);
+            dict.Add(GetAttribute<Attributes.OptionName>(AltMouseSetup).StringName, GetAttribute<Attributes.OptionStringValue>(AltMouseSetup).StringValue);
+            dict.Add(GetAttribute<Attributes.OptionName>(Resolution).StringName, GetAttribute<Attributes.OptionStringValue>(Resolution).StringValue);
+            dict.Add(GetAttribute<Attributes.OptionName>(Brightness).StringName, Brightness.ToString());
+            dict.Add(GetAttribute<Attributes.OptionName>(ScrollSpeed).StringName, ScrollSpeed.ToString());
+            dict.Add(GetAttribute<Attributes.OptionName>(AudioLOD).StringName, GetAttribute<Attributes.OptionStringValue>(AudioLOD).StringValue);
+            dict.Add(GetAttribute<Attributes.OptionName>(GeneralDetails).StringName, GetAttribute<Attributes.OptionStringValue>(GeneralDetails).StringValue);
+            dict.Add(GetAttribute<Attributes.OptionName>(GeneralDetails).StringName, GetAttribute<Attributes.OptionStringValue>(GeneralDetails).StringValue);
+            dict.Add(GetAttribute<Attributes.OptionName>(VolAmbient).StringName, VolAmbient.ToString());
+            dict.Add(GetAttribute<Attributes.OptionName>(VolVoice).StringName, VolVoice.ToString());
+            dict.Add(GetAttribute<Attributes.OptionName>(VolMusic).StringName, VolMusic.ToString());
+            dict.Add(GetAttribute<Attributes.OptionName>(VolSFX).StringName, VolSFX.ToString());
+            dict.Add(GetAttribute<Attributes.OptionName>(UseEAX).StringName, GetAttribute<Attributes.OptionStringValue>(UseEAX).StringValue);
+            dict.Add(GetAttribute<Attributes.OptionName>(FPSLimit).StringName, GetAttribute<Attributes.OptionStringValue>(FPSLimit).StringValue);
+
+            // Hardcoded options
+            dict.Add("FirewallBehavior", "1");
+            dict.Add("FirewallNeedToRefresh", "FALSE");
+            dict.Add("FirewallPortAllocationDelta", "0");
+            dict.Add("FirewallPortOverride", "16000");
+            dict.Add("FlashTutorial", "0");
+            dict.Add("IsThreadedLoad", "yes");
+            dict.Add("IsThreadedLoad", "yes");
+
+            return dict;
+        }
     }
 
     public static class OptionsParser
@@ -99,6 +181,35 @@ namespace BfmeOnline.OptionsEditor
         public static OptionsINI GetDefaultConfig()
         {
             return new OptionsINI();
+        }
+
+        private static readonly string PATH_OPTIONS_INI =
+            Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Roaming", "My Battle for Middle-earth Files", "Options.ini");
+
+        /// <summary>
+        /// Takes OptionsINI config object and writes to options.ini file.
+        /// </summary>
+        /// <param name="options"></param>
+        public static void DumpOptionsToFile(OptionsINI optionsIni)
+        {
+            if (!File.Exists(PATH_OPTIONS_INI))
+            {
+                // Create a file to write to.
+                using (StreamWriter sw = File.CreateText(PATH_OPTIONS_INI))
+                {
+                    var options = optionsIni.GetOptionsDict();
+                    options.ToList().ForEach(keyValPair =>
+                    {
+                        sw.WriteLine($"{keyValPair.Key} = {keyValPair.Value}");
+                    });
+                }
+
+                MessageBox.Show("Options saved successfully!");
+            }
+            else
+            {
+                MessageBox.Show("Failed to write Options.ini");
+            }
         }
     }
 
