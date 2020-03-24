@@ -2,7 +2,7 @@
 
 namespace BfmeOnline.OptionsEditor
 {
-    enum Resolution
+    public enum Resolution
     {
         [Description("800x600")]
         res_800x600,
@@ -12,7 +12,7 @@ namespace BfmeOnline.OptionsEditor
         res_1920x1080
     }
 
-    enum Details
+    public enum Details
     {
         [Description("Low")]
         LOW,
@@ -22,5 +22,23 @@ namespace BfmeOnline.OptionsEditor
         HIGH,
         [Description("Ultra")]
         ULTRA_HIGH
+    }
+
+    public enum AudioLOD
+    {
+        [Description("Low")]
+        LOW,
+        [Description("Medium")]
+        MEDIUM,
+        [Description("High")]
+        HIGH
+    }
+
+    public enum YesNoOption
+    {
+        [Description("yes")]
+        YES,
+        [Description("no")]
+        NO
     }
 }
