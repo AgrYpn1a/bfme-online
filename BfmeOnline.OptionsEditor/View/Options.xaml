@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BfmeOnlineLauncher.View"
         mc:Ignorable="d"
-        Title="Options" Height="500" Width="450">
+        Title="Options" Height="500" Width="450" ResizeMode="NoResize">
 
     <Border Padding="5">
         <Grid>
@@ -29,7 +29,7 @@
                     </Grid.RowDefinitions>
 
                     <StackPanel Grid.Column="0" Grid.Row="0">
-                        <Label Content="Display Options" Margin="0 0 0 15" HorizontalAlignment="Center"></Label>
+                        <Label Content="Display Options" FontSize="15" FontStyle="Italic" Margin="0 0 0 15" HorizontalAlignment="Center"></Label>
                         <Border Padding="5">
                             <Grid>
                                 <Grid.ColumnDefinitions>
@@ -41,35 +41,35 @@
                                     <Label Content="Details:"></Label>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1">
-                                    <ComboBox x:Name="cbResoultion" Margin="0 2" SelectedValue="{Binding Resolution, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></ComboBox>
-                                    <ComboBox x:Name="cbDetails" Margin="0 2"></ComboBox>
+                                    <ComboBox x:Name="cmbResoultion" Margin="0 2" SelectedValue="{Binding Resolution, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></ComboBox>
+                                    <ComboBox x:Name="cmbDetails" Margin="0 2" SelectedValue="{Binding Details, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></ComboBox>
                                 </StackPanel>
                             </Grid>
                         </Border>
                         <Label Content="Brightness" HorizontalAlignment="Center"></Label>
-                        <Slider x:Name="sdBrightness" Margin="15 5" Maximum="100" Minimum="0"></Slider>
-                        <CheckBox x:Name="cbShowAllHealthBars" Margin="15 10" Content="Show All Health Bars"></CheckBox>
-                        <CheckBox x:Name="cbShowUnitDecals" Margin="15 10" Content="Show Unit Decals"></CheckBox>
-                        <CheckBox x:Name="cbFrameLimit" Margin="15 10" Content="Frame Limit"></CheckBox>
+                        <Slider x:Name="sdBrightness" Margin="15 5" Maximum="100" Minimum="0" Value="{Binding Brightness, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></Slider>
+                        <CheckBox x:Name="cbShowAllHealthBars" Margin="15 10" Content="Show All Health Bars" IsChecked="{Binding ShowAllHealthBars, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></CheckBox>
+                        <CheckBox x:Name="cbShowUnitDecals" Margin="15 10" Content="Show Unit Decals" IsChecked="{Binding ShowUnitDecals, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></CheckBox>
+                        <CheckBox x:Name="cbFrameLimit" Margin="15 10" Content="Frame Limit" IsChecked="{Binding FrameLimit, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></CheckBox>
                     </StackPanel>
                     <StackPanel Grid.Column="0" Grid.Row="1">
-                        <Label Content="Controls" Margin="0 0 0 15" HorizontalAlignment="Center"></Label>
+                        <Label Content="Controls" FontSize="15" FontStyle="Italic" Margin="0 0 0 15" HorizontalAlignment="Center"></Label>
                         <Label Content="Scroll Speed" HorizontalAlignment="Center"></Label>
-                        <Slider x:Name="sdScrollSpeed" Margin="15 5" Maximum="100" Minimum="0"></Slider>
-                        <CheckBox x:Name="cbAlternateMouseSetup" Margin="15 10" Content="Alternate Mouse Setup"></CheckBox>
+                        <Slider x:Name="sdScrollSpeed" Margin="15 5" Maximum="100" Minimum="0" Value="{Binding ScrollSpeed, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></Slider>
+                        <CheckBox x:Name="cbAlternateMouseSetup" Margin="15 10" Content="Alternate Mouse Setup" IsChecked="{Binding AlternateMouseSetup, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></CheckBox>
                     </StackPanel>
                 </Grid>
                 <StackPanel Grid.Column="1">
-                    <Label Content="Audio Controls" Margin="0 0 0 15" HorizontalAlignment="Center"></Label>
+                    <Label Content="Audio Controls" FontSize="15" FontStyle="Italic" Margin="0 0 0 15" HorizontalAlignment="Center"></Label>
                     <Label Content="Music" HorizontalAlignment="Center"></Label>
-                    <Slider x:Name="sdMusic" Margin="15 5" Maximum="100" Minimum="0"></Slider>
+                    <Slider x:Name="sdMusic" Margin="15 5" Maximum="100" Minimum="0" Value="{Binding Music, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></Slider>
                     <Label Content="Sound FX" HorizontalAlignment="Center"></Label>
-                    <Slider x:Name="sdSoundFx" Margin="15 5" Maximum="100" Minimum="0"></Slider>
+                    <Slider x:Name="sdSoundFx" Margin="15 5" Maximum="100" Minimum="0" Value="{Binding SoundFx, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></Slider>
                     <Label Content="Voice" HorizontalAlignment="Center"></Label>
-                    <Slider x:Name="sdVoice" Margin="15 5" Maximum="100" Minimum="0"></Slider>
+                    <Slider x:Name="sdVoice" Margin="15 5" Maximum="100" Minimum="0" Value="{Binding Voice, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></Slider>
                     <Label Content="Ambient" HorizontalAlignment="Center"></Label>
-                    <Slider x:Name="sdAmbient" Margin="15 5" Maximum="100" Minimum="0"></Slider>
-                    <CheckBox x:Name="cbEax3" Margin="15 20" Content="EAX3"></CheckBox>
+                    <Slider x:Name="sdAmbient" Margin="15 5" Maximum="100" Minimum="0" Value="{Binding Ambient, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></Slider>
+                    <CheckBox x:Name="cbEax3" Margin="15 20" Content="EAX3" IsChecked="{Binding Eax3, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></CheckBox>
 
                 </StackPanel>
             </Grid>
