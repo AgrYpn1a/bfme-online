@@ -38,59 +38,59 @@ namespace BfmeOnline.OptionsEditor
 
     public sealed class OptionsINI
     {
-        [Attributes.OptionNameAttribute("AllHealthBars")]
+        [Attributes.OptionName("AllHealthBars")]
         public YesNoOption ShowAllHealthBars { get; set; } = YesNoOption.YES;
 
-        [Attributes.OptionNameAttribute("UnitDecals")]
+        [Attributes.OptionName("UnitDecals")]
         public YesNoOption ShowUnitDecals { get; set; } = YesNoOption.NO;
 
-        [Attributes.OptionNameAttribute("FPSLimit")]
+        [Attributes.OptionName("FPSLimit")]
         public YesNoOption FPSLimit { get; set; } = YesNoOption.NO;
 
-        [Attributes.OptionNameAttribute("AlternateMouseSetup")]
+        [Attributes.OptionName("AlternateMouseSetup")]
         public YesNoOption AltMouseSetup { get; set; } = YesNoOption.NO;
 
 
-        [Attributes.OptionNameAttribute("Resolution")]
+        [Attributes.OptionName("Resolution")]
         public Resolution Resolution { get; set; } = Resolution.res_1920x1080;
 
-        [Attributes.OptionNameAttribute("Brightness")]
+        [Attributes.OptionName("Brightness")]
         [Attributes.OptionIntConstraint(0, 100)]
         public int Brightness { get; set; } = 50;
 
-        [Attributes.OptionNameAttribute("ScrollFactor")]
+        [Attributes.OptionName("ScrollFactor")]
         [Attributes.OptionIntConstraint(0, 100)]
         public int ScrollSpeed { get; set; } = 50;
 
         // LOD
-        [Attributes.OptionNameAttribute("AudioLOD")]
+        [Attributes.OptionName("AudioLOD")]
         public AudioLOD AudioLOD { get; set; } = AudioLOD.HIGH;
 
-        [Attributes.OptionNameAttribute("StaticGameLOD")]
+        [Attributes.OptionName("StaticGameLOD")]
         public Details GeneralDetails { get; set; } = Details.ULTRA_HIGH;
 
         // Volume
-        [Attributes.OptionNameAttribute("AmbientVolume")]
+        [Attributes.OptionName("AmbientVolume")]
         [Attributes.OptionIntConstraint(0, 100)]
         public int VolAmbient { get; set; } = 50;
 
-        [Attributes.OptionNameAttribute("VoiceVolume")]
+        [Attributes.OptionName("VoiceVolume")]
         [Attributes.OptionIntConstraint(0, 100)]
         public int VolVoice { get; set; } = 50;
 
-        [Attributes.OptionNameAttribute("MovieVolume")]
+        [Attributes.OptionName("MovieVolume")]
         [Attributes.OptionIntConstraint(0, 100)]
         public int VolMovie { get; set; } = 50;
 
-        [Attributes.OptionNameAttribute("MusicVolume")]
+        [Attributes.OptionName("MusicVolume")]
         [Attributes.OptionIntConstraint(0, 100)]
         public int VolMusic { get; set; } = 50;
 
-        [Attributes.OptionNameAttribute("SFXVolume")]
+        [Attributes.OptionName("SFXVolume")]
         [Attributes.OptionIntConstraint(0, 100)]
         public int VolSFX { get; set; } = 50;
 
-        [Attributes.OptionNameAttribute("UseEAX3")]
+        [Attributes.OptionName("UseEAX3")]
         public YesNoOption UseEAX { get; set; } = YesNoOption.NO;
 
         public static T GetAttribute<T>(string propName) where T : Attribute

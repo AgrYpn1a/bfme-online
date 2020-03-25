@@ -50,7 +50,8 @@ namespace BfmeOnlineLauncher.View
 
         private void OptionsDefaultInit()
         {
-            var optionsIni = OptionsParser.GetDefaultConfig();
+            //var optionsIni = OptionsParser.GetDefaultConfig();
+            var optionsIni = OptionsParser.ParseFromFile();
 
             Resolution = optionsIni.Resolution.ToDescriptionString();
             Details = optionsIni.GeneralDetails.ToDescriptionString();
@@ -94,6 +95,7 @@ namespace BfmeOnlineLauncher.View
         private void btnResetSettings_Click(object sender, RoutedEventArgs e)
         {
             OptionsDefaultInit();
+
             //this.OnClosed();
         }
 
