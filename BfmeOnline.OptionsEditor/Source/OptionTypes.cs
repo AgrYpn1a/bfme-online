@@ -26,7 +26,7 @@ namespace BfmeOnline.OptionsEditor
         [Attributes.OptionStringValue("High")]
         [Description("High")]
         HIGH,
-        [Attributes.OptionStringValue("Ultra")]
+        [Attributes.OptionStringValue("UltraHigh")]
         [Description("Ultra")]
         ULTRA_HIGH
     }
