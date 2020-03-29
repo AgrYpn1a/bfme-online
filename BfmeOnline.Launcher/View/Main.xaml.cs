@@ -59,8 +59,8 @@ namespace BfmeOnline.Launcher.View
 
             // Bind events
             _bfmeApp.OnOnlinePlayersChanged += BfmeApp_OnOnlinePlayersChanged;
-            _bfmeApp.OnQueued += BfmeApp_OnQueued;
-            _bfmeApp.OnMatchFound += BfmeApp_OnMatchFound;
+            //_bfmeApp.OnQueued += BfmeApp_OnQueued;
+            //_bfmeApp.OnMatchFound += BfmeApp_OnMatchFound;
         }
 
         ~Main()
@@ -76,28 +76,28 @@ namespace BfmeOnline.Launcher.View
             WS.Instance.SendMessage(new WSMessage() { EventType = WSEvent.CMD, Message = "queue" });
         }
 
-        private void BfmeApp_OnQueued()
-        {
-            Application.Current.Dispatcher.Invoke(() =>
-            {
-                QMWindowSearching.Visibility = Visibility.Visible;
-                QMWindowDefaultContent.Visibility = Visibility.Collapsed;
-            });
-        }
+        //private void BfmeApp_OnQueued()
+        //{
+        //    Application.Current.Dispatcher.Invoke(() =>
+        //    {
+        //        QMWindowSearching.Visibility = Visibility.Visible;
+        //        QMWindowDefaultContent.Visibility = Visibility.Collapsed;
+        //    });
+        //}
 
-        private void BfmeApp_OnMatchFound()
-        {
-            Application.Current.Dispatcher.Invoke(async () =>
-            {
-                QMWindowSearching.Visibility = Visibility.Collapsed;
-                QMWindowFoundMatchContent.Visibility = Visibility.Visible;
+        //private void BfmeApp_OnMatchFound()
+        //{
+        //    Application.Current.Dispatcher.Invoke(async () =>
+        //    {
+        //        QMWindowSearching.Visibility = Visibility.Collapsed;
+        //        QMWindowFoundMatchContent.Visibility = Visibility.Visible;
 
-                await Task.Delay(3000);
+        //        await Task.Delay(3000);
 
-                QMWindowFoundMatchContent.Visibility = Visibility.Collapsed;
-                QMCurrent.Visibility = Visibility.Visible;
-            });
-        }
+        //        QMWindowFoundMatchContent.Visibility = Visibility.Collapsed;
+        //        QMCurrent.Visibility = Visibility.Visible;
+        //    });
+        //}
 
         private void Btn_Close_Click(object sender, RoutedEventArgs e)
         {

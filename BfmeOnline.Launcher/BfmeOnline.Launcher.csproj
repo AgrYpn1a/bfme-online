@@ -13,7 +13,7 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <OutputPath>$(SolutionDir)\bin</OutputPath>
-    <DefineConstants>TRACE;DEBUG;DEBUG_OPTIONS_WIN</DefineConstants>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -34,6 +34,11 @@
     <None Remove="Resources\GUI\Main\Main.jpg" />
     <None Remove="Resources\GUI\Main\Main.png" />
     <None Remove="Resources\GUI\SignIn\SignIn_Background.png" />
+    <None Remove="Resources\Images\bfme1Active.png" />
+    <None Remove="Resources\Images\bfme2Active.png" />
+    <None Remove="Resources\Images\bfme3Active.png" />
+    <None Remove="Resources\Images\buttonBackgrounds.png" />
+    <None Remove="Resources\Images\vertLine.png" />
     <None Remove="Resources\Videos\GollumQMFound.mp4" />
     <None Remove="Resources\Videos\GollumQMLoop.mp4" />
   </ItemGroup>
@@ -51,6 +56,11 @@
     <Resource Include="Resources\GUI\Main\Main.jpg">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\Images\bfme1Active.png" />
+    <Resource Include="Resources\Images\bfme2Active.png" />
+    <Resource Include="Resources\Images\bfme3Active.png" />
+    <Resource Include="Resources\Images\buttonBackgrounds.png" />
+    <Resource Include="Resources\Images\vertLine.png" />
     <Content Include="Resources\Videos\GollumQMFound.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

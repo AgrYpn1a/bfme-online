@@ -16,7 +16,70 @@
         <WindowChrome CaptionHeight="60"></WindowChrome>
     </WindowChrome.WindowChrome>
 
-    <StackPanel VerticalAlignment="Top" Grid.RowSpan="1">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="9*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"></RowDefinition>
+                <RowDefinition Height="9*"></RowDefinition>
+                <RowDefinition Height="3*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1">
+                <Grid.Background>
+                    <ImageBrush ImageSource="/Resources/Images/buttonBackgrounds.png" Opacity="1"  Stretch="UniformToFill"/>
+                </Grid.Background>
+                <Image Source="/Resources/Images/vertLine.png" Panel.ZIndex="99" HorizontalAlignment="Right"></Image>
+                <StackPanel>
+                    <Button Margin="-12 0 10 0">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Border>
+                                    <Image x:Name="BFME" Source="/Resources/Images/bfme1Active.png" Opacity="1" Width="162" Height="125"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button Margin="-6 -21 10 0">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Border>
+                                    <Image Name="BFME" Source="/Resources/Images/bfme2Active.png" Opacity="0" Width="162" Height="125"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button Margin="1 -25 10 0">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Border>
+                                    <Image Name="BFME" Source="/Resources/Images/bfme3Active.png" Opacity="0" Width="162" Height="125"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="8*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1">
+                <Border BorderBrush="Black" Margin="-5 25 25 -10" Opacity="0.6" BorderThickness="500">
+                </Border>
+            </Grid>
+            <StackPanel Grid.Row="2" Orientation="Horizontal">
+                <ProgressBar Margin="15 35 15 35" Width="450"></ProgressBar>
+                <Button Content="Install/Play" Margin="0 25 5 25" Width="150"></Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+    <!--<StackPanel VerticalAlignment="Top" Grid.RowSpan="1">
         <Grid VerticalAlignment="Top" Margin="0 5 5 80">
             <StackPanel 
                 WindowChrome.IsHitTestVisibleInChrome="True"
@@ -61,7 +124,9 @@
                                     </MediaElement.Triggers>
                                 </MediaElement>
                             </StackPanel>
-                            <!--<MediaElement x:Name="GollumVideo" Source="/Resources/Videos/GollumQMLoop.mp4" Margin="242,18,242,66" />-->
+                            -->
+    <!--<MediaElement x:Name="GollumVideo" Source="/Resources/Videos/GollumQMLoop.mp4" Margin="242,18,242,66" />-->
+    <!--
                             <TextBlock FontSize="20" Text="searching for hobbitses..." Foreground="#FFF5AA0A" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,312,0,0" FontFamily="Ringbearer"/>
                         </Grid>
 
@@ -81,7 +146,9 @@
                                     </MediaElement.Triggers>
                                 </MediaElement>
                             </StackPanel>
-                            <!--<MediaElement x:Name="GollumVideo" Source="/Resources/Videos/GollumQMLoop.mp4" Margin="242,18,242,66" />-->
+                            -->
+    <!--<MediaElement x:Name="GollumVideo" Source="/Resources/Videos/GollumQMLoop.mp4" Margin="242,18,242,66" />-->
+    <!--
                             <TextBlock FontSize="20" Text="found match!" Foreground="#FFF5AA0A" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,312,0,0" FontFamily="Ringbearer"/>
                         </Grid>
 
@@ -90,12 +157,14 @@
                         </Grid>
 
                         <TextBlock x:Name="QMWindowDefaultContent" FontSize="14" Text="Press 'Find Match' to queue for a Quick Match." Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        <!--<TextBlock x:Name="QMWindowFoundMatchContent" Visibility="Collapsed" FontSize="14" Text="Found match!" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" />-->
+                        -->
+    <!--<TextBlock x:Name="QMWindowFoundMatchContent" Visibility="Collapsed" FontSize="14" Text="Found match!" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" />-->
+    <!--
                     </Grid>
                 </Border>
                 <Button Name="Btn_FindMatch" Margin="0 20 0 0" Cursor="Hand" Content="find match" FontSize="22" Width="160" Height="40" FontFamily="Ringbearer" Foreground="#FFFDA100" Background="#CC000000" Click="Btn_FindMatch_Click" />
             </StackPanel>
         </Grid>
-    </StackPanel>
+    </StackPanel>-->
 
 </Window>
