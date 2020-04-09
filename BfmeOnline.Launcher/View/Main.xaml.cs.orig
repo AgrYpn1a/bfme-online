@@ -123,6 +123,7 @@ namespace BfmeOnline.Launcher.View
             Application.Current.Shutdown();
         }
 
+<<<<<<< HEAD
         private bool _isInstalling;
         private bool _isDownloading;
 
@@ -151,6 +152,14 @@ namespace BfmeOnline.Launcher.View
 
             _isDownloading = true;
             t.Start();
+=======
+        private void BtnBrowse_Click(object sender, RoutedEventArgs e)
+        {
+
+            System.Windows.Forms.FolderBrowserDialog dlg = new System.Windows.Forms.FolderBrowserDialog();
+            dlg.ShowDialog();
+            tbPath.Text = dlg.SelectedPath;
+>>>>>>> 1ee0605ace0fc31d47bfe06a6db0f4b4242e2a08
         }
     }
 }
