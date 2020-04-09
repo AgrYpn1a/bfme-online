@@ -7,7 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BfmeOnline.Launcher", "Bfme
 EndProject
 Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "BfmeOnlineLauncher.Installer", "BfmeOnline.Launcher.Installer\BfmeOnlineLauncher.Installer.wixproj", "{99C51667-AFAE-48E5-89A5-DB3BD01F3802}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BfmeOnline.OptionsEditor", "BfmeOnline.OptionsEditor\BfmeOnline.OptionsEditor.csproj", "{B833A5C9-55AA-488A-B676-07A2FB85B672}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BfmeOnline.OptionsEditor", "BfmeOnline.OptionsEditor\BfmeOnline.OptionsEditor.csproj", "{B833A5C9-55AA-488A-B676-07A2FB85B672}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BfmeOnline.Downloader", "BfmeOnline.Downloader\BfmeOnline.Downloader.csproj", "{7F7C07F7-82FF-422B-AD1E-9C15DDF03D93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BfmeOnline.GameInstaller", "BfmeOnline.GameInstaller\BfmeOnline.GameInstaller.csproj", "{69A9F24D-1D9B-4AF6-982C-C7F52922F044}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +57,30 @@ Global
 		{B833A5C9-55AA-488A-B676-07A2FB85B672}.Release|x64.Build.0 = Release|Any CPU
 		{B833A5C9-55AA-488A-B676-07A2FB85B672}.Release|x86.ActiveCfg = Release|Any CPU
 		{B833A5C9-55AA-488A-B676-07A2FB85B672}.Release|x86.Build.0 = Release|Any CPU
+		{7F7C07F7-82FF-422B-AD1E-9C15DDF03D93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F7C07F7-82FF-422B-AD1E-9C15DDF03D93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F7C07F7-82FF-422B-AD1E-9C15DDF03D93}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7F7C07F7-82FF-422B-AD1E-9C15DDF03D93}.Debug|x64.Build.0 = Debug|Any CPU
+		{7F7C07F7-82FF-422B-AD1E-9C15DDF03D93}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7F7C07F7-82FF-422B-AD1E-9C15DDF03D93}.Debug|x86.Build.0 = Debug|Any CPU
+		{7F7C07F7-82FF-422B-AD1E-9C15DDF03D93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F7C07F7-82FF-422B-AD1E-9C15DDF03D93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F7C07F7-82FF-422B-AD1E-9C15DDF03D93}.Release|x64.ActiveCfg = Release|Any CPU
+		{7F7C07F7-82FF-422B-AD1E-9C15DDF03D93}.Release|x64.Build.0 = Release|Any CPU
+		{7F7C07F7-82FF-422B-AD1E-9C15DDF03D93}.Release|x86.ActiveCfg = Release|Any CPU
+		{7F7C07F7-82FF-422B-AD1E-9C15DDF03D93}.Release|x86.Build.0 = Release|Any CPU
+		{69A9F24D-1D9B-4AF6-982C-C7F52922F044}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69A9F24D-1D9B-4AF6-982C-C7F52922F044}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69A9F24D-1D9B-4AF6-982C-C7F52922F044}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{69A9F24D-1D9B-4AF6-982C-C7F52922F044}.Debug|x64.Build.0 = Debug|Any CPU
+		{69A9F24D-1D9B-4AF6-982C-C7F52922F044}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{69A9F24D-1D9B-4AF6-982C-C7F52922F044}.Debug|x86.Build.0 = Debug|Any CPU
+		{69A9F24D-1D9B-4AF6-982C-C7F52922F044}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69A9F24D-1D9B-4AF6-982C-C7F52922F044}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69A9F24D-1D9B-4AF6-982C-C7F52922F044}.Release|x64.ActiveCfg = Release|Any CPU
+		{69A9F24D-1D9B-4AF6-982C-C7F52922F044}.Release|x64.Build.0 = Release|Any CPU
+		{69A9F24D-1D9B-4AF6-982C-C7F52922F044}.Release|x86.ActiveCfg = Release|Any CPU
+		{69A9F24D-1D9B-4AF6-982C-C7F52922F044}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

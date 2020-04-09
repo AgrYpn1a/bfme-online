@@ -14,6 +14,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using BfmeOnline.Downloader;
+using System.Threading;
 
 namespace BfmeOnline.Launcher.View
 {
@@ -102,6 +104,36 @@ namespace BfmeOnline.Launcher.View
         private void Btn_Close_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        private bool _isInstalling;
+        private bool _isDownloading;
+
+        private void BtnInstall_Click(object sender, RoutedEventArgs e)
+        {
+            BfmeOnline.Downloader.Downloader downloader = new BfmeOnline.Downloader.Downloader();
+            downloader.OnDownloadFinished = delegate
+            {
+                _isDownloading = false;
+            };
+
+            pbDownload.Value = 0;
+
+            Thread t = new Thread(() =>
+            {
+                downloader.OnProgressUpdate = (progress) =>
+                {
+                    Dispatcher.Invoke(new Action(() =>
+                    {
+                        pbDownload.Value = progress;
+                    }));
+                };
+
+                downloader.DownloadFile("https://speed.hetzner.de/100MB.bin", @"e:\temp\game.zip");
+            });
+
+            _isDownloading = true;
+            t.Start();
         }
     }
 }

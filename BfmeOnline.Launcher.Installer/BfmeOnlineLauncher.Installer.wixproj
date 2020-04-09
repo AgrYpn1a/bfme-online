@@ -67,7 +67,7 @@
     <Exec Command="rd /s /q ..\bin\netcoreapp3.0\win-$(Platform)">
     </Exec>
     <!-- Publish dotnet core app -->
-    <Exec Command="dotnet publish ..\ -c $(Configuration) -r win-$(Platform)">
+    <Exec Command="dotnet publish ..\ -c $(Configuration) -r win-$(Platform) /p:TrimUnusedDependencies=true">
     </Exec>
     <!-- Delete localizations -->
     <Exec Command="RD /S /Q ..\bin\netcoreapp3.0\win-$(Platform)\publish\cs">

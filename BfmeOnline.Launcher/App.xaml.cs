@@ -34,7 +34,7 @@ namespace BfmeOnline.Launcher
         {
             base.OnStartup(e);
 
-            DebugWindows();
+            if (DebugWindows()) return;
 
             // Bind event handlers
             //AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
@@ -160,20 +160,19 @@ namespace BfmeOnline.Launcher
                 vpnProcess.ExecuteCommand("SHUTDOWN", (res) => { });
         }
 
-#if DEBUG
-        private void DebugWindows()
+        private bool DebugWindows()
         {
 #if DEBUG_MAIN_WIN
             new Main().Show();
-            return;
+            return true;
 #elif DEBUG_OPTIONS_WIN
             new Main().Show();
-            return;
+            return true;
 #endif
+            return false;
         }
-#endif
 
-#endregion
+        #endregion
 
         private void TaskScheduler_UnobservedTaskException(object sender, UnobservedTaskExceptionEventArgs e)
         {

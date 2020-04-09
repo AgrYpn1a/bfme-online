@@ -50,8 +50,8 @@ namespace BfmeOnlineLauncher.View
 
         private void OptionsDefaultInit()
         {
-            //var optionsIni = OptionsParser.GetDefaultConfig();
-            var optionsIni = OptionsParser.ParseFromFile();
+            var optionsIni = OptionsParser.GetDefaultConfig();
+            //var optionsIni = OptionsParser.ParseFromFile();
 
             Resolution = optionsIni.Resolution.ToDescriptionString();
             Details = optionsIni.GeneralDetails.ToDescriptionString();

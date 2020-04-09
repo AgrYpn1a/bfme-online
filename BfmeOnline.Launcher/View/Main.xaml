@@ -74,8 +74,8 @@
                 </Border>
             </Grid>
             <StackPanel Grid.Row="2" Orientation="Horizontal">
-                <ProgressBar Margin="15 35 15 35" Width="450"></ProgressBar>
-                <Button Content="Install/Play" Margin="0 25 5 25" Width="150"></Button>
+                <ProgressBar x:Name="pbDownload" Margin="15 35 15 35" Value="50" Width="450"></ProgressBar>
+                <Button x:Name="BtnInstall" Content="Install" Margin="0 25 5 25" Width="150" FontSize="24" FontFamily="Ringbearer" Click="BtnInstall_Click"></Button>
             </StackPanel>
         </Grid>
     </Grid>
