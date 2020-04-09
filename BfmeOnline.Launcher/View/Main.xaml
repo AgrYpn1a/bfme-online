@@ -15,68 +15,91 @@
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="60"></WindowChrome>
     </WindowChrome.WindowChrome>
-
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"></ColumnDefinition>
-            <ColumnDefinition Width="9*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <Grid Grid.Column="0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="4*"></RowDefinition>
-                <RowDefinition Height="9*"></RowDefinition>
-                <RowDefinition Height="3*"></RowDefinition>
-            </Grid.RowDefinitions>
-            <Grid Grid.Row="1">
-                <Grid.Background>
-                    <ImageBrush ImageSource="/Resources/Images/buttonBackgrounds.png" Opacity="1"  Stretch="UniformToFill"/>
-                </Grid.Background>
-                <Image Source="/Resources/Images/vertLine.png" Panel.ZIndex="99" HorizontalAlignment="Right"></Image>
-                <StackPanel>
-                    <Button Margin="-12 0 10 0">
-                        <Button.Template>
-                            <ControlTemplate>
-                                <Border>
-                                    <Image x:Name="BFME" Source="/Resources/Images/bfme1Active.png" Opacity="1" Width="162" Height="125"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-                    <Button Margin="-6 -21 10 0">
-                        <Button.Template>
-                            <ControlTemplate>
-                                <Border>
-                                    <Image Name="BFME" Source="/Resources/Images/bfme2Active.png" Opacity="0" Width="162" Height="125"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-                    <Button Margin="1 -25 10 0">
-                        <Button.Template>
-                            <ControlTemplate>
-                                <Border>
-                                    <Image Name="BFME" Source="/Resources/Images/bfme3Active.png" Opacity="0" Width="162" Height="125"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-                </StackPanel>
-            </Grid>
-        </Grid>
-        <Grid Grid.Column="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="2*"></RowDefinition>
-                <RowDefinition Height="8*"></RowDefinition>
-                <RowDefinition Height="2*"></RowDefinition>
-            </Grid.RowDefinitions>
-            <Grid Grid.Row="1">
-                <Border BorderBrush="Black" Margin="-5 25 25 -10" Opacity="0.6" BorderThickness="500">
-                </Border>
-            </Grid>
-            <StackPanel Grid.Row="2" Orientation="Horizontal">
-                <ProgressBar Margin="15 35 15 35" Width="450"></ProgressBar>
-                <Button Content="Install/Play" Margin="0 25 5 25" Width="150"></Button>
+        <Grid VerticalAlignment="Top" Margin="0 5 5 80">
+            <StackPanel 
+                WindowChrome.IsHitTestVisibleInChrome="True"
+                VerticalAlignment="Center"
+                Height="25"
+                HorizontalAlignment="Right"
+                Orientation="Horizontal">
+                <Button Content="-" FontSize="16" Width="25" />
+                <Button x:Name="Btn_Close" Content="x" FontSize="16" Width="25" Click="Btn_Close_Click" />
             </StackPanel>
+            <Label Margin="20 -5 565 0" Content="{Binding Version}" FontWeight="Normal" Foreground="White"></Label>
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="9*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*"></RowDefinition>
+                    <RowDefinition Height="9*"></RowDefinition>
+                    <RowDefinition Height="3*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="1">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/Resources/Images/buttonBackgrounds.png" Opacity="1"  Stretch="UniformToFill"/>
+                    </Grid.Background>
+                    <Image Source="/Resources/Images/vertLine.png" Panel.ZIndex="99" HorizontalAlignment="Right"></Image>
+                    <StackPanel>
+                        <Button Margin="-12 0 10 0">
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <Border>
+                                        <Image x:Name="BFME" Source="/Resources/Images/bfme1Active.png" Opacity="1" Width="162" Height="125"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button Margin="-6 -21 10 0">
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <Border>
+                                        <Image Name="BFME" Source="/Resources/Images/bfme2Active.png" Opacity="0" Width="162" Height="125"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button Margin="1 -25 10 0">
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <Border>
+                                        <Image Name="BFME" Source="/Resources/Images/bfme3Active.png" Opacity="0" Width="162" Height="125"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="8*"></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="1">
+                    <Border BorderBrush="Black" Margin="-5 25 25 -10" Opacity="0.6" BorderThickness="500">
+                    </Border>
+                </Grid>
+                <StackPanel x:Name="downloadPanel" Grid.Row="2" Orientation="Horizontal" Visibility="Hidden">
+                    <ProgressBar Margin="15 35 15 35" Width="450"></ProgressBar>
+                    <Button Content="Cancel" Margin="0 25 5 25" FontSize="20" FontWeight="Bold" Width="150"></Button>
+                </StackPanel>
+                <StackPanel x:Name="playPanel" Grid.Row="2" Orientation="Horizontal" Visibility="Hidden">
+                    <ProgressBar Margin="15 35 15 35" Width="450"></ProgressBar>
+                    <Button Content="Play" Margin="0 25 5 25" FontSize="20" FontWeight="Bold" Width="150"></Button>
+                </StackPanel>
+                <StackPanel x:Name="installPanel" Grid.Row="2" Orientation="Horizontal" Visibility="Visible">
+                    <TextBox x:Name="tbPath" FontSize="10" TextAlignment="Left" Margin="-6 35 15 35" Width="150" Background="White" Foreground="White"></TextBox>
+                    <Button x:Name="BtnBrowse" Content="Browse" Margin="0 35 50 35" Width="80" Click="BtnBrowse_Click"></Button>
+                    <Button Content="Install" FontSize="20" FontWeight="Bold" Margin="90 25 5 25" Width="150"></Button>
+                </StackPanel>
+
+            </Grid>
         </Grid>
     </Grid>
     <!--<StackPanel VerticalAlignment="Top" Grid.RowSpan="1">

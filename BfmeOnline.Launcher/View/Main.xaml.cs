@@ -1,5 +1,6 @@
 ﻿using BfmeOnline.Launcher.Source;
 using BfmeOnline.Launcher.Source.WS;
+using Microsoft.Win32;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -25,6 +26,7 @@ namespace BfmeOnline.Launcher.View
         private App _bfmeApp;
 
         public event PropertyChangedEventHandler PropertyChanged;
+        public string Path;
 
         protected void OnPropertyChanged(string propertyName)
         {
@@ -61,6 +63,21 @@ namespace BfmeOnline.Launcher.View
             _bfmeApp.OnOnlinePlayersChanged += BfmeApp_OnOnlinePlayersChanged;
             //_bfmeApp.OnQueued += BfmeApp_OnQueued;
             //_bfmeApp.OnMatchFound += BfmeApp_OnMatchFound;
+            tbPath.Text = System.Reflection.Assembly.GetExecutingAssembly().Location;
+
+#if DEBUG_INSTALLED
+            installPanel.Visibility = Visibility.Hidden;
+            downloadPanel.Visibility = Visibility.Hidden;
+            playPanel.Visibility = Visibility.Visible;       
+#elif DEBUG_NOTINSTALLED
+            installPanel.Visibility = Visibility.Visible;
+            downloadPanel.Visibility = Visibility.Hidden;
+            playPanel.Visibility = Visibility.Hidden;
+#elif DEBUG_INSTALLING
+            installPanel.Visibility = Visibility.Hidden;
+            downloadPanel.Visibility = Visibility.Visible;
+            playPanel.Visibility = Visibility.Hidden;
+#endif
         }
 
         ~Main()
@@ -102,6 +119,14 @@ namespace BfmeOnline.Launcher.View
         private void Btn_Close_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        private void BtnBrowse_Click(object sender, RoutedEventArgs e)
+        {
+
+            System.Windows.Forms.FolderBrowserDialog dlg = new System.Windows.Forms.FolderBrowserDialog();
+            dlg.ShowDialog();
+            tbPath.Text = dlg.SelectedPath;
         }
     }
 }
