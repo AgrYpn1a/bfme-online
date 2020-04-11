@@ -13,7 +13,7 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <OutputPath>$(SolutionDir)\bin</OutputPath>
-    <DefineConstants>TRACE;DEBUG;DEBUG_INSTALLING;</DefineConstants>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -81,6 +81,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BfmeOnline.Downloader\BfmeOnline.Downloader.csproj" />
+    <ProjectReference Include="..\BfmeOnline.GameInstaller\BfmeOnline.GameInstaller.csproj" />
   </ItemGroup>
 
   <ItemGroup>

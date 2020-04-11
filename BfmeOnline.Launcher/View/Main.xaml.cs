@@ -17,6 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using BfmeOnline.Downloader;
 using System.Threading;
+using BfmeOnline.GameInstaller;
 
 namespace BfmeOnline.Launcher.View
 {
@@ -66,20 +67,21 @@ namespace BfmeOnline.Launcher.View
             //_bfmeApp.OnQueued += BfmeApp_OnQueued;
             //_bfmeApp.OnMatchFound += BfmeApp_OnMatchFound;
             tbPath.Text = System.Reflection.Assembly.GetExecutingAssembly().Location;
+            Path = tbPath.Text;
 
-#if DEBUG_INSTALLED
-            installPanel.Visibility = Visibility.Hidden;
-            downloadPanel.Visibility = Visibility.Hidden;
-            playPanel.Visibility = Visibility.Visible;       
-#elif DEBUG_NOTINSTALLED
-            installPanel.Visibility = Visibility.Visible;
-            downloadPanel.Visibility = Visibility.Hidden;
-            playPanel.Visibility = Visibility.Hidden;
-#elif DEBUG_INSTALLING
-            installPanel.Visibility = Visibility.Hidden;
-            downloadPanel.Visibility = Visibility.Visible;
-            playPanel.Visibility = Visibility.Hidden;
-#endif
+            //#if DEBUG_INSTALLED
+            //            installPanel.Visibility = Visibility.Hidden;
+            //            downloadPanel.Visibility = Visibility.Hidden;
+            //            playPanel.Visibility = Visibility.Visible;       
+            //#elif DEBUG_NOTINSTALLED
+            //            installPanel.Visibility = Visibility.Visible;
+            //            downloadPanel.Visibility = Visibility.Hidden;
+            //            playPanel.Visibility = Visibility.Hidden;
+            //#elif DEBUG_INSTALLING
+            //            installPanel.Visibility = Visibility.Hidden;
+            //            downloadPanel.Visibility = Visibility.Visible;
+            //            playPanel.Visibility = Visibility.Hidden;
+            //#endif
         }
 
         ~Main()
@@ -128,29 +130,31 @@ namespace BfmeOnline.Launcher.View
 
         private void BtnInstall_Click(object sender, RoutedEventArgs e)
         {
-            BfmeOnline.Downloader.Downloader downloader = new BfmeOnline.Downloader.Downloader();
-            downloader.OnDownloadFinished = delegate
+            installPanel.Visibility = Visibility.Hidden;
+            downloadPanel.Visibility = Visibility.Visible;
+            Task.Run(() =>
             {
-                _isDownloading = false;
-            };
-
-            pbDownload.Value = 0;
-
-            Thread t = new Thread(() =>
-            {
-                downloader.OnProgressUpdate = (progress) =>
-                {
-                    Dispatcher.Invoke(new Action(() =>
-                    {
-                        pbDownload.Value = progress;
-                    }));
-                };
-
-                downloader.DownloadFile("https://speed.hetzner.de/100MB.bin", @"e:\temp\game.zip");
+                Installer.Install("https://8d9ec52f.ngrok.io/download-game", Path);
             });
+            Task.Run(() =>
+            {
+                while (Installer.State != InstallerState.FINISHED)
+                {
+                    Dispatcher.Invoke(() =>
+                    {
+                        lbInstaller.Content = Installer.State;
+                        pbInstaller.Value = Installer.Progress;
+                    });
 
-            _isDownloading = true;
-            t.Start();
+                }
+                FinalizeInstall();
+            });
+        }
+
+        private void FinalizeInstall()
+        {
+            MessageBox.Show("Installation finnished!");
+            //playPanel.Visibility = Visibility.Hidden;
         }
 
         private void BtnBrowse_Click(object sender, RoutedEventArgs e)
@@ -158,6 +162,7 @@ namespace BfmeOnline.Launcher.View
             System.Windows.Forms.FolderBrowserDialog dlg = new System.Windows.Forms.FolderBrowserDialog();
             dlg.ShowDialog();
             tbPath.Text = dlg.SelectedPath;
+            Path = tbPath.Text;
         }
     }
 }

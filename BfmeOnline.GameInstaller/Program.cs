@@ -26,6 +26,7 @@ namespace BfmeOnline.GameInstaller
             {
                 Console.Write($"\r{Installer.State} Progress = {Installer.Progress}");
                 Console.Write($"                                                                                         ");
+                
             }
         }
     }
