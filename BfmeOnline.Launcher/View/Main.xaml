@@ -86,7 +86,7 @@
                     </Border>
                 </Grid>
                 <StackPanel x:Name="downloadPanel" Grid.Row="2" Orientation="Horizontal" Visibility="Hidden">
-                    <ProgressBar Margin="15 35 15 35" Width="450"></ProgressBar>
+                    <ProgressBar x:Name="pbDownload" Margin="15 35 15 35" Width="450"></ProgressBar>
                     <Button Content="Cancel" Margin="0 25 5 25" FontSize="20" FontWeight="Bold" Width="150"></Button>
                 </StackPanel>
                 <StackPanel x:Name="playPanel" Grid.Row="2" Orientation="Horizontal" Visibility="Hidden">
@@ -98,15 +98,7 @@
                     <Button x:Name="BtnBrowse" Content="Browse" Margin="0 35 50 35" Width="80" Click="BtnBrowse_Click"></Button>
                     <Button Content="Install" FontSize="20" FontWeight="Bold" Margin="90 25 5 25" Width="150"></Button>
                 </StackPanel>
-
             </Grid>
-<<<<<<< HEAD
-            <StackPanel Grid.Row="2" Orientation="Horizontal">
-                <ProgressBar x:Name="pbDownload" Margin="15 35 15 35" Value="50" Width="450"></ProgressBar>
-                <Button x:Name="BtnInstall" Content="Install" Margin="0 25 5 25" Width="150" FontSize="24" FontFamily="Ringbearer" Click="BtnInstall_Click"></Button>
-            </StackPanel>
-=======
->>>>>>> 1ee0605ace0fc31d47bfe06a6db0f4b4242e2a08
         </Grid>
     </Grid>
     <!--<StackPanel VerticalAlignment="Top" Grid.RowSpan="1">

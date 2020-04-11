@@ -260,6 +260,5 @@ namespace BfmeOnline.Launcher
             siw = new SignInWindow();
             siw.Show();
         }
-
     }
 }

@@ -22,7 +22,7 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
     <OutputPath>$(SolutionDir)\bin</OutputPath>
-    <DefineConstants>TRACE;DEBUG_OPTIONS_WIN</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;DEBUG_MAIN_WIN;DEBUG_NOTINSTALLED</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">

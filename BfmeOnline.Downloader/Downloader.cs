@@ -53,7 +53,7 @@ namespace BfmeOnline.Downloader
                     OnProgressUpdate?.Invoke(progress);
 
                     // TODO remove debug
-                    Console.WriteLine(progress);
+                    //Console.WriteLine(progress);
                 }
             }).Start();
 
@@ -69,7 +69,7 @@ namespace BfmeOnline.Downloader
                     fileNames[index] = fileName;
 
                     // Initiate download
-                    Console.WriteLine($"Thread {index} started.");
+                    //Console.WriteLine($"Thread {index} started.");
 
                     int offset = (index > 0) ? 1 : 0;
 

@@ -152,5 +152,12 @@ namespace BfmeOnline.Launcher.View
             _isDownloading = true;
             t.Start();
         }
+
+        private void BtnBrowse_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Forms.FolderBrowserDialog dlg = new System.Windows.Forms.FolderBrowserDialog();
+            dlg.ShowDialog();
+            tbPath.Text = dlg.SelectedPath;
+        }
     }
 }
