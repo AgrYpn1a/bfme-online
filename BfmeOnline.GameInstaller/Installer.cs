@@ -26,6 +26,8 @@ namespace BfmeOnline.GameInstaller
         public static InstallerState State { get; private set; } = InstallerState.NONE;
         public static int Progress { get; private set; } = 0;
         public static bool Finished { get; private set; } = false;
+        private static int TotalFiles;
+        private static int FilesExtracted;
 
         private static object _root = new object();
 
@@ -135,6 +137,10 @@ namespace BfmeOnline.GameInstaller
         {
             using (Ionic.Zip.ZipFile zip = Ionic.Zip.ZipFile.Read(filePath))
             {
+                //global progress count
+                TotalFiles = zip.Count;
+                FilesExtracted = 0;
+
                 zip.ExtractProgress += Zip_ExtractProgress;
                 zip.Password = "X4Ax6w2RN9zgrTVZUt7xEZpYG75kaqfz";
                 zip.ExtractAll(installPath, ExtractExistingFileAction.OverwriteSilently);
@@ -147,13 +153,19 @@ namespace BfmeOnline.GameInstaller
 
         private static void Zip_ExtractProgress(object sender, Ionic.Zip.ExtractProgressEventArgs e)
         {
-            if (e.TotalBytesToTransfer == 0)
-                return;
+            //if (e.TotalBytesToTransfer == 0)
+            //    return;
 
-            lock (_root)
-            {
-                Progress = Convert.ToInt32(100 * e.BytesTransferred / e.TotalBytesToTransfer);
-            }
+            //lock (_root)
+            //{
+            //    Progress = Convert.ToInt32(100 * e.BytesTransferred / e.TotalBytesToTransfer);
+            //}
+
+            //trying global extract progress
+            if (e.EventType != ZipProgressEventType.Extracting_BeforeExtractEntry)
+                return;
+            FilesExtracted++;
+            Progress = 100 * FilesExtracted / TotalFiles;
 
         }
     }
