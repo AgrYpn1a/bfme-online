@@ -12,25 +12,25 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>$(SolutionDir)\bin</OutputPath>
+    <OutputPath>bin</OutputPath>
     <DefineConstants>TRACE;DEBUG</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutputPath>$(SolutionDir)\bin</OutputPath>
+    <OutputPath>bin</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
-    <OutputPath>$(SolutionDir)\bin</OutputPath>
+    <OutputPath>bin</OutputPath>
     <DefineConstants>TRACE;DEBUG;DEBUG_MAIN_WIN;DEBUG_NOTINSTALLED</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
-    <OutputPath>$(SolutionDir)\bin</OutputPath>
+    <OutputPath>bin</OutputPath>
   </PropertyGroup>
   
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutputPath>$(SolutionDir)\bin</OutputPath>
+    <OutputPath>bin</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>

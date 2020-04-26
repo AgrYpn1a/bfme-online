@@ -134,7 +134,8 @@ namespace BfmeOnline.Launcher.View
             downloadPanel.Visibility = Visibility.Visible;
             Task.Run(() =>
             {
-                Installer.Install("https://bfme-games.fra1.digitaloceanspaces.com/The%20Battle%20for%20Middle-earth.zip", Path);
+                //Installer.Install("https://bfme-games.fra1.digitaloceanspaces.com/The%20Battle%20for%20Middle-earth.zip", Path);
+                Installer.Install("http://bfmedownload/download-game", Path);
             });
             Task.Run(() =>
             {

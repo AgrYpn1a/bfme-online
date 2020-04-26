@@ -70,7 +70,7 @@ namespace BfmeOnline.GameInstaller
                 });
             };
 
-            dl.DownloadFile(downloadUrl, downloadPath);
+            dl.Download(downloadUrl, downloadPath);
         }
 
         internal static void InstallRegistryKeys(string installPath)

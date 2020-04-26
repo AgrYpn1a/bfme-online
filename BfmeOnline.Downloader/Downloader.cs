@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace BfmeOnline.Downloader
 {
 
-    public class Downloader
+    public class Downloader : IDownloader
     {
         private string _sourceUrl;
         private string _destinationPath;
@@ -35,7 +35,7 @@ namespace BfmeOnline.Downloader
             return progress / THREADS;
         }
 
-        public void DownloadFile(string sourceUrl, string destinationPath)
+        public void Download(string sourceUrl, string destinationPath)
         {
             _isFinished = false;
             _sourceUrl = sourceUrl;
@@ -97,6 +97,9 @@ namespace BfmeOnline.Downloader
                     byte[] file = File.ReadAllBytes(fileName);
                     destinationStream.Write(file, 0, file.Length);
                 }
+
+                // Make sure stream is closed after writing
+                destinationStream.Close();
 
                 foreach (var fileName in fileNames)
                 {
@@ -180,6 +183,10 @@ namespace BfmeOnline.Downloader
             }
 
         }
+
+        public void Cancel()
+        {
+        }
     }
 
     class Program
@@ -188,7 +195,7 @@ namespace BfmeOnline.Downloader
         static void Main(string[] args)
         {
             Downloader downloader = new Downloader();
-            downloader.DownloadFile("https://speed.hetzner.de/100MB.bin", @"e:\temp\100mb.bin");
+            downloader.Download("https://speed.hetzner.de/100MB.bin", @"e:\temp\100mb.bin");
         }
     }
 }
