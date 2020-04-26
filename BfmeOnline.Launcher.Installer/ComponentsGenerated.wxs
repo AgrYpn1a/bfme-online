@@ -2,900 +2,897 @@
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
     <Fragment>
         <DirectoryRef Id="INSTALLFOLDER">
-            <Component Id="cmp2D5D0706F016AA20825C868A7DBC7634" Guid="{22AD06E1-4E38-4F8A-8483-E473024471DD}">
+            <Component Id="cmp2D5D0706F016AA20825C868A7DBC7634" Guid="{DA5259C9-DD44-415A-AC3E-F5FD406D4C09}">
                 <File Id="fil73D9EEE9E6F72A2A485AFB3F749860B9" KeyPath="yes" Source="$(var.BasePath)\Accessibility.dll" />
             </Component>
-            <Component Id="cmpF22D40156F8E16FBFA89C752FF9D0EF9" Guid="{B4A99B00-F7BE-4B6A-BE9E-5F459C2072D1}">
+            <Component Id="cmpF22D40156F8E16FBFA89C752FF9D0EF9" Guid="{DB910E4B-5614-4D97-ACFF-2176E1FD3C7E}">
                 <File Id="fil2DACDED111D2125FD9BAF52808E5CEB0" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-core-console-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp742C123932C1A216E185167E7780B396" Guid="{9C5E7DB4-B5E1-4024-BE16-E35D7D59D9AA}">
+            <Component Id="cmp742C123932C1A216E185167E7780B396" Guid="{D4555EB4-7B6B-430E-8BD1-360C3FC4B0EA}">
                 <File Id="filD4F5DAB6FC380871476D90A9B278B655" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-core-datetime-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp0C2E6E9A00C3293AC27A114F5CD9CE2A" Guid="{5294F611-EF13-4FB4-A713-F2BEB6560FB8}">
+            <Component Id="cmp0C2E6E9A00C3293AC27A114F5CD9CE2A" Guid="{2A43DAB4-F90B-4836-8388-AA14100CEB3F}">
                 <File Id="filC4BA033347D114D73E0BFDC4F138ED4B" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-core-debug-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp6EBAE5ACCACC27065A435A0042E7BAED" Guid="{A62C38E9-C0EB-48A2-B376-B0B78D8E2B21}">
+            <Component Id="cmp6EBAE5ACCACC27065A435A0042E7BAED" Guid="{B7FFAB21-14DC-4FA5-AD83-2C8068AADBC5}">
                 <File Id="filBE3E8E1D40266192494C4DD3D256E4B0" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-core-errorhandling-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp8654E1D8A29D75D1863BECEDD37AC0AE" Guid="{3FBDA822-633B-4A0B-A1ED-AB0E078B2824}">
+            <Component Id="cmp8654E1D8A29D75D1863BECEDD37AC0AE" Guid="{D87880C8-6D51-494C-A4CA-D4C61A6566E7}">
                 <File Id="filDFD8964B5B00E12A86C400251EF6F77E" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-core-file-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp41E89377B0002CC2350CF2F309C7EF96" Guid="{5D2A00BC-CF09-41F6-9C21-B82F3AB7DC28}">
+            <Component Id="cmp41E89377B0002CC2350CF2F309C7EF96" Guid="{77C7190A-B932-4B31-B49A-E8C211161B70}">
                 <File Id="filED19878F18A70E195BF8CDAA0D0E8890" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-core-file-l1-2-0.dll" />
             </Component>
-            <Component Id="cmpDEE5CBC14AEA029E9F4401E5B3982607" Guid="{0B66596C-67F4-4D2F-A912-873D109AF2F2}">
+            <Component Id="cmpDEE5CBC14AEA029E9F4401E5B3982607" Guid="{FBA8D53D-6686-4F9F-B41E-2D0B99FA58C1}">
                 <File Id="fil99A16235893D27C698F1132A81059440" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-core-file-l2-1-0.dll" />
             </Component>
-            <Component Id="cmp590BD4AE87E294D1563CF4D557250096" Guid="{549CB287-BE37-4DC1-82D5-C0F0A81A02D0}">
+            <Component Id="cmp590BD4AE87E294D1563CF4D557250096" Guid="{82C9E220-C7BF-47F3-874A-1873A6A03227}">
                 <File Id="filD5657AEC19C9FC8E0AF60F470875CF64" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-core-handle-l1-1-0.dll" />
             </Component>
-            <Component Id="cmpCF2CF8C7A0C59052CAA01587AA5785DC" Guid="{38C0198E-800C-46E0-8006-4FC39D15EFC4}">
+            <Component Id="cmpCF2CF8C7A0C59052CAA01587AA5785DC" Guid="{FC436B53-77CC-4C8F-9042-55703205C2EA}">
                 <File Id="fil522696687E0EECCAA70A0E9D409F1AFF" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-core-heap-l1-1-0.dll" />
             </Component>
-            <Component Id="cmpDD279108FA0E596011006D554F6A3104" Guid="{B6E89847-A462-4F0F-9DED-F0FD7022D03A}">
+            <Component Id="cmpDD279108FA0E596011006D554F6A3104" Guid="{196E9F68-66DE-4346-932B-EBCBEAE9007B}">
                 <File Id="fil87D340479265677CE6A63011B082D90C" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-core-interlocked-l1-1-0.dll" />
             </Component>
-            <Component Id="cmpCD74B7BA0C179921851020BBB033014C" Guid="{C64E1613-155B-46F8-8953-5D7425BF2C88}">
+            <Component Id="cmpCD74B7BA0C179921851020BBB033014C" Guid="{AD7985CB-3044-42D4-8A62-5D4A21C0889B}">
                 <File Id="fil2B1C02B60D25396B459A4FD75F2C3397" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-core-libraryloader-l1-1-0.dll" />
             </Component>
-            <Component Id="cmpAC8BDC4BFF75C5529DB6BFA54526ED0C" Guid="{E66CE364-CF5F-44EF-A413-A982C0D9F50B}">
+            <Component Id="cmpAC8BDC4BFF75C5529DB6BFA54526ED0C" Guid="{13F928B6-75B0-440B-8770-A7F017291DBD}">
                 <File Id="fil166AA52FFB5EC305E92912AB1AD3E8BE" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-core-localization-l1-2-0.dll" />
             </Component>
-            <Component Id="cmp8C8498D921E5B275BE6C7E3DA8DCEB68" Guid="{A7BD37F3-D9A7-4E14-8232-C5B5847C8178}">
+            <Component Id="cmp8C8498D921E5B275BE6C7E3DA8DCEB68" Guid="{F64A3968-95B2-46D9-84D1-DE0B089694CA}">
                 <File Id="fil119FC388EE479D2497F4E5235A4D0A0D" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-core-memory-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp9AE39696CCE4B2BA21A7559EDA2F0D90" Guid="{B1C18566-F820-4429-AA1B-B6119FE2B51F}">
+            <Component Id="cmp9AE39696CCE4B2BA21A7559EDA2F0D90" Guid="{EC7C8D46-9075-49CE-B90F-B8BA4EFB02F9}">
                 <File Id="filAF1A85247BFD7049AEE00A37035FC723" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-core-namedpipe-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp5D145C20D5E90C9E54B87DDC549105EA" Guid="{AAFE11E7-7171-46CF-B30D-A24554985212}">
+            <Component Id="cmp5D145C20D5E90C9E54B87DDC549105EA" Guid="{B3C5EA8B-81B7-4901-8E32-55863E4041EF}">
                 <File Id="filED53139C4E70E2ED3BF5C20A13EF04C9" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-core-processenvironment-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp4BC27243200E3663A58563BC8AD5A268" Guid="{2C7230B6-CDBC-4835-A550-1AE4E7B7D7BD}">
+            <Component Id="cmp4BC27243200E3663A58563BC8AD5A268" Guid="{2ECD704F-5982-4BD9-B803-A10BF641B817}">
                 <File Id="fil6C98F7250E35758DF2EAE6D18757B52A" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-core-processthreads-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp3C1343875198F364F70980382E32F197" Guid="{9447FF5D-1DFA-41ED-89B8-56DE5BF9CB4D}">
+            <Component Id="cmp3C1343875198F364F70980382E32F197" Guid="{CB0C129B-5FF6-4C99-B60F-B1569A407CE3}">
                 <File Id="filDCFF49060A8650BC3CD76399B278EFB3" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-core-processthreads-l1-1-1.dll" />
             </Component>
-            <Component Id="cmpECDFB8DD1F83358D411D63B1F980153E" Guid="{98053FB1-16CD-4BB7-994D-E1E7BC7BB87E}">
+            <Component Id="cmpECDFB8DD1F83358D411D63B1F980153E" Guid="{C7244846-0A34-439E-91DB-2DD435318DEF}">
                 <File Id="fil473C62601D1A459892F1035DC46D5837" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-core-profile-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp1E66ED1BF30236B52829E44485A58E50" Guid="{2C4FC1FD-0B94-4FB8-AAD1-8C25E7E247CD}">
+            <Component Id="cmp1E66ED1BF30236B52829E44485A58E50" Guid="{1847F63E-6B94-4135-8CFB-E65BBDEB6545}">
                 <File Id="fil86B1657D34671048F554605B02204614" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-core-rtlsupport-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp43C0DEA19BA8D8C7F25F0DD08B502FBD" Guid="{A7F176A9-9699-46BE-AEE7-0FE070DEB353}">
+            <Component Id="cmp43C0DEA19BA8D8C7F25F0DD08B502FBD" Guid="{B28BEB09-4653-44B2-90CA-4B37DE4CEAC3}">
                 <File Id="filFAB349D875247DA20FBC6095A574364F" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-core-string-l1-1-0.dll" />
             </Component>
-            <Component Id="cmpBE4AFE403859DE3CDCB4C17CE29AD9B1" Guid="{213074D1-67E3-4DA5-BE5B-258F09BCA1FA}">
+            <Component Id="cmpBE4AFE403859DE3CDCB4C17CE29AD9B1" Guid="{D365D2BA-A04B-4F8F-8EA2-DAE7E7D96FB5}">
                 <File Id="filE7772A0EC4C57BADD6BD4261E7E1D733" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-core-synch-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp6FB01AFC7883E57A54B9364FE007F69A" Guid="{7F6BAAE8-833A-4ED1-BFAE-33D447675200}">
+            <Component Id="cmp6FB01AFC7883E57A54B9364FE007F69A" Guid="{6B14E79C-D144-439F-BDA0-3B827189471B}">
                 <File Id="filC694EB3BC04DCB9743E89D8C9FCA39F3" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-core-synch-l1-2-0.dll" />
             </Component>
-            <Component Id="cmp34831A79EBBEDE365CF8E47BB8DA4AEE" Guid="{F873738C-A82B-4552-8029-1887099318EE}">
+            <Component Id="cmp34831A79EBBEDE365CF8E47BB8DA4AEE" Guid="{6360C51B-F62F-4207-A787-FF644C71E386}">
                 <File Id="fil156E0DB27CC93BDB6B5984208AF58408" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-core-sysinfo-l1-1-0.dll" />
             </Component>
-            <Component Id="cmpC5B1C289707493DC1A9765CBF1619688" Guid="{FBACE645-34A0-4FB7-87D5-018603ADB2BB}">
+            <Component Id="cmpC5B1C289707493DC1A9765CBF1619688" Guid="{A243145C-AFD5-40E5-9306-EAE36BAC29BF}">
                 <File Id="filF7650F0EE0391337B997E96186D1FABA" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-core-timezone-l1-1-0.dll" />
             </Component>
-            <Component Id="cmpBDCBA58D640E71BC077901A457EFAA06" Guid="{0FBA3D80-369A-4D86-B772-F19856594B98}">
+            <Component Id="cmpBDCBA58D640E71BC077901A457EFAA06" Guid="{5402B5FB-9B14-4CC2-91E6-217A3C2B6B03}">
                 <File Id="fil8D8B394F6F988ACC1E93C0D7A19BF8E9" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-core-util-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp5555B17514BB9BCBAF7845DEE241FB74" Guid="{10A81FCA-7AD0-4A0B-ACA1-075CC7B036EE}">
-                <File Id="filDB552A98BB516D9B0F19F0AE4AAE1489" KeyPath="yes" Source="$(var.BasePath)\API-MS-Win-core-xstate-l2-1-0.dll" />
-            </Component>
-            <Component Id="cmp74F6E981444243E078C5E033BD078819" Guid="{A89E0189-EEED-4319-9BF0-C8A7606B61D8}">
+            <Component Id="cmp74F6E981444243E078C5E033BD078819" Guid="{8A2E0429-6535-4C03-8366-84A6356040DA}">
                 <File Id="fil27C5261AF57F48008AECF60CB43570E2" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-crt-conio-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp20DD0168324B65A2B89EB723FB32E7F3" Guid="{F90698FF-6FE3-4698-886F-56C6CBA0B40A}">
+            <Component Id="cmp20DD0168324B65A2B89EB723FB32E7F3" Guid="{2130D728-8AA2-4C1C-BBDB-84527A2AF080}">
                 <File Id="fil857EC09AC99AFE55013ED23276EA7A26" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-crt-convert-l1-1-0.dll" />
             </Component>
-            <Component Id="cmpDD9A8434CB4A6317B4BA2A55410983F6" Guid="{5AF31DD3-D793-4C50-A3EE-BB7821DD8A1A}">
+            <Component Id="cmpDD9A8434CB4A6317B4BA2A55410983F6" Guid="{7468FF4D-7817-4A7B-8C23-772ADAA9FA68}">
                 <File Id="fil05F92919DA01CD87C088B1B7CE3AF0D8" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-crt-environment-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp11E56753706BD7FE87724F732A73F490" Guid="{80EB251F-0452-410B-A958-EB3571272C3B}">
+            <Component Id="cmp11E56753706BD7FE87724F732A73F490" Guid="{39259E14-F956-46E4-B277-157394FBF1FB}">
                 <File Id="fil7D01539A9AB967EA680352C503C6DC09" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-crt-filesystem-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp8A47DE6FFCA0BA39168EFA51F2E3ECFF" Guid="{A5A4E02D-010E-41D6-B80D-29FC730F152D}">
+            <Component Id="cmp8A47DE6FFCA0BA39168EFA51F2E3ECFF" Guid="{F679A08F-689F-4303-936C-AB2D1077B1A5}">
                 <File Id="fil27C551710BEF5EC4BC328135EEBEA135" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-crt-heap-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp4B8C11AC4FCB7CB42D55737034265B39" Guid="{88E11FEC-5C30-488E-B779-946DD79120F7}">
+            <Component Id="cmp4B8C11AC4FCB7CB42D55737034265B39" Guid="{73B0DA6A-EF62-49D2-966C-4440F49E086A}">
                 <File Id="fil0B1F8BD818900489ED53DD592A535C47" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-crt-locale-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp3E56BCDB6A50B4AA292F631457D3032D" Guid="{B9DDAB19-1E3D-4608-8CA0-D773CA351A61}">
+            <Component Id="cmp3E56BCDB6A50B4AA292F631457D3032D" Guid="{08F06A08-212C-4DE2-8D58-796A00AA4146}">
                 <File Id="fil2CF8DDC41ED2CCC246838458C09CB0E7" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-crt-math-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp995D66766A5CFBA5514D9EBED950459D" Guid="{441C438F-72BF-4FFD-91AD-B738D24AFBDF}">
+            <Component Id="cmp995D66766A5CFBA5514D9EBED950459D" Guid="{C36DFDA8-3F10-41FD-B566-97486B09657D}">
                 <File Id="fil8A07AAC4EC03297A8FE92F1C6005B6CE" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-crt-multibyte-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp4823CF61E7C973B92C27FA84E4DB141A" Guid="{A4AE8C86-770E-4EFC-8B48-1AE8B2A2D7EC}">
+            <Component Id="cmp4823CF61E7C973B92C27FA84E4DB141A" Guid="{98294937-6FDC-457C-90B6-A677A322DCF7}">
                 <File Id="fil3620C932251D7355C13ACBDAF2A84082" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-crt-private-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp14FD53BFC562B74A90211F6A7FA45EF8" Guid="{2AC169C3-5899-4DAC-829F-A96B09756775}">
+            <Component Id="cmp14FD53BFC562B74A90211F6A7FA45EF8" Guid="{0746FEFB-40CD-41B2-B3C8-E87BFA03654B}">
                 <File Id="filFB0713470FD14BAAA182341CB19AF7EF" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-crt-process-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp8C8DF6C3F20B60706F1C2D2317BA7664" Guid="{3C92CD74-9DDF-4830-932F-C95910285743}">
+            <Component Id="cmp8C8DF6C3F20B60706F1C2D2317BA7664" Guid="{7F694D2E-C5BA-4C47-85D2-83D508259F45}">
                 <File Id="fil7C86F69C29F28D20530B0BCAF69E9FB9" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-crt-runtime-l1-1-0.dll" />
             </Component>
-            <Component Id="cmpFE2451868FE2A2D25EE3375499109233" Guid="{58A72CD1-299B-446D-B7FE-89533741DD62}">
+            <Component Id="cmpFE2451868FE2A2D25EE3375499109233" Guid="{A0A651BF-A595-4084-82ED-FAD50443DC96}">
                 <File Id="fil1CA9B8B8CFB836B270D48565EC302DA5" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-crt-stdio-l1-1-0.dll" />
             </Component>
-            <Component Id="cmpE0DBCBD210EEB84B2FE546162F07C376" Guid="{4C07B545-0634-4B40-91D8-3D2CE2ECD0A2}">
+            <Component Id="cmpE0DBCBD210EEB84B2FE546162F07C376" Guid="{F3ED010F-CF97-49F3-BE84-A02A67772485}">
                 <File Id="fil756422CB95AC98A122B628535E348CFD" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-crt-string-l1-1-0.dll" />
             </Component>
-            <Component Id="cmpD01CA70C06D9ADCC4F49058182448367" Guid="{612C32E0-5CAF-4DCA-B04B-9C604A7054A6}">
+            <Component Id="cmpD01CA70C06D9ADCC4F49058182448367" Guid="{B2B1A460-F560-4BDD-87AD-DD568DAD42BF}">
                 <File Id="filBA529A8BD882A2CAE02E14EEA7B22ADF" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-crt-time-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp21CF0447C915302F93234E31801A67A7" Guid="{00540463-CBEB-475F-8A51-CE2AC52D1C40}">
+            <Component Id="cmp21CF0447C915302F93234E31801A67A7" Guid="{C52F467A-EA62-43B3-A6FB-F34F3B8F4DD8}">
                 <File Id="fil76FEC3CFC3B4E7E1F7410458BFA45411" KeyPath="yes" Source="$(var.BasePath)\api-ms-win-crt-utility-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp0636EC0CADD4FF2AA17EB9C8A797F1AC" Guid="{2648CD5B-0869-4947-8CAF-25E76F83EEA3}">
+            <Component Id="cmp0636EC0CADD4FF2AA17EB9C8A797F1AC" Guid="{855F94D5-4A5B-49BD-BA77-FE65AEE3AAB4}">
                 <File Id="fil4A57D9AA533E04768B57B65B7E1696DC" KeyPath="yes" Source="$(var.BasePath)\BfmeOnline.Downloader.deps.json" />
             </Component>
-            <Component Id="cmp3CAF20DB2EE79AC08E427971F5EEFE33" Guid="{781EBEE4-B869-4E20-B190-F5C58C01EF26}">
+            <Component Id="cmp3CAF20DB2EE79AC08E427971F5EEFE33" Guid="{04FF6137-1BA4-4BF5-8936-D0D0F0CF0E38}">
                 <File Id="fil7FE072F23EBDA0C59879CA1AE2D392F4" KeyPath="yes" Source="$(var.BasePath)\BfmeOnline.Downloader.dll" />
             </Component>
-            <Component Id="cmp3CB2323828D3448504523983AC98A04C" Guid="{D8AB36B8-7CC7-4CD2-A713-5FB72A53363C}">
+            <Component Id="cmp3CB2323828D3448504523983AC98A04C" Guid="{10E0C5AC-5452-440B-94F5-528A5C768750}">
                 <File Id="fil458648459D079166D8FE77E132C06606" KeyPath="yes" Source="$(var.BasePath)\BfmeOnline.Downloader.pdb" />
             </Component>
-            <Component Id="cmp95E21A1E5DC6AD3725E44C5DDBCD1C04" Guid="{3D8375EB-61AF-4326-A293-479AFE177F3F}">
+            <Component Id="cmp95E21A1E5DC6AD3725E44C5DDBCD1C04" Guid="{B2573FE6-04A3-491B-9E67-C25C42708586}">
                 <File Id="fil6DD360E354EA59980585B3C219303CC2" KeyPath="yes" Source="$(var.BasePath)\BfmeOnline.GameInstaller.dll" />
             </Component>
-            <Component Id="cmpE53EE743816341AEFEB2A00B141A0094" Guid="{BE4460EF-B4E4-4039-8DF4-D4509113D62D}">
+            <Component Id="cmpE53EE743816341AEFEB2A00B141A0094" Guid="{174DC18C-667A-460F-AA35-07C0B7448D1B}">
                 <File Id="filD92F5CA6D87F024D2A932C18B6E7444D" KeyPath="yes" Source="$(var.BasePath)\BfmeOnline.GameInstaller.pdb" />
             </Component>
-            <Component Id="cmp0279231DCD3D3775B100675C576162A1" Guid="{EB3936CC-B1DF-4429-9204-686B65508C5E}">
+            <Component Id="cmp0279231DCD3D3775B100675C576162A1" Guid="{1488F40B-BE10-4321-A7E7-772C1C82BD76}">
                 <File Id="fil00BADC92F6F3960CACBF9A59D011C8D5" KeyPath="yes" Source="$(var.BasePath)\BfmeOnline.Launcher.deps.json" />
             </Component>
-            <Component Id="cmpEBEEFE3DCF1BC5B6270E728DACC5EDC5" Guid="{82F2FE46-6BB7-4D63-A802-11CBB7F8CB2A}">
+            <Component Id="cmpEBEEFE3DCF1BC5B6270E728DACC5EDC5" Guid="{598A6BB5-9DD0-45BA-A5EC-86A89F9ECC49}">
                 <File Id="filBD5CCB124FEA79ED5D91BE74B13FAF9F" KeyPath="yes" Source="$(var.BasePath)\BfmeOnline.Launcher.dll" />
             </Component>
-            <Component Id="cmp8A89BB56843E37D652126B94C11104B3" Guid="{FF12D9D3-86DE-4C5F-AED3-8701E84B5056}">
+            <Component Id="cmp8A89BB56843E37D652126B94C11104B3" Guid="{0C6F48D5-A0FA-49C8-8D01-9D97D3CF5B68}">
                 <File Id="fil5BCE97A74359941489B46F61FD4E495B" KeyPath="yes" Source="$(var.BasePath)\BfmeOnline.Launcher.exe" />
             </Component>
-            <Component Id="cmpB11DF5A0972E8284683F39B6315A8F69" Guid="{D1F664F2-7B7A-4B0A-A624-14AAC1EC9754}">
+            <Component Id="cmpB11DF5A0972E8284683F39B6315A8F69" Guid="{BE17FF0B-22BB-47B5-9655-E63A6B7A71C8}">
                 <File Id="filC5139FDC155A72A2D53AA9E931448ABC" KeyPath="yes" Source="$(var.BasePath)\BfmeOnline.Launcher.pdb" />
             </Component>
-            <Component Id="cmp3E00C9E0A0C570F8EAF1DAB5FB6B3864" Guid="{9DFE5260-8FBB-401A-8659-52F75CB3AF3B}">
+            <Component Id="cmp3E00C9E0A0C570F8EAF1DAB5FB6B3864" Guid="{F82216E4-DA83-4C09-94A6-A8AA343873FC}">
                 <File Id="filA521C03944777275FF6E389D0E0DD75D" KeyPath="yes" Source="$(var.BasePath)\BfmeOnline.Launcher.runtimeconfig.json" />
             </Component>
-            <Component Id="cmp2E5EDA8D72F327AFF452AE2FE00CEA69" Guid="{DAD3B186-D8C3-4D3B-8C3D-0883025ACB90}">
+            <Component Id="cmp2E5EDA8D72F327AFF452AE2FE00CEA69" Guid="{2D038443-8EE9-4A14-AFC5-3A82F33BF044}">
                 <File Id="fil0AC151BF3F546CFD05E806D12E6A5768" KeyPath="yes" Source="$(var.BasePath)\clrcompression.dll" />
             </Component>
-            <Component Id="cmp4FD0997C338542D825893A7B99BCB1EF" Guid="{62450417-34D6-4E0E-86F7-0212930E29E3}">
+            <Component Id="cmp4FD0997C338542D825893A7B99BCB1EF" Guid="{1C4AFE9D-9AB8-41F8-B05F-2DA8C5A49318}">
                 <File Id="fil10B00363CA29492EFFC20B1401323297" KeyPath="yes" Source="$(var.BasePath)\clretwrc.dll" />
             </Component>
-            <Component Id="cmp170DFF239B610B0ACA2229119DEA678E" Guid="{2AB28064-1954-43ED-BDEC-B3B22B3CE380}">
+            <Component Id="cmp170DFF239B610B0ACA2229119DEA678E" Guid="{AD03012C-04CE-438A-99AD-050F887F1AE1}">
                 <File Id="filE90347B97ED4AE7124A57EB903AE43EE" KeyPath="yes" Source="$(var.BasePath)\clrjit.dll" />
             </Component>
-            <Component Id="cmp1FAC008E6AA14459AD5390EB28F23EFE" Guid="{35F773F4-A7D8-4686-B6F2-EB14468F077D}">
+            <Component Id="cmp1FAC008E6AA14459AD5390EB28F23EFE" Guid="{BB657309-D86A-42A9-B84B-923B9EE852E0}">
                 <File Id="filDCDD15F7F6F6F4476AD67EA901580BA2" KeyPath="yes" Source="$(var.BasePath)\coreclr.dll" />
             </Component>
-            <Component Id="cmp63C170ACC5D9139D96E32073358D1BE1" Guid="{81DBF70C-AA05-4381-89D5-CEB3406E4A14}">
+            <Component Id="cmp63C170ACC5D9139D96E32073358D1BE1" Guid="{414A41AC-5C87-420D-8914-8D8E16D928F9}">
                 <File Id="fil736C19A57049C32DF1C124E3518A0144" KeyPath="yes" Source="$(var.BasePath)\D3DCompiler_47_cor3.dll" />
             </Component>
-            <Component Id="cmp5DC61834042D8A563B1B0F5CEE7AD1E7" Guid="{866C3260-8A25-43BB-90FB-38FE7F9CE44E}">
+            <Component Id="cmp5DC61834042D8A563B1B0F5CEE7AD1E7" Guid="{1AB0EBFA-A1AF-418A-95C8-9C8E39EE8FC8}">
                 <File Id="filE07135178784FB8052BC2470B2BD2D1F" KeyPath="yes" Source="$(var.BasePath)\dbgshim.dll" />
             </Component>
-            <Component Id="cmpC8D84524EA3808AF29E9A098AF886DF5" Guid="{AB6BF847-3F50-45E0-8B97-4BC3AA12D31A}">
+            <Component Id="cmpC8D84524EA3808AF29E9A098AF886DF5" Guid="{1032A083-5508-4C61-9E38-2FEEFA936423}">
                 <File Id="fil34408C899878BB81924DD927327B1FD0" KeyPath="yes" Source="$(var.BasePath)\DirectWriteForwarder.dll" />
             </Component>
-            <Component Id="cmpB955D9B38C7C234C7BB5B427D5306A88" Guid="{BEFE4739-A81F-47EA-9C64-2791B487E525}">
+            <Component Id="cmpB955D9B38C7C234C7BB5B427D5306A88" Guid="{0C93DD34-DCEF-434C-A53C-FAFB4F32732B}">
                 <File Id="fil8A89501B56E70203FA5889466F0EF478" KeyPath="yes" Source="$(var.BasePath)\FluentAssertions.dll" />
             </Component>
-            <Component Id="cmpD51C7DCAA0760E3A269231CFA7A989BF" Guid="{1D83486F-EE3C-4EC1-8266-EDC8CA5D3E75}">
+            <Component Id="cmpD51C7DCAA0760E3A269231CFA7A989BF" Guid="{B24B5073-6D8C-4D9B-8BC6-7916B35B23B0}">
                 <File Id="fil85A6359F27FC15BF6766873998D82972" KeyPath="yes" Source="$(var.BasePath)\hostfxr.dll" />
             </Component>
-            <Component Id="cmp2257790539B8870843640B5857727F5B" Guid="{1DF5ACE7-654B-4C40-949C-D95106DA7C3B}">
+            <Component Id="cmp2257790539B8870843640B5857727F5B" Guid="{FF31871A-1716-4E00-97E2-307E1FC3AC07}">
                 <File Id="filA82C6852012979D774CE6FA0C9E849DD" KeyPath="yes" Source="$(var.BasePath)\hostpolicy.dll" />
             </Component>
-            <Component Id="cmpA1B1DF3E25658385276D302BEA14E565" Guid="{D84F6E60-393B-48DE-B2EF-6F1ED85F980F}">
+            <Component Id="cmpA1B1DF3E25658385276D302BEA14E565" Guid="{3414B44C-C1F3-46B7-A510-BBB71D9ACC44}">
                 <File Id="fil9A525618F64C62D4C9AE79C02FB4FE38" KeyPath="yes" Source="$(var.BasePath)\Ionic.Zip.dll" />
             </Component>
-            <Component Id="cmpC9CE6FD0F9E9DFB943DBB4F09D32F05A" Guid="{2143BBAA-B806-4CA2-94EC-09544743652B}">
+            <Component Id="cmpC9CE6FD0F9E9DFB943DBB4F09D32F05A" Guid="{ABCA26BB-00DD-4542-BFEC-492034D41599}">
                 <File Id="fil4AA0A6933C86860B14DECBAECD718A4D" KeyPath="yes" Source="$(var.BasePath)\Microsoft.CSharp.dll" />
             </Component>
-            <Component Id="cmpD0A27145DF91E42A761E3A37B2CB9DDC" Guid="{48B9974A-A330-4BED-A67C-6F8483CB7BA8}">
-                <File Id="fil8F7514FF24FCE4BE026ABA261D3C16F5" KeyPath="yes" Source="$(var.BasePath)\Microsoft.DiaSymReader.Native.x86.dll" />
+            <Component Id="cmp4B6065E0A17CF05299642017B84D7228" Guid="{C612E66D-35F8-4251-AEF8-103637B318CD}">
+                <File Id="fil6ED4FB0A9DFCCEAB87945F3165986368" KeyPath="yes" Source="$(var.BasePath)\Microsoft.DiaSymReader.Native.amd64.dll" />
             </Component>
-            <Component Id="cmp8EC381C8860EA0402AE3BBCE36881CD6" Guid="{92AACFAB-4FEF-4BFC-8878-CB701005C251}">
+            <Component Id="cmp8EC381C8860EA0402AE3BBCE36881CD6" Guid="{D60193FC-F39F-4C43-BDD2-6AA97CE29F62}">
                 <File Id="filF2302FC5DBE10906C7F8B47074159FBC" KeyPath="yes" Source="$(var.BasePath)\Microsoft.VisualBasic.Core.dll" />
             </Component>
-            <Component Id="cmp31C9A362EFEB77E9A39782026B90E97C" Guid="{9F40C549-DF33-47FF-AB05-9A21DE7312A3}">
+            <Component Id="cmp31C9A362EFEB77E9A39782026B90E97C" Guid="{4EF54550-1F5C-48A8-90DD-EB35B4D4BAB6}">
                 <File Id="filA562EB74A7C370A466F650D6C6CF3B1D" KeyPath="yes" Source="$(var.BasePath)\Microsoft.VisualBasic.dll" />
             </Component>
-            <Component Id="cmpC089979D7EDD0520871FCF59E4512F6A" Guid="{C3B6132D-E7DB-4BAD-966A-14DB504B279D}">
+            <Component Id="cmpC089979D7EDD0520871FCF59E4512F6A" Guid="{FFEC3A2A-A76D-4A01-9D0C-5D262A6F8D19}">
                 <File Id="fil69885EF287CDAEE15C09BE435AEC1160" KeyPath="yes" Source="$(var.BasePath)\Microsoft.Win32.Primitives.dll" />
             </Component>
-            <Component Id="cmp0D68E449059BB44DFA1E9415801CF702" Guid="{D5D73FED-3253-4D74-813D-605DCFAEE80B}">
+            <Component Id="cmp0D68E449059BB44DFA1E9415801CF702" Guid="{7492C1A0-6EBE-4CED-A9CC-E658F89C779E}">
                 <File Id="filA7028E5A374213CF811EC7B2945C4842" KeyPath="yes" Source="$(var.BasePath)\Microsoft.Win32.Registry.AccessControl.dll" />
             </Component>
-            <Component Id="cmp3E4F3E4686A9B425B5812E5171CCDEEF" Guid="{A390228C-C408-48A6-BE17-294FC0A917F2}">
+            <Component Id="cmp3E4F3E4686A9B425B5812E5171CCDEEF" Guid="{2F3A0185-4669-46E9-8A88-214944DB9881}">
                 <File Id="fil24DC60A8CFEFE326A0444D71C66806C1" KeyPath="yes" Source="$(var.BasePath)\Microsoft.Win32.Registry.dll" />
             </Component>
-            <Component Id="cmp16861E24C897764CA922EC062BA74EC9" Guid="{79AF4FA0-333F-40A3-9053-EB2FC59D1712}">
+            <Component Id="cmp16861E24C897764CA922EC062BA74EC9" Guid="{A6F715BE-6BD1-4D7A-916A-427DF0DA1D3D}">
                 <File Id="filD8E300ACBEFE74B5C24D4D06DCE96AAC" KeyPath="yes" Source="$(var.BasePath)\Microsoft.Win32.SystemEvents.dll" />
             </Component>
-            <Component Id="cmpBB1767D7C200C536ABB2D361F40F9D92" Guid="{1BF26BB7-C6DD-475E-941B-D22DF771EB48}">
+            <Component Id="cmpBB1767D7C200C536ABB2D361F40F9D92" Guid="{98593C91-9F33-4BBE-B3FA-596550BC9BC4}">
                 <File Id="fil4E0F4321F336BF83461A34116F3E30B7" KeyPath="yes" Source="$(var.BasePath)\Microsoft.WindowsAPICodePack.dll" />
             </Component>
-            <Component Id="cmpE35DDB3C925C83E74C7DAAE6FEA6C156" Guid="{4EC649EC-1C1B-4FB5-A5C6-74856A697EC3}">
+            <Component Id="cmpE35DDB3C925C83E74C7DAAE6FEA6C156" Guid="{0F1F8E42-0417-4DDB-BF28-C86222FE92F2}">
                 <File Id="filEAEAE1CB9E8AC1FF00B05453ABEE2ADF" KeyPath="yes" Source="$(var.BasePath)\mscordaccore.dll" />
             </Component>
-            <Component Id="cmp21BD15EB0B7A5577107F9F9F54133781" Guid="{4DD093F7-5B7E-40F7-8E78-31BD2E18D69A}">
-                <File Id="filBF27BE0271207A4549C39596A2BC182C" KeyPath="yes" Source="$(var.BasePath)\mscordaccore_x86_x86_4.700.20.6603.dll" />
+            <Component Id="cmpE293C2B53136F1FA497C19D17CF90F6E" Guid="{5E6A8D20-D8EC-4FC5-B12C-DD8F6FAE5024}">
+                <File Id="fil6CF637CC6FA0473DD0F665A28E7D4F2B" KeyPath="yes" Source="$(var.BasePath)\mscordaccore_amd64_amd64_4.700.20.6603.dll" />
             </Component>
-            <Component Id="cmpA5ABEAD31F33B1E5825EC6F159ABFB0F" Guid="{33896E93-61CE-44AA-AF5C-93E6357BB872}">
+            <Component Id="cmpA5ABEAD31F33B1E5825EC6F159ABFB0F" Guid="{8F090118-468F-4DC2-A350-5167CA167D29}">
                 <File Id="fil1A6B0EBD5A5BF8DD0582A2665D3492F1" KeyPath="yes" Source="$(var.BasePath)\mscordbi.dll" />
             </Component>
-            <Component Id="cmp5D6845991403E371A015DF7EBDF71F13" Guid="{7D14C3D1-26A7-4ECE-99EC-CA66FA07CEC4}">
+            <Component Id="cmp5D6845991403E371A015DF7EBDF71F13" Guid="{93216631-E192-4C36-A758-375716EB0281}">
                 <File Id="fil19173CC3BDE452DE5D884F05D5F6F8A1" KeyPath="yes" Source="$(var.BasePath)\mscorlib.dll" />
             </Component>
-            <Component Id="cmpF9CF939A2A6923752CD1F985F06B6D81" Guid="{DB9C02E3-7C56-4F05-91E7-F36C74628E91}">
+            <Component Id="cmpF9CF939A2A6923752CD1F985F06B6D81" Guid="{4CBED632-D955-42EC-8165-20FCCF0AA28D}">
                 <File Id="fil5490F6A54CA521132AA21176A043F6BA" KeyPath="yes" Source="$(var.BasePath)\mscorrc.debug.dll" />
             </Component>
-            <Component Id="cmp57B8361D25AD503DC733F4039E5A38B0" Guid="{2B4DBDE7-0A5C-4BA6-BC23-FB4B667D6ABB}">
+            <Component Id="cmp57B8361D25AD503DC733F4039E5A38B0" Guid="{D731AC5C-FC2F-4CE4-96DA-E71474CB12A3}">
                 <File Id="fil85A18A68043DF7CE61683156FF7F660F" KeyPath="yes" Source="$(var.BasePath)\mscorrc.dll" />
             </Component>
-            <Component Id="cmp2D22C362F8F0B3B68D8A335DB9874738" Guid="{4F5D9E63-AFC8-4DB2-91CF-38A5E3953F35}">
+            <Component Id="cmp2D22C362F8F0B3B68D8A335DB9874738" Guid="{C5326369-E5DB-41E8-BEA8-1C298F856F26}">
                 <File Id="fil0C7258C62EED04D203F333E1383578C2" KeyPath="yes" Source="$(var.BasePath)\netstandard.dll" />
             </Component>
-            <Component Id="cmpBC4FC00A26E7D32479D42D3411317FC5" Guid="{E60F2174-6465-4274-99B1-C8C8AE5CAA5C}">
+            <Component Id="cmpBC4FC00A26E7D32479D42D3411317FC5" Guid="{BAF01C0E-7007-49BC-8B88-B0C3718C4A17}">
                 <File Id="fil90A8AAD9FC612906D405476D61CEA3F4" KeyPath="yes" Source="$(var.BasePath)\Newtonsoft.Json.dll" />
             </Component>
-            <Component Id="cmp2331B7D07912805FDD8E30EBA7274C0A" Guid="{EF4A95EF-32FC-48DB-9D54-EB9BBE6C804B}">
+            <Component Id="cmp2331B7D07912805FDD8E30EBA7274C0A" Guid="{DB2EE7DA-98D8-4625-B5F2-085A404E5199}">
                 <File Id="filB92FECC285EC4A1BFF4B39CA02F221E4" KeyPath="yes" Source="$(var.BasePath)\PenImc_cor3.dll" />
             </Component>
-            <Component Id="cmp6C5C75A1EB25A58B7EE5C14FF8B883BE" Guid="{898F8E0D-A9E2-45CD-B265-ADDD357C8E5E}">
+            <Component Id="cmp6C5C75A1EB25A58B7EE5C14FF8B883BE" Guid="{A2970FD4-7199-491F-A0EA-761B84842219}">
                 <File Id="filD684C094C8A6183C2408E728E8FC6CE3" KeyPath="yes" Source="$(var.BasePath)\PresentationCore.dll" />
             </Component>
-            <Component Id="cmp5A677DC63451E2A03AA3CF111F3755D7" Guid="{377B52E6-6193-4B87-8A04-213CFED6B9BE}">
+            <Component Id="cmp5A677DC63451E2A03AA3CF111F3755D7" Guid="{5F080ACB-59DB-4209-A364-5739D9C0FC77}">
                 <File Id="filB939B5C63FA55282C482981CBC86E200" KeyPath="yes" Source="$(var.BasePath)\PresentationFramework-SystemCore.dll" />
             </Component>
-            <Component Id="cmpC8AB12219BD59966EF75C3F9A49693E8" Guid="{0E2753DD-B8EB-4F5E-8275-35A9837883A2}">
+            <Component Id="cmpC8AB12219BD59966EF75C3F9A49693E8" Guid="{D324CCAB-03D6-4F12-BFCC-A8E890FFDC83}">
                 <File Id="fil049C6D7359BE221F7A8666AB5D957652" KeyPath="yes" Source="$(var.BasePath)\PresentationFramework-SystemData.dll" />
             </Component>
-            <Component Id="cmp8424A1D10D000CC5393D351824712747" Guid="{AE9800DF-4A0D-4C16-BD5B-974470E96A45}">
+            <Component Id="cmp8424A1D10D000CC5393D351824712747" Guid="{15DC7434-6095-4234-810E-D2D4BF2CE827}">
                 <File Id="fil4A0E2289EAD07E64D91FFA6FF62AA4D8" KeyPath="yes" Source="$(var.BasePath)\PresentationFramework-SystemDrawing.dll" />
             </Component>
-            <Component Id="cmpB20C1C8085E3262E6F9047BFF35650FB" Guid="{8A52F742-D3E4-4E64-8A3F-0D6CF5C93475}">
+            <Component Id="cmpB20C1C8085E3262E6F9047BFF35650FB" Guid="{706EFEBC-BA36-456E-9AEE-E302665A21B5}">
                 <File Id="fil907510623FFC4D4BE6BF1013E77A815B" KeyPath="yes" Source="$(var.BasePath)\PresentationFramework-SystemXml.dll" />
             </Component>
-            <Component Id="cmpB8EC6350231D3163DF3846C1341D2943" Guid="{64700390-3867-4F1D-8C53-74785DCE9D1B}">
+            <Component Id="cmpB8EC6350231D3163DF3846C1341D2943" Guid="{F9799C66-6486-456F-A009-07E20C2E4825}">
                 <File Id="fil4A0253F8E83E7B4A7C1110165D8FD38F" KeyPath="yes" Source="$(var.BasePath)\PresentationFramework-SystemXmlLinq.dll" />
             </Component>
-            <Component Id="cmpFCB429770A4785176BCD93FB5439164B" Guid="{91E4A6B3-9CDE-45CA-A7E4-ECF1331D18D2}">
+            <Component Id="cmpFCB429770A4785176BCD93FB5439164B" Guid="{202B275B-A99C-4972-85AD-8FE1F691A889}">
                 <File Id="filE6C28460F252B8F29E170004F93D699B" KeyPath="yes" Source="$(var.BasePath)\PresentationFramework.Aero.dll" />
             </Component>
-            <Component Id="cmpA87A4DD223F27627CF392437583BE820" Guid="{423B9047-AD38-402F-AE1F-D8601C87C3F8}">
+            <Component Id="cmpA87A4DD223F27627CF392437583BE820" Guid="{27F06085-9C76-48B3-91CC-195736D5C079}">
                 <File Id="filC25D44122DF8EF817242B07047FCB2B3" KeyPath="yes" Source="$(var.BasePath)\PresentationFramework.Aero2.dll" />
             </Component>
-            <Component Id="cmp6C5D1A622B2F754CA995D75A3008C6C4" Guid="{0E5A78E1-25BC-4297-B2DD-D21E2EC2D70A}">
+            <Component Id="cmp6C5D1A622B2F754CA995D75A3008C6C4" Guid="{FD6B7918-D9C9-4751-AD0A-0DD219170059}">
                 <File Id="filCFB448F07F150ED5F358710D66D36FD7" KeyPath="yes" Source="$(var.BasePath)\PresentationFramework.AeroLite.dll" />
             </Component>
-            <Component Id="cmp9F58C57B47357E9EEBD150E82797701E" Guid="{F5A77128-B133-4E4D-B596-64A1696A6C82}">
+            <Component Id="cmp9F58C57B47357E9EEBD150E82797701E" Guid="{5B30BDF2-E44C-4869-899E-DCD0C0ADFD41}">
                 <File Id="fil2FCF4D566407ABED38F7EE1A0F6DC265" KeyPath="yes" Source="$(var.BasePath)\PresentationFramework.Classic.dll" />
             </Component>
-            <Component Id="cmp102DF4543D616708AFFB03FE0D33E9FD" Guid="{06E7F2FF-CF24-4B5E-B574-029C4D50CB6D}">
+            <Component Id="cmp102DF4543D616708AFFB03FE0D33E9FD" Guid="{6F8FB1AB-53AA-415E-A85D-3E855102F09B}">
                 <File Id="fil84BBB454BCC145BD4204710D36C78139" KeyPath="yes" Source="$(var.BasePath)\PresentationFramework.dll" />
             </Component>
-            <Component Id="cmpD35700D8C571FEF1A77808FF569CC454" Guid="{CF05F23B-3463-4703-B7C0-385A2E939434}">
+            <Component Id="cmpD35700D8C571FEF1A77808FF569CC454" Guid="{FFED4E9C-8163-4733-AC8F-7F1AE7D7338A}">
                 <File Id="fil3AE04728E2949964FED0B9E6C64DC7B3" KeyPath="yes" Source="$(var.BasePath)\PresentationFramework.Luna.dll" />
             </Component>
-            <Component Id="cmp81D7D2F46BB8DF704BA72617D1E600EF" Guid="{D47D1D97-7557-4C81-9384-74D94D6BD5B3}">
+            <Component Id="cmp81D7D2F46BB8DF704BA72617D1E600EF" Guid="{68B3368F-EEFD-4ECB-8460-1E7E1904EF02}">
                 <File Id="filD9CA1D4E542A78B7EB7705631B58412A" KeyPath="yes" Source="$(var.BasePath)\PresentationFramework.Royale.dll" />
             </Component>
-            <Component Id="cmpAAD5497968A7B8FFCB626EB296EB0E32" Guid="{6DFAA1B1-E66D-4643-BE4A-FFC4FC3DE2B9}">
+            <Component Id="cmpAAD5497968A7B8FFCB626EB296EB0E32" Guid="{70A5CF3D-EBA5-4F4E-B515-0E0F8FD48370}">
                 <File Id="fil3F4E615E22A14A67DD34A8E3D1F46E12" KeyPath="yes" Source="$(var.BasePath)\PresentationNative_cor3.dll" />
             </Component>
-            <Component Id="cmpD9D2AA3C9EEDF60DA5590A0295DA82BF" Guid="{BFDED196-FDD8-4105-A877-F48E5ED4EF1C}">
+            <Component Id="cmpD9D2AA3C9EEDF60DA5590A0295DA82BF" Guid="{B82C7781-C41D-434D-A027-97CE0D6B1ED5}">
                 <File Id="filA488C51E7A83A10A01E9650C5FFEFD72" KeyPath="yes" Source="$(var.BasePath)\PresentationUI.dll" />
             </Component>
-            <Component Id="cmp5C49F5914B0668CB6DFDBB8DECA56D57" Guid="{34F32679-5A95-459F-9DC2-D9085A3A4CEA}">
+            <Component Id="cmp5C49F5914B0668CB6DFDBB8DECA56D57" Guid="{551AED23-F9D3-4A44-9EE3-256B412369D0}">
                 <File Id="fil6600874976ACEC333389DC5F11937D8A" KeyPath="yes" Source="$(var.BasePath)\ReachFramework.dll" />
             </Component>
-            <Component Id="cmp4A3650BF9490F28818DA214BCC72C248" Guid="{B1E895F8-0FDF-4919-8907-83947983DC7C}">
+            <Component Id="cmp4A3650BF9490F28818DA214BCC72C248" Guid="{23A1CA20-047F-4CD7-B7F2-68F293AEC5E8}">
                 <File Id="fil29DAF6E2B9B4ACF67EB0C784127C1B4F" KeyPath="yes" Source="$(var.BasePath)\SOS_README.md" />
             </Component>
-            <Component Id="cmpECF9AF67F22A4B8E249ABC94D17E35B0" Guid="{296E67A8-AEC5-4658-B777-61FE0DA8AED3}">
+            <Component Id="cmpECF9AF67F22A4B8E249ABC94D17E35B0" Guid="{94E18C78-FE44-43FC-BDD9-E668849FA5C2}">
                 <File Id="fil60FB823542E98D11B99AE00BD12E8F81" KeyPath="yes" Source="$(var.BasePath)\SuperSocket.ClientEngine.dll" />
             </Component>
-            <Component Id="cmp5BF82A49794EF8CA80B3603A0E77FC35" Guid="{D942DE7D-EF12-4873-83C5-3F3669D8ABEC}">
+            <Component Id="cmp5BF82A49794EF8CA80B3603A0E77FC35" Guid="{2B5B4467-E0D8-40AC-A902-5E9EA22ADB3F}">
                 <File Id="filAFD0CC30CB2E6DD52C314025EFBB3EF7" KeyPath="yes" Source="$(var.BasePath)\System.AppContext.dll" />
             </Component>
-            <Component Id="cmpA748C45814948C0E47F0962CF5A9E2C5" Guid="{7509D0E9-8481-438D-8CE1-1B63187D0B06}">
+            <Component Id="cmpA748C45814948C0E47F0962CF5A9E2C5" Guid="{0690120D-52B6-48FE-8C1F-E9D443D8E562}">
                 <File Id="filAF63FF48A59E0E5E7F49BFD1CBBB0CC3" KeyPath="yes" Source="$(var.BasePath)\System.Buffers.dll" />
             </Component>
-            <Component Id="cmp627F95934DFE8795F8708045A2120F23" Guid="{A147526A-F452-4529-AED6-6CE612F97EE4}">
+            <Component Id="cmp627F95934DFE8795F8708045A2120F23" Guid="{ED12620C-26CF-494C-BE2C-69A7F20688EC}">
                 <File Id="filAEAF8C61AA86723A95F0986173532954" KeyPath="yes" Source="$(var.BasePath)\System.CodeDom.dll" />
             </Component>
-            <Component Id="cmp602E8F2B93FE6578A846F762EC68A1D9" Guid="{08FC1302-7519-4C54-B498-4F3534013712}">
+            <Component Id="cmp602E8F2B93FE6578A846F762EC68A1D9" Guid="{7D57194A-9CB4-4797-8FA4-B992E3A04EA7}">
                 <File Id="fil8A8EC4001DD8F96250E301ED6A1E3783" KeyPath="yes" Source="$(var.BasePath)\System.Collections.Concurrent.dll" />
             </Component>
-            <Component Id="cmp3DA1940FB9C385E5772FD6B27D952566" Guid="{06ED31EE-9A99-45D2-B42E-16399845FD92}">
+            <Component Id="cmp3DA1940FB9C385E5772FD6B27D952566" Guid="{F4907668-3AE2-451F-BD3E-3E51A27A19BA}">
                 <File Id="fil61FB0EF6F8353D5D25E080C4B6E602C0" KeyPath="yes" Source="$(var.BasePath)\System.Collections.dll" />
             </Component>
-            <Component Id="cmp969F6EDF2594F3809D7A716387BF8894" Guid="{DA7CB6A0-69CB-4430-9445-6B3584A62A30}">
+            <Component Id="cmp969F6EDF2594F3809D7A716387BF8894" Guid="{D862B274-2AAC-4CA9-96CE-D3AA2113BC76}">
                 <File Id="fil60E3CB228DB7CBE488269EDFC1321CC6" KeyPath="yes" Source="$(var.BasePath)\System.Collections.Immutable.dll" />
             </Component>
-            <Component Id="cmp1340CAF41213E899D78462CF580BF2AD" Guid="{03A67CEF-A879-4CBA-BE75-E80915E5672C}">
+            <Component Id="cmp1340CAF41213E899D78462CF580BF2AD" Guid="{4591DAA2-0872-4CD7-BA4E-D212790AF92D}">
                 <File Id="filE68AB55348C2F39BA40CC24DA31D4211" KeyPath="yes" Source="$(var.BasePath)\System.Collections.NonGeneric.dll" />
             </Component>
-            <Component Id="cmp4CA8A8377EC5F30AF1C8BF2ABE2B916B" Guid="{063559B2-8D8F-4E23-A468-ADAFDEEC1602}">
+            <Component Id="cmp4CA8A8377EC5F30AF1C8BF2ABE2B916B" Guid="{323D3708-6C14-441D-988D-B7AF8808783C}">
                 <File Id="filF574BF00EFD9442D9E5911559F8D7CB3" KeyPath="yes" Source="$(var.BasePath)\System.Collections.Specialized.dll" />
             </Component>
-            <Component Id="cmp86FA15ED6758AB64222C7B872722AE2A" Guid="{3D62634E-6E3C-41E3-837D-4492D0CB9727}">
+            <Component Id="cmp86FA15ED6758AB64222C7B872722AE2A" Guid="{2732B60E-FA20-4CB1-AB64-04CA776BD2A4}">
                 <File Id="fil4462620259C842921061439D47904D07" KeyPath="yes" Source="$(var.BasePath)\System.ComponentModel.Annotations.dll" />
             </Component>
-            <Component Id="cmp9556FA278AFE7EC69B499286701C47DD" Guid="{474FC239-4719-462B-B8FE-DFA14068AA91}">
+            <Component Id="cmp9556FA278AFE7EC69B499286701C47DD" Guid="{E42A80B6-ACE3-4324-91FE-5EF479AB885A}">
                 <File Id="filE93529C4D0A5B4CFDF6A66415A67EC2E" KeyPath="yes" Source="$(var.BasePath)\System.ComponentModel.DataAnnotations.dll" />
             </Component>
-            <Component Id="cmp912EE5CA7F0C138422055A3D0C240C38" Guid="{5521BEA8-5866-486B-AE8F-2625FECE54CD}">
+            <Component Id="cmp912EE5CA7F0C138422055A3D0C240C38" Guid="{F695CB43-48A9-4A46-825B-8DEE1CFB995C}">
                 <File Id="fil8084AE81753074831DC96EB13423F40D" KeyPath="yes" Source="$(var.BasePath)\System.ComponentModel.dll" />
             </Component>
-            <Component Id="cmp9DD02050EE6C7C34C1B0689DE491114C" Guid="{4A14BFD8-0729-4C93-99BC-006449803CE0}">
+            <Component Id="cmp9DD02050EE6C7C34C1B0689DE491114C" Guid="{CCFE98C8-0C67-44C0-B77E-EEC58C648514}">
                 <File Id="fil1E5C558F899E13FD4A03E9ACF14B5065" KeyPath="yes" Source="$(var.BasePath)\System.ComponentModel.EventBasedAsync.dll" />
             </Component>
-            <Component Id="cmp0E07B6458918A72AFC17E557DDF86BE9" Guid="{A1F9A319-68C5-48CA-89D7-1020D973D0BB}">
+            <Component Id="cmp0E07B6458918A72AFC17E557DDF86BE9" Guid="{60E844EE-3F6F-43F3-A66E-B326C8BC0462}">
                 <File Id="fil757C2B539CEF8E96C5DAF1634B560D0F" KeyPath="yes" Source="$(var.BasePath)\System.ComponentModel.Primitives.dll" />
             </Component>
-            <Component Id="cmp9CD588F7BA24625E3D5679886E12AD98" Guid="{D1239FE7-4A84-48F9-83C9-0A68D755BD46}">
+            <Component Id="cmp9CD588F7BA24625E3D5679886E12AD98" Guid="{BFACB450-C283-4E3E-84E8-82874E391FD2}">
                 <File Id="fil057857F4AB9C19007F7BB13F6DAB4F8E" KeyPath="yes" Source="$(var.BasePath)\System.ComponentModel.TypeConverter.dll" />
             </Component>
-            <Component Id="cmp89F5F904B3CAF843A281A5A84D668E1E" Guid="{CEED1741-CEC9-4206-A282-181450278DEB}">
+            <Component Id="cmp89F5F904B3CAF843A281A5A84D668E1E" Guid="{421FD0EF-4839-467F-95A7-00B19AF23FB8}">
                 <File Id="fil7882FAF25832DB256D31EEFC7582E0FF" KeyPath="yes" Source="$(var.BasePath)\System.Configuration.ConfigurationManager.dll" />
             </Component>
-            <Component Id="cmpF656F8D927B22EBD6310E5C903B7AD2F" Guid="{6B51B697-D13A-4AD9-8A83-403B79F8ACE4}">
+            <Component Id="cmpF656F8D927B22EBD6310E5C903B7AD2F" Guid="{7F30AC1D-E0B7-4EC0-A533-EDEA6D92C027}">
                 <File Id="fil2246A7473D1BCC6E95F555EAB7475AF4" KeyPath="yes" Source="$(var.BasePath)\System.Configuration.dll" />
             </Component>
-            <Component Id="cmp1A01EFD00F1DAF10CE06F8196357F24C" Guid="{971B250E-9729-4C45-B51A-51C52A020DF1}">
+            <Component Id="cmp1A01EFD00F1DAF10CE06F8196357F24C" Guid="{6B311F73-1D37-4BB8-A005-66C674EA65CA}">
                 <File Id="fil08A6ABF18A6A31D6C7924DD13873F17E" KeyPath="yes" Source="$(var.BasePath)\System.Console.dll" />
             </Component>
-            <Component Id="cmpD30DFAE51C0943BAFB7AC75897513137" Guid="{D49CCA52-2C96-4181-B11C-03F777C0B0CB}">
+            <Component Id="cmpD30DFAE51C0943BAFB7AC75897513137" Guid="{D47405F6-C222-4526-BE20-9B8722B8E4F2}">
                 <File Id="fil7BDEEAE72E41B83DADD9674EFD0C13A4" KeyPath="yes" Source="$(var.BasePath)\System.Core.dll" />
             </Component>
-            <Component Id="cmp5C82A05FA23F935F2AF47CD1A8E11EF5" Guid="{96C290DA-47ED-4D73-A1A3-CB898D708B7A}">
+            <Component Id="cmp5C82A05FA23F935F2AF47CD1A8E11EF5" Guid="{1DDFE99A-9AEC-41BB-AAAB-1486E336317F}">
                 <File Id="filE0AB56016BACB84E3B4D8920E3BC3B88" KeyPath="yes" Source="$(var.BasePath)\System.Data.Common.dll" />
             </Component>
-            <Component Id="cmp5CB380A0CF7ECBE64C12C4F1CBA72184" Guid="{DB65BD9C-3FDC-4386-BE98-F17C892F332B}">
+            <Component Id="cmp5CB380A0CF7ECBE64C12C4F1CBA72184" Guid="{3FD95EF2-F006-43A0-8830-D930FEC9B4CF}">
                 <File Id="fil2C0E5DF4B063EF0BDC8E45AD9A1CB2B9" KeyPath="yes" Source="$(var.BasePath)\System.Data.DataSetExtensions.dll" />
             </Component>
-            <Component Id="cmp6E52B5B284A5C6D04DFDDC4BC01C9D04" Guid="{17CA8D8D-452A-4E34-9020-1D03EEE2464D}">
+            <Component Id="cmp6E52B5B284A5C6D04DFDDC4BC01C9D04" Guid="{19455486-74EA-4DCC-B6CA-B782DF3C5765}">
                 <File Id="filF4E3F9BC20277CEE2671F48F0839F81E" KeyPath="yes" Source="$(var.BasePath)\System.Data.dll" />
             </Component>
-            <Component Id="cmp22B8A868CE2DD329BE70F085D1D45887" Guid="{BB1F6816-99E4-4462-9EF0-9F76D80F2D50}">
+            <Component Id="cmp22B8A868CE2DD329BE70F085D1D45887" Guid="{D67D8222-F202-412D-8532-D48EA30A52EA}">
                 <File Id="fil9DBCDC9E0E60916A8A16F73C6458FE81" KeyPath="yes" Source="$(var.BasePath)\System.Design.dll" />
             </Component>
-            <Component Id="cmp18D7BFB3BE8790A76D7469ACDB6FF184" Guid="{DEA9F194-9F68-4B39-B91C-F1EEE6383186}">
+            <Component Id="cmp18D7BFB3BE8790A76D7469ACDB6FF184" Guid="{6217BBCC-5874-4414-964C-1DB5286BADE7}">
                 <File Id="filF5EC28734B29A9D0741ED65730786D83" KeyPath="yes" Source="$(var.BasePath)\System.Diagnostics.Contracts.dll" />
             </Component>
-            <Component Id="cmp16EF400B22B4D8375CD56E7168F49BBB" Guid="{83395BCA-643A-4B01-91D9-3D7C9048937D}">
+            <Component Id="cmp16EF400B22B4D8375CD56E7168F49BBB" Guid="{EADE0664-01DD-4CAA-99FB-45B7466DA417}">
                 <File Id="filC5A135B91631EDD63E03635FE5DB1528" KeyPath="yes" Source="$(var.BasePath)\System.Diagnostics.Debug.dll" />
             </Component>
-            <Component Id="cmpE722E076AB8486E4A4F24B01268787A2" Guid="{FCFB840B-26FE-46F2-89CC-05B368CE3A30}">
+            <Component Id="cmpE722E076AB8486E4A4F24B01268787A2" Guid="{B7030060-987A-43C2-86B1-111C18869D3A}">
                 <File Id="fil92FE767CE7126933F4E9DEEEBAAE9354" KeyPath="yes" Source="$(var.BasePath)\System.Diagnostics.DiagnosticSource.dll" />
             </Component>
-            <Component Id="cmp28DA583D03D243568B9E8D67E28DC03E" Guid="{BAB6971A-7DDE-40E2-92D5-FB45E91E7893}">
+            <Component Id="cmp28DA583D03D243568B9E8D67E28DC03E" Guid="{C12E8D72-A594-4AA1-8FAF-3A2C54C72486}">
                 <File Id="fil7F8EC318E9E8F0F09CC7C081378B6293" KeyPath="yes" Source="$(var.BasePath)\System.Diagnostics.EventLog.dll" />
             </Component>
-            <Component Id="cmp7E39F1A13DA5F3678F3102B85106204A" Guid="{136FC4EE-09C0-44BA-9E0A-4E65F5FBEE6F}">
+            <Component Id="cmp7E39F1A13DA5F3678F3102B85106204A" Guid="{6F7A7E18-5F36-47EB-9E66-5EF54BCBB0A8}">
                 <File Id="filE669E7EEC097516D4E9BE57F87820A6F" KeyPath="yes" Source="$(var.BasePath)\System.Diagnostics.FileVersionInfo.dll" />
             </Component>
-            <Component Id="cmp28698F3E40E97D0D04ED87AE917B13C7" Guid="{A7E424F9-155D-4777-9254-E27BB9D0F1BD}">
+            <Component Id="cmp28698F3E40E97D0D04ED87AE917B13C7" Guid="{778BE908-E4C2-40AA-96A8-C0662C05C415}">
                 <File Id="fil07DA91370126729501EE3756F11EC693" KeyPath="yes" Source="$(var.BasePath)\System.Diagnostics.PerformanceCounter.dll" />
             </Component>
-            <Component Id="cmpD23621427F9427EADECDFB75824E8F4E" Guid="{190E4D50-AC57-460D-BDF0-800FC8F2697A}">
+            <Component Id="cmpD23621427F9427EADECDFB75824E8F4E" Guid="{796A5353-4E43-4B2A-B4DC-1EEB3F667D14}">
                 <File Id="filA2202346FF26F0ADE22443C43E9EA3EA" KeyPath="yes" Source="$(var.BasePath)\System.Diagnostics.Process.dll" />
             </Component>
-            <Component Id="cmpB3E27F13800A8FF984F132723F98897C" Guid="{52B5A341-E41B-4AEB-830B-E05D7546665C}">
+            <Component Id="cmpB3E27F13800A8FF984F132723F98897C" Guid="{1E3CB34A-F881-4517-9E6D-8A5036B9A702}">
                 <File Id="filDBF3A4F1AEA58FEDB0007DD546ADD630" KeyPath="yes" Source="$(var.BasePath)\System.Diagnostics.StackTrace.dll" />
             </Component>
-            <Component Id="cmp36E12B3A84F72D19A05AB3898848297D" Guid="{9C4E17FA-2045-4227-B172-7E1F7C754931}">
+            <Component Id="cmp36E12B3A84F72D19A05AB3898848297D" Guid="{8C63C282-5185-411A-BE73-ACFB9869F290}">
                 <File Id="fil21EE5D64D21C91238861B7873377CB07" KeyPath="yes" Source="$(var.BasePath)\System.Diagnostics.TextWriterTraceListener.dll" />
             </Component>
-            <Component Id="cmp167D1C5C6A974604FBBFEDD39E2FDF84" Guid="{D12EE031-20A0-47C3-A627-C12EA8A19045}">
+            <Component Id="cmp167D1C5C6A974604FBBFEDD39E2FDF84" Guid="{C11FBCA0-9B86-456A-B753-0142A06B324A}">
                 <File Id="fil589087C30E15FFAD786A80C79F228C31" KeyPath="yes" Source="$(var.BasePath)\System.Diagnostics.Tools.dll" />
             </Component>
-            <Component Id="cmpBDFBFA929E7957E9AB4B89B1C6BBCD7A" Guid="{6D0D36A8-E8AA-452E-A03A-3CCC398E6970}">
+            <Component Id="cmpBDFBFA929E7957E9AB4B89B1C6BBCD7A" Guid="{DB6C6D77-CA33-4D6D-A864-2B3C4574CF04}">
                 <File Id="fil51DF554AB19C81BD826675A139E6342C" KeyPath="yes" Source="$(var.BasePath)\System.Diagnostics.TraceSource.dll" />
             </Component>
-            <Component Id="cmp804ACD73DC5E4AF51ACF260299491EAE" Guid="{999908E6-B9C6-44B6-8BDC-EE6E2EF34233}">
+            <Component Id="cmp804ACD73DC5E4AF51ACF260299491EAE" Guid="{B4F348FC-EBE6-4075-877C-D68FC1B9C4C2}">
                 <File Id="filE457FA9EC2AE98FDC3C82D976418C363" KeyPath="yes" Source="$(var.BasePath)\System.Diagnostics.Tracing.dll" />
             </Component>
-            <Component Id="cmpAD5C11A981D4344E85B848FADA08BC7A" Guid="{A8CA2E99-769C-4E2F-A322-422291954016}">
+            <Component Id="cmpAD5C11A981D4344E85B848FADA08BC7A" Guid="{779E3CE6-EA01-4120-8D00-7A13FD97A6A0}">
                 <File Id="filB96A273004D67264028A0882F910C6E9" KeyPath="yes" Source="$(var.BasePath)\System.DirectoryServices.dll" />
             </Component>
-            <Component Id="cmpDF0E8DFC3FD3541C5F2C09C32EB47D43" Guid="{CFC1C4D4-DE2E-4459-AF73-60699327A26D}">
+            <Component Id="cmpDF0E8DFC3FD3541C5F2C09C32EB47D43" Guid="{011CB282-BF35-41E1-B729-287C239C77A1}">
                 <File Id="filC3BE34C84149D5BCB63C005357EEAFA8" KeyPath="yes" Source="$(var.BasePath)\System.dll" />
             </Component>
-            <Component Id="cmp08EBD8C605FF27A4F0FCEC5A1317087B" Guid="{1B456146-80C7-4BDB-8786-3C58394A1942}">
+            <Component Id="cmp08EBD8C605FF27A4F0FCEC5A1317087B" Guid="{06EA88F4-702B-4F01-BFED-197A4F44BB6F}">
                 <File Id="fil01C46D7B4C6F372B6DD0D0DC961DAE47" KeyPath="yes" Source="$(var.BasePath)\System.Drawing.Common.dll" />
             </Component>
-            <Component Id="cmp47173B07C3D27FE9CEEE39525BDCF466" Guid="{65632D83-17CE-4924-B571-5C44A7B13316}">
+            <Component Id="cmp47173B07C3D27FE9CEEE39525BDCF466" Guid="{A940F788-8430-42CD-92D1-8E62AC55CB19}">
                 <File Id="filD88C65D0D845C64A22B7CA08F98A4CC4" KeyPath="yes" Source="$(var.BasePath)\System.Drawing.Design.dll" />
             </Component>
-            <Component Id="cmpB2383A108F34A58E0B95F9E4A6C11472" Guid="{0EA544DC-F9C0-4217-A8C1-EF21F0FA662B}">
+            <Component Id="cmpB2383A108F34A58E0B95F9E4A6C11472" Guid="{A5D74B08-7ECD-484A-BAF8-8BB62949CA11}">
                 <File Id="fil092085DD5C1F70413B836886CAA1B750" KeyPath="yes" Source="$(var.BasePath)\System.Drawing.dll" />
             </Component>
-            <Component Id="cmp08477E3E9CCCB3373C6D6B557560F00D" Guid="{0C75D1FA-2EC7-4BC9-87D4-EA7770308590}">
+            <Component Id="cmp08477E3E9CCCB3373C6D6B557560F00D" Guid="{9FFCAF9B-F5EF-4DC4-89DB-C345BA2D999D}">
                 <File Id="filB3F994E499D6B2658F4935DB290BBD4C" KeyPath="yes" Source="$(var.BasePath)\System.Drawing.Primitives.dll" />
             </Component>
-            <Component Id="cmpA142100C3F0BB7810ABB24189CCE1D0D" Guid="{F1F0E8D6-6246-4859-ACD9-596D176904D6}">
+            <Component Id="cmpA142100C3F0BB7810ABB24189CCE1D0D" Guid="{A1CEFE17-38A7-40C7-9ECC-2E2D5B6959D8}">
                 <File Id="filC724FD793DE9BFA79CD7FB6C9ADD74B0" KeyPath="yes" Source="$(var.BasePath)\System.Dynamic.Runtime.dll" />
             </Component>
-            <Component Id="cmpF2CFC77F0487C42E6C597124620175D0" Guid="{129ECA52-7738-435B-AA5E-6412764B61C0}">
+            <Component Id="cmpF2CFC77F0487C42E6C597124620175D0" Guid="{8D3EADD7-9BC6-47E5-A2D1-1017EC7153E5}">
                 <File Id="filB1DA3C706CDD3EB9DD5FAEE10E17A1EC" KeyPath="yes" Source="$(var.BasePath)\System.Globalization.Calendars.dll" />
             </Component>
-            <Component Id="cmp38992D30F99BD043E10383498A731822" Guid="{E0BD2B81-BE35-46C4-97ED-642F03645120}">
+            <Component Id="cmp38992D30F99BD043E10383498A731822" Guid="{BE199966-2A25-437C-AD9D-35F00F1C7A8E}">
                 <File Id="fil302011DAA4997DB8B141168A984D0E89" KeyPath="yes" Source="$(var.BasePath)\System.Globalization.dll" />
             </Component>
-            <Component Id="cmp2ECBD4EE80FB56B111EAB04A7922F75E" Guid="{011948D9-BB1B-43D3-A4E0-0776E9150260}">
+            <Component Id="cmp2ECBD4EE80FB56B111EAB04A7922F75E" Guid="{313954A8-1303-401C-BDD1-C97668F0B985}">
                 <File Id="filBCE4D84B0CA5B233C74110483CAD4D62" KeyPath="yes" Source="$(var.BasePath)\System.Globalization.Extensions.dll" />
             </Component>
-            <Component Id="cmp5E152418F44B197588C8F9A4DDF04671" Guid="{2C242E9D-83B9-410F-8CC8-1198F6D54227}">
+            <Component Id="cmp5E152418F44B197588C8F9A4DDF04671" Guid="{6AAD07FE-D236-43F4-9888-E6CB3C7D004E}">
                 <File Id="fil774AACD1EEB82B127C4F31CF1E4F2D89" KeyPath="yes" Source="$(var.BasePath)\System.IO.Compression.Brotli.dll" />
             </Component>
-            <Component Id="cmpC8D343DED6ECA227B78780388C7AA77C" Guid="{4DAF39BE-7183-4816-865C-900C7DC77BF6}">
+            <Component Id="cmpC8D343DED6ECA227B78780388C7AA77C" Guid="{51943B83-F6F9-4EDF-AC08-F5C707158B26}">
                 <File Id="fil8C21BB6ED9A67550B3F3EE8EF35E5A89" KeyPath="yes" Source="$(var.BasePath)\System.IO.Compression.dll" />
             </Component>
-            <Component Id="cmp785C51A2B2F1C4486FAD12D454C0C3B7" Guid="{2931EB57-C2C2-498A-A79D-7114A3199D26}">
+            <Component Id="cmp785C51A2B2F1C4486FAD12D454C0C3B7" Guid="{23906EE3-BB74-481E-BBA3-99DA80BD3020}">
                 <File Id="fil055B583E10F0EC51CBC9D94E08FF9220" KeyPath="yes" Source="$(var.BasePath)\System.IO.Compression.FileSystem.dll" />
             </Component>
-            <Component Id="cmpD40621D43FCB57C24FE91D5292CDCA60" Guid="{A895010D-35D3-485D-B4B0-7A66F86404C8}">
+            <Component Id="cmpD40621D43FCB57C24FE91D5292CDCA60" Guid="{9FFE389A-762A-404C-A8FC-B7D42B95F9C4}">
                 <File Id="fil58D577100F63265F0448602DFD48190C" KeyPath="yes" Source="$(var.BasePath)\System.IO.Compression.ZipFile.dll" />
             </Component>
-            <Component Id="cmp06E205989506C503C7B11F6FE4B449C6" Guid="{E5D79022-0949-46C8-AC00-1EEE6013D0BF}">
+            <Component Id="cmp06E205989506C503C7B11F6FE4B449C6" Guid="{1D6B6054-F828-4ACF-8E1A-96E53AEFC7E6}">
                 <File Id="fil1585A04883FF89B289FC2454E8EDC783" KeyPath="yes" Source="$(var.BasePath)\System.IO.dll" />
             </Component>
-            <Component Id="cmp6FB68A3D94F72D93B83F617A34391D43" Guid="{E7150840-21FF-4EEF-990C-5B4CECB8CC30}">
+            <Component Id="cmp6FB68A3D94F72D93B83F617A34391D43" Guid="{18F509CD-1F07-43A2-A6AB-4D0370199F74}">
                 <File Id="fil68E5BC92D13004A9B7057B40B42A647F" KeyPath="yes" Source="$(var.BasePath)\System.IO.FileSystem.AccessControl.dll" />
             </Component>
-            <Component Id="cmp2BF489548413875B5E6C82837FCD954F" Guid="{03E0DFCC-87A5-49B9-B94C-BA380D6990FB}">
+            <Component Id="cmp2BF489548413875B5E6C82837FCD954F" Guid="{B7B09B5E-1B00-4370-A10E-3CC9F8103296}">
                 <File Id="filB910A291C5575D86F028725A2C33BF2D" KeyPath="yes" Source="$(var.BasePath)\System.IO.FileSystem.dll" />
             </Component>
-            <Component Id="cmp1AB9ED2F24CD7F4C14BBC93CA838C6B0" Guid="{1D7AAE62-8BBC-4EE4-82C2-82FC05B73335}">
+            <Component Id="cmp1AB9ED2F24CD7F4C14BBC93CA838C6B0" Guid="{066D4DB0-A4BB-4A30-9861-59A0C835FB29}">
                 <File Id="fil574A395F5B89705022FDCE55CD01B148" KeyPath="yes" Source="$(var.BasePath)\System.IO.FileSystem.DriveInfo.dll" />
             </Component>
-            <Component Id="cmpC96839737F0D0575D352C1AE13A73E26" Guid="{65D0BA9A-F644-4A22-9017-3A25D4EC1613}">
+            <Component Id="cmpC96839737F0D0575D352C1AE13A73E26" Guid="{82464470-8304-4411-921C-8984B397A79D}">
                 <File Id="fil02F9A4228ADE0C77AF34898B47FD1723" KeyPath="yes" Source="$(var.BasePath)\System.IO.FileSystem.Primitives.dll" />
             </Component>
-            <Component Id="cmp43533F1C6D869598C6A682154C94696E" Guid="{72D275AC-5512-49D8-9D23-C1D90D4498CB}">
+            <Component Id="cmp43533F1C6D869598C6A682154C94696E" Guid="{3EAF2A4B-AC02-4EB9-9AFF-D0A3973B3B78}">
                 <File Id="filBF4695E38CC21BF49BBCA04E77D36710" KeyPath="yes" Source="$(var.BasePath)\System.IO.FileSystem.Watcher.dll" />
             </Component>
-            <Component Id="cmpBEA123016451982E36F3B409E9D6426F" Guid="{3B0CFEF0-2F9F-47FC-9030-E783D202EA51}">
+            <Component Id="cmpBEA123016451982E36F3B409E9D6426F" Guid="{100FE097-4D6B-482D-85B4-D3BA7E19B3C1}">
                 <File Id="fil4018AFAC307CEA6BC7FCB7A5B8BCA075" KeyPath="yes" Source="$(var.BasePath)\System.IO.IsolatedStorage.dll" />
             </Component>
-            <Component Id="cmp27E36B7C8DB5461A9579366D20E5DD16" Guid="{18B2FFD4-2FAC-4420-8D41-41AB32385DEC}">
+            <Component Id="cmp27E36B7C8DB5461A9579366D20E5DD16" Guid="{D2B576AB-D1A2-45E8-8808-E081A38EBEC0}">
                 <File Id="fil7F43DE255F0B70BD8014CC9F0611E6A9" KeyPath="yes" Source="$(var.BasePath)\System.IO.MemoryMappedFiles.dll" />
             </Component>
-            <Component Id="cmpC2D1864013DD0BCBA830EE1028C6B904" Guid="{242361D9-C25F-4649-BBE7-5D4A3C068CFE}">
+            <Component Id="cmpC2D1864013DD0BCBA830EE1028C6B904" Guid="{BC697088-267D-4B15-9C00-A764A9BCDD6A}">
                 <File Id="fil023CBA6DE00A7F1A1EC7457E89B72F4D" KeyPath="yes" Source="$(var.BasePath)\System.IO.Packaging.dll" />
             </Component>
-            <Component Id="cmp183D1A43C4BEFEBCA439AD7D937EB769" Guid="{2EB659F0-37CC-492A-B522-4F943F135F61}">
+            <Component Id="cmp183D1A43C4BEFEBCA439AD7D937EB769" Guid="{5F6A5ECF-F43B-4190-B4F3-24238FF13746}">
                 <File Id="fil560ABBE9A039926454C012CD4E72893F" KeyPath="yes" Source="$(var.BasePath)\System.IO.Pipes.AccessControl.dll" />
             </Component>
-            <Component Id="cmpB23C66A8B8F46E3F568C19DFB6A6E1A4" Guid="{1BB3398A-4632-4A5E-8737-0DA1A51699E4}">
+            <Component Id="cmpB23C66A8B8F46E3F568C19DFB6A6E1A4" Guid="{C0AF0312-B743-410D-9DC9-32B5ECE03070}">
                 <File Id="fil8EAA03164AF160196E835AAF613219D0" KeyPath="yes" Source="$(var.BasePath)\System.IO.Pipes.dll" />
             </Component>
-            <Component Id="cmp5338A7F671CC8A6B5D8355578A8A889A" Guid="{28BD3C68-D07E-4B46-ADB5-F3909BC39A05}">
+            <Component Id="cmp5338A7F671CC8A6B5D8355578A8A889A" Guid="{E81A5A38-BB73-42EA-AC5E-C4DE23BCCB02}">
                 <File Id="filA25C390E7FAA5E8406CA4A02BBBCC33A" KeyPath="yes" Source="$(var.BasePath)\System.IO.UnmanagedMemoryStream.dll" />
             </Component>
-            <Component Id="cmpC0FA693A1C79F59FC93C10CFD37D42F2" Guid="{A925A5C5-4C0D-42DC-82EC-64E2B3242846}">
+            <Component Id="cmpC0FA693A1C79F59FC93C10CFD37D42F2" Guid="{CA14353F-8001-42AC-BD09-870A1C8AA8AD}">
                 <File Id="fil598A363D5498D9DDBAFE6880F82F75CA" KeyPath="yes" Source="$(var.BasePath)\System.Linq.dll" />
             </Component>
-            <Component Id="cmpE2761380A2AA89636D5B95A135451B7F" Guid="{1FDCC944-AF62-40FB-BFB6-B6A2011A15B7}">
+            <Component Id="cmpE2761380A2AA89636D5B95A135451B7F" Guid="{22A0E4F8-7218-498A-ABB9-879DDB0A0720}">
                 <File Id="fil33155AE23C9BC1A3E340E9A8ABDE1D42" KeyPath="yes" Source="$(var.BasePath)\System.Linq.Expressions.dll" />
             </Component>
-            <Component Id="cmp1C1E90C62AB1B0C4B75A0C8670A93BF5" Guid="{0A27228C-C74A-4FA2-93E5-A9959B0CBF2A}">
+            <Component Id="cmp1C1E90C62AB1B0C4B75A0C8670A93BF5" Guid="{AD6C37D6-8E9F-4062-A865-DC1CCAAF34EE}">
                 <File Id="fil3F3DFA5907492425703385E53974B104" KeyPath="yes" Source="$(var.BasePath)\System.Linq.Parallel.dll" />
             </Component>
-            <Component Id="cmpA89B897A857FCF03B6B2373DF3AC3D44" Guid="{7A724A88-A8A7-429E-9A52-7D619C53ECE3}">
+            <Component Id="cmpA89B897A857FCF03B6B2373DF3AC3D44" Guid="{1DC1AC0D-A977-46DF-8094-780BBAB5FD59}">
                 <File Id="fil7169F7E92FBFDB99FD71D763F2E780C7" KeyPath="yes" Source="$(var.BasePath)\System.Linq.Queryable.dll" />
             </Component>
-            <Component Id="cmp642ED5B0D0BD1F16347D1310992C55A0" Guid="{8DA109BB-F456-40D1-B672-65B6AF6B70C4}">
+            <Component Id="cmp642ED5B0D0BD1F16347D1310992C55A0" Guid="{DBE64253-A444-4A4D-B6C8-00E82D968247}">
                 <File Id="filFA1D7EC932018D1CCB80F9F43D328009" KeyPath="yes" Source="$(var.BasePath)\System.Memory.dll" />
             </Component>
-            <Component Id="cmp40CE537659009D03264914C9BC03C3C4" Guid="{D9E6D8CB-749A-4FDA-A5DA-C8C7AB86A762}">
+            <Component Id="cmp40CE537659009D03264914C9BC03C3C4" Guid="{068AF00E-9A76-4F7E-9061-CE7B926C8EEF}">
                 <File Id="fil138FED47A2033C514135486DE6F14E89" KeyPath="yes" Source="$(var.BasePath)\System.Net.dll" />
             </Component>
-            <Component Id="cmpBA5ABAFBBC1B2CC2232B3287ABE89965" Guid="{B6A85708-96A8-41E0-AEC6-66F6DC243E10}">
+            <Component Id="cmpBA5ABAFBBC1B2CC2232B3287ABE89965" Guid="{87703CC6-DF9C-499A-8E41-4D1A7B3C00D2}">
                 <File Id="fil7D48B04FDEE4653060C375A94010A762" KeyPath="yes" Source="$(var.BasePath)\System.Net.Http.dll" />
             </Component>
-            <Component Id="cmpC782B77AEA5E798D1EE668908BCE5744" Guid="{5790E806-0E44-4DE6-9911-96E4BFE01B85}">
+            <Component Id="cmpC782B77AEA5E798D1EE668908BCE5744" Guid="{D4D40743-5A1F-40FA-A5E8-EC584A0D95B1}">
                 <File Id="fil127AF952C61922AD02D178AC079F811D" KeyPath="yes" Source="$(var.BasePath)\System.Net.HttpListener.dll" />
             </Component>
-            <Component Id="cmpD4922FF7B4D84282C79B36D11AD019F5" Guid="{FCE21E7B-B4CC-4ECB-AE7C-76139BAD3721}">
+            <Component Id="cmpD4922FF7B4D84282C79B36D11AD019F5" Guid="{81776735-F8B4-4D30-890B-0124F2970BE7}">
                 <File Id="filC3D64A43ADF6877B3846FF9C45EC3DC6" KeyPath="yes" Source="$(var.BasePath)\System.Net.Mail.dll" />
             </Component>
-            <Component Id="cmp8487DBCD10F6EA164525782F92DE4F4F" Guid="{3628E9FC-DD0D-4B3C-9754-3C1B281FEC04}">
+            <Component Id="cmp8487DBCD10F6EA164525782F92DE4F4F" Guid="{D9867C7D-306C-4417-859B-36D2FCD25D4D}">
                 <File Id="fil69D9F4812C174BFB653C73FDA9A444E0" KeyPath="yes" Source="$(var.BasePath)\System.Net.NameResolution.dll" />
             </Component>
-            <Component Id="cmpA79F27EC312D0A6A5E914E2D5E6EAAFB" Guid="{A24B199E-4F3B-480E-842F-47FB4743A975}">
+            <Component Id="cmpA79F27EC312D0A6A5E914E2D5E6EAAFB" Guid="{43E35870-9567-43AF-928E-BC15B59B3D8C}">
                 <File Id="filC663E3CB9E88525B42D5B8916035A2EE" KeyPath="yes" Source="$(var.BasePath)\System.Net.NetworkInformation.dll" />
             </Component>
-            <Component Id="cmp8E66472F03923A37D938729AEED0ABF6" Guid="{C25087DC-0418-4888-BD0A-D0CCB959ED9E}">
+            <Component Id="cmp8E66472F03923A37D938729AEED0ABF6" Guid="{9ADBEF87-5CAC-4F99-BC82-CF9019E82FCF}">
                 <File Id="fil8C39D1E2631D6844BB01F4F3D4309095" KeyPath="yes" Source="$(var.BasePath)\System.Net.Ping.dll" />
             </Component>
-            <Component Id="cmp7F3C257977DAD545E41C24AEEBA5F3D7" Guid="{CD1A174A-F19D-4629-9914-A0D361E93C9C}">
+            <Component Id="cmp7F3C257977DAD545E41C24AEEBA5F3D7" Guid="{1ACA7B3A-8931-4E25-8EAC-BE7C39B46CCB}">
                 <File Id="fil9E23EE919E61291572A9E7A02358BE0B" KeyPath="yes" Source="$(var.BasePath)\System.Net.Primitives.dll" />
             </Component>
-            <Component Id="cmp1F98307E0E8546CD03283A275A109E29" Guid="{0C99E977-4E5C-40A2-BECB-5F6C58806229}">
+            <Component Id="cmp1F98307E0E8546CD03283A275A109E29" Guid="{EB959A38-2488-477F-A7D3-71732EAEDFC9}">
                 <File Id="filABF76F5E8887AC62C808D141EEE7F90D" KeyPath="yes" Source="$(var.BasePath)\System.Net.Requests.dll" />
             </Component>
-            <Component Id="cmp661DE9832C6188B3A05455224EB65C4A" Guid="{FA867C05-79D9-4F84-933E-81C811408642}">
+            <Component Id="cmp661DE9832C6188B3A05455224EB65C4A" Guid="{FB1D8E44-7459-40CD-8856-722B22041DE4}">
                 <File Id="fil1D7AB309A4579D55C17E387F8DFFAE30" KeyPath="yes" Source="$(var.BasePath)\System.Net.Security.dll" />
             </Component>
-            <Component Id="cmp8E3852370BA1AE4CF400F39FCCDA03D6" Guid="{268D6279-21C2-4F77-9955-0178F8592006}">
+            <Component Id="cmp8E3852370BA1AE4CF400F39FCCDA03D6" Guid="{0B0B8BE8-CDAD-4FBC-8B5F-2FF4567DB6F7}">
                 <File Id="filF31EC463F2BCDA3FBA9E27555B78248A" KeyPath="yes" Source="$(var.BasePath)\System.Net.ServicePoint.dll" />
             </Component>
-            <Component Id="cmp35FB771C91E6D09AC7AD31EA6BD82D48" Guid="{FA1C2D5A-B70F-4538-802A-4714E9B892CA}">
+            <Component Id="cmp35FB771C91E6D09AC7AD31EA6BD82D48" Guid="{ACF7EDD4-A502-4204-A66C-EBB24F6CCC91}">
                 <File Id="fil823B0C5D79C138C9B43DE503AE851AF3" KeyPath="yes" Source="$(var.BasePath)\System.Net.Sockets.dll" />
             </Component>
-            <Component Id="cmp7B9C5D477298F95DFB96DD7F2A003544" Guid="{B6B925F3-A281-4017-9EAA-1613C722B502}">
+            <Component Id="cmp7B9C5D477298F95DFB96DD7F2A003544" Guid="{6A3F2FFD-F252-4C12-BE3E-A41C8A9D8E3F}">
                 <File Id="fil7360B14310AD1BEF6FE2752D039C30EC" KeyPath="yes" Source="$(var.BasePath)\System.Net.WebClient.dll" />
             </Component>
-            <Component Id="cmpBD3081A75FFFB18E0F831CA90BB02A51" Guid="{4E4A7F77-F419-4C2A-BC70-2B655A5F41F8}">
+            <Component Id="cmpBD3081A75FFFB18E0F831CA90BB02A51" Guid="{DB24B0D5-07C1-4487-985B-D5B5E8957C7C}">
                 <File Id="fil56CADEAFFCFAFECB7B1BDB9CFD8987F1" KeyPath="yes" Source="$(var.BasePath)\System.Net.WebHeaderCollection.dll" />
             </Component>
-            <Component Id="cmp2F42759F8BD7F5B6CDFE79371A61B5DD" Guid="{33E56C8A-6D86-4E91-9D0C-AC7684BE9690}">
+            <Component Id="cmp2F42759F8BD7F5B6CDFE79371A61B5DD" Guid="{F865FAB9-A9E5-48C3-9DF9-3188F21E4CC9}">
                 <File Id="fil17A7AE3F911F04CCD48A2A211DECDD7E" KeyPath="yes" Source="$(var.BasePath)\System.Net.WebProxy.dll" />
             </Component>
-            <Component Id="cmp68954BEF36096052C3124B7F9EF02351" Guid="{66DF2A50-3E91-45A6-BEEC-7588C1C94C47}">
+            <Component Id="cmp68954BEF36096052C3124B7F9EF02351" Guid="{87D2BF14-9DC0-47DE-8991-27F9E79D6CF9}">
                 <File Id="filBE4907C935596CA9CAA2A7AA9AB25169" KeyPath="yes" Source="$(var.BasePath)\System.Net.WebSockets.Client.dll" />
             </Component>
-            <Component Id="cmpA3D72A47568CFB72A8579DA365A9694A" Guid="{8C0ADBB6-4E3E-41AE-A3D1-A948E22CC67D}">
+            <Component Id="cmpA3D72A47568CFB72A8579DA365A9694A" Guid="{D4494525-C80E-4509-B6C3-8852AA6D06FD}">
                 <File Id="fil21106B04138595285E4063BA0375F731" KeyPath="yes" Source="$(var.BasePath)\System.Net.WebSockets.dll" />
             </Component>
-            <Component Id="cmp1012A53E20F9FB30F60F434224BB9BE9" Guid="{F9AEE928-F951-4328-B6D9-B36D4DA76A8B}">
+            <Component Id="cmp1012A53E20F9FB30F60F434224BB9BE9" Guid="{FAA49874-3A6B-4001-AE30-FB7D59B674B2}">
                 <File Id="fil2619BE5E53030D1D5F0C69715CB84463" KeyPath="yes" Source="$(var.BasePath)\System.Numerics.dll" />
             </Component>
-            <Component Id="cmp89AE5ECEB789ECF60BE6CC568D60B2F9" Guid="{4D9A36D7-80E7-436A-BD46-FD12B3B0BDE9}">
+            <Component Id="cmp89AE5ECEB789ECF60BE6CC568D60B2F9" Guid="{FEF08A46-CCE0-4058-B3C5-B5E645207A49}">
                 <File Id="fil07CC506FCE6F39AF87379627460A5FFB" KeyPath="yes" Source="$(var.BasePath)\System.Numerics.Vectors.dll" />
             </Component>
-            <Component Id="cmpF02258D9C1CDC79ADE6BED7D7E27B7F8" Guid="{EADDD15D-0317-4682-BC7A-7EB256045CB7}">
+            <Component Id="cmpF02258D9C1CDC79ADE6BED7D7E27B7F8" Guid="{D8F9C906-6E27-4240-A0DC-548D6F403F8D}">
                 <File Id="fil9A7CC4FBC706133927299AE792CF930C" KeyPath="yes" Source="$(var.BasePath)\System.ObjectModel.dll" />
             </Component>
-            <Component Id="cmp1A53114B13A948D9546767911FF06440" Guid="{CB9ECFB1-BF5A-4774-B188-31BD173E1966}">
+            <Component Id="cmp1A53114B13A948D9546767911FF06440" Guid="{E84ED821-FE93-4A6B-A541-C918521F5953}">
                 <File Id="fil5F4979C3C98B85DA740692F39B4D56A4" KeyPath="yes" Source="$(var.BasePath)\System.Printing.dll" />
             </Component>
-            <Component Id="cmp2DB01C2F4195AA81E62D885F63BE7641" Guid="{25514EEE-8E27-4071-ABE5-DD976090720C}">
+            <Component Id="cmp2DB01C2F4195AA81E62D885F63BE7641" Guid="{B76E65D5-DA88-45FB-B25E-EAC3C17AEC9C}">
                 <File Id="fil5F20267552D2080D363590717A478A65" KeyPath="yes" Source="$(var.BasePath)\System.Private.CoreLib.dll" />
             </Component>
-            <Component Id="cmp0EDB097376FBE0BE64756815576F1B61" Guid="{BDA56A6C-522D-453E-B9E8-814E1F3CA0B8}">
+            <Component Id="cmp0EDB097376FBE0BE64756815576F1B61" Guid="{18D1BCF2-D864-42E2-BAFD-3CB7ADC5B3CF}">
                 <File Id="fil956212AAC02131CE9DBEEFFAA517A9B4" KeyPath="yes" Source="$(var.BasePath)\System.Private.DataContractSerialization.dll" />
             </Component>
-            <Component Id="cmp1BF66780B6F5DC544844F175D2217D45" Guid="{9A7D9BF1-9706-40C5-93BD-0DF207801572}">
+            <Component Id="cmp1BF66780B6F5DC544844F175D2217D45" Guid="{D6A1CB55-A627-4D42-8EE2-B32784CAD405}">
                 <File Id="fil61B45F4CB4B92624343A3825909B2603" KeyPath="yes" Source="$(var.BasePath)\System.Private.Uri.dll" />
             </Component>
-            <Component Id="cmpD2D406D08D2C2D891122355DB33D02D0" Guid="{ECD22CDA-B795-40B7-81E2-A492C3C857F1}">
+            <Component Id="cmpD2D406D08D2C2D891122355DB33D02D0" Guid="{FC6E3EB0-1A2C-4486-A7A8-25ED032B86C1}">
                 <File Id="fil30AEEA8E30A25E3F992AFBC4E978B1EC" KeyPath="yes" Source="$(var.BasePath)\System.Private.Xml.dll" />
             </Component>
-            <Component Id="cmp1333ED3B16D8F8DA45E77A4CE5FCD880" Guid="{B76CA3AF-D81A-4C1F-A353-19BA7CDC6FBF}">
+            <Component Id="cmp1333ED3B16D8F8DA45E77A4CE5FCD880" Guid="{AFCABDAF-8660-4F68-B0B0-5DA10DEC9798}">
                 <File Id="fil0E88E58D4BC67A706C27F550F4AD0845" KeyPath="yes" Source="$(var.BasePath)\System.Private.Xml.Linq.dll" />
             </Component>
-            <Component Id="cmpD96EF0310A9F4CDC867A29C92627C66F" Guid="{28B0CFDC-F152-4B5F-859A-6392C0E2095B}">
+            <Component Id="cmpD96EF0310A9F4CDC867A29C92627C66F" Guid="{7B13528A-3126-43FC-97B5-10CDCA41DE12}">
                 <File Id="fil00885DA9E6C4C6258656E6A6E9AF6900" KeyPath="yes" Source="$(var.BasePath)\System.Reflection.DispatchProxy.dll" />
             </Component>
-            <Component Id="cmpA232CC5CBB9F7FC0C83CBF6E9889AEA2" Guid="{1E15F06C-56C3-4EBF-8B66-F0031813D1F8}">
+            <Component Id="cmpA232CC5CBB9F7FC0C83CBF6E9889AEA2" Guid="{D24C0838-E8BB-4D60-BB84-87652F71B86D}">
                 <File Id="filA974C5A92C285D01E798C45F066066E6" KeyPath="yes" Source="$(var.BasePath)\System.Reflection.dll" />
             </Component>
-            <Component Id="cmpB04DC6BD037C409C2E1ACEF4893EF6E0" Guid="{D0F23997-B2C8-40CB-A029-635B88563678}">
+            <Component Id="cmpB04DC6BD037C409C2E1ACEF4893EF6E0" Guid="{D35ADF7B-D43B-49AE-968B-8E38FC32B501}">
                 <File Id="fil95A0627F4D1FCB03CAA781B38C9913E8" KeyPath="yes" Source="$(var.BasePath)\System.Reflection.Emit.dll" />
             </Component>
-            <Component Id="cmp1BA496B8D1F481E17E4F9777D97E83A3" Guid="{CD84A650-D7DC-41CF-B263-B052C5EACA05}">
+            <Component Id="cmp1BA496B8D1F481E17E4F9777D97E83A3" Guid="{09CD51C5-3072-4932-850A-9B33F56D20B5}">
                 <File Id="fil206530E7FF9234ED40038107D8CF0C52" KeyPath="yes" Source="$(var.BasePath)\System.Reflection.Emit.ILGeneration.dll" />
             </Component>
-            <Component Id="cmpE704E6B7F4208E4FA240D82240CB87CB" Guid="{4D81F780-2DBD-4195-930A-231978434265}">
+            <Component Id="cmpE704E6B7F4208E4FA240D82240CB87CB" Guid="{A69756D5-FCAA-4F92-8CED-0D061D90C093}">
                 <File Id="fil9688DF0AEBCA099B83BD29AE45557399" KeyPath="yes" Source="$(var.BasePath)\System.Reflection.Emit.Lightweight.dll" />
             </Component>
-            <Component Id="cmpBBE9705F8359FDCA711FD64D14D92D29" Guid="{4C962B41-C386-40CB-A7B1-375D442207F9}">
+            <Component Id="cmpBBE9705F8359FDCA711FD64D14D92D29" Guid="{64C35467-4E35-470B-88C4-91AE844FC5EE}">
                 <File Id="filBF34301359DFDB004DA5653ADCF77EA8" KeyPath="yes" Source="$(var.BasePath)\System.Reflection.Extensions.dll" />
             </Component>
-            <Component Id="cmp2FF83375B57E90E070D5274FE375C377" Guid="{EE8CE1C1-F7C5-4B99-BC83-569A659EA439}">
+            <Component Id="cmp2FF83375B57E90E070D5274FE375C377" Guid="{9905ECA1-454C-44A3-B3F3-97100260E012}">
                 <File Id="fil91EF703BE463A4F6D596BD34EF59864F" KeyPath="yes" Source="$(var.BasePath)\System.Reflection.Metadata.dll" />
             </Component>
-            <Component Id="cmp673F5FD19E1447A9E9517732D5099C50" Guid="{545B1DE9-5F23-4351-81D3-6C56145D7F39}">
+            <Component Id="cmp673F5FD19E1447A9E9517732D5099C50" Guid="{69564196-8747-46BF-89F0-F9C2D4E5DE7F}">
                 <File Id="fil8C7FE5693A485A6EC5DB4F983E211310" KeyPath="yes" Source="$(var.BasePath)\System.Reflection.Primitives.dll" />
             </Component>
-            <Component Id="cmp3196328A6B461FCF95D6C3A5A44720F2" Guid="{89BB87CE-164D-4612-893D-52A6D43E5D68}">
+            <Component Id="cmp3196328A6B461FCF95D6C3A5A44720F2" Guid="{8172D854-D3DA-4A8A-AD8A-D309B30EFC43}">
                 <File Id="fil6342337C40983F32057D5D6FEB7FDFFC" KeyPath="yes" Source="$(var.BasePath)\System.Reflection.TypeExtensions.dll" />
             </Component>
-            <Component Id="cmp4A8A6A75A7C3928058FB8D71B03DECA5" Guid="{2190F82B-9C1D-4C11-9826-525E545EEED7}">
+            <Component Id="cmp4A8A6A75A7C3928058FB8D71B03DECA5" Guid="{98F00E48-EEFE-44FB-952D-A0B750F6A6FF}">
                 <File Id="fil905A3F9E6816128D691E37CC90C0750D" KeyPath="yes" Source="$(var.BasePath)\System.Resources.Extensions.dll" />
             </Component>
-            <Component Id="cmp70FC17596CC6D6081664CEA3F1370618" Guid="{885626EA-2CC6-4590-9A7C-1C6859E103E0}">
+            <Component Id="cmp70FC17596CC6D6081664CEA3F1370618" Guid="{12BCE548-BCE3-4F10-87C8-2F9E15EEC106}">
                 <File Id="filA1280936EE48F816F9935AC5D8CC2135" KeyPath="yes" Source="$(var.BasePath)\System.Resources.Reader.dll" />
             </Component>
-            <Component Id="cmp0D6DF42F2B6440373438F26D08393D7E" Guid="{2E7F1F2A-54A4-4A68-96E1-F96B7B17A525}">
+            <Component Id="cmp0D6DF42F2B6440373438F26D08393D7E" Guid="{060E31F4-1D30-408D-B742-2ACE2F70A189}">
                 <File Id="fil0A8B8FDA1F690B6521438D46937A3A6B" KeyPath="yes" Source="$(var.BasePath)\System.Resources.ResourceManager.dll" />
             </Component>
-            <Component Id="cmp9CA91C7958AD8878AF60199DC48CD573" Guid="{E7DC7B9E-0050-4F6E-A735-1331DF8830A0}">
+            <Component Id="cmp9CA91C7958AD8878AF60199DC48CD573" Guid="{96834AB1-5EEB-4194-939B-80F3E12B9554}">
                 <File Id="fil230BE30D15C956EF11744774D5E2748A" KeyPath="yes" Source="$(var.BasePath)\System.Resources.Writer.dll" />
             </Component>
-            <Component Id="cmpAFCF21A15F6EDA45A32D147050609285" Guid="{DEA697CD-695D-4EEC-B266-B54EF06AE5BE}">
+            <Component Id="cmpAFCF21A15F6EDA45A32D147050609285" Guid="{E0BD66B2-58F0-470D-95A6-01FA361DDF5A}">
                 <File Id="filAE286E96EA00902BC284AEBF3030D6E4" KeyPath="yes" Source="$(var.BasePath)\System.Runtime.CompilerServices.Unsafe.dll" />
             </Component>
-            <Component Id="cmpBC6ED153615307A014F39AD878C11A6F" Guid="{0EC73433-9BC6-4B5E-9F10-FFCFC063D5A7}">
+            <Component Id="cmpBC6ED153615307A014F39AD878C11A6F" Guid="{33A4CD05-CFA6-4DD8-AB3E-79A69413B9D3}">
                 <File Id="fil06F091C33B00CEE32ABF1D23BFFCF153" KeyPath="yes" Source="$(var.BasePath)\System.Runtime.CompilerServices.VisualC.dll" />
             </Component>
-            <Component Id="cmp5535623A0957F12A580F2E0AE9AB7F24" Guid="{F5DB044F-46D2-439D-AF1B-D1DE9825B8D1}">
+            <Component Id="cmp5535623A0957F12A580F2E0AE9AB7F24" Guid="{6EF56993-4CF0-42D3-AE83-D058F725E0A4}">
                 <File Id="fil1F7505072F9E81ACFDD7E6910787823E" KeyPath="yes" Source="$(var.BasePath)\System.Runtime.dll" />
             </Component>
-            <Component Id="cmp1F804D02F421408F7E20267C22EA6672" Guid="{D7342846-CF99-4B01-8C10-A6742EA12474}">
+            <Component Id="cmp1F804D02F421408F7E20267C22EA6672" Guid="{8D354F1C-3F00-4641-A648-4F3042DC8248}">
                 <File Id="fil46F95A243148C958E6F1AB4B4F561CB1" KeyPath="yes" Source="$(var.BasePath)\System.Runtime.Extensions.dll" />
             </Component>
-            <Component Id="cmpC9E0DEEB7CF98154C06B2056C911EFFB" Guid="{67702306-9132-4C63-9E6A-A8617390623B}">
+            <Component Id="cmpC9E0DEEB7CF98154C06B2056C911EFFB" Guid="{21C6B635-D2D1-4626-9F12-69C8FB5E5671}">
                 <File Id="fil7F78E91219FBF02ABACD6059011A3487" KeyPath="yes" Source="$(var.BasePath)\System.Runtime.Handles.dll" />
             </Component>
-            <Component Id="cmpDD067213D9C6C74C7DEE2A7AAB0FAEEC" Guid="{63B00164-314A-4547-8E31-0FEF7E5C7FA5}">
+            <Component Id="cmpDD067213D9C6C74C7DEE2A7AAB0FAEEC" Guid="{B7CE113A-E943-40DE-841B-149BA5558C02}">
                 <File Id="fil853E903EAF99997C9E803CAE3ACFBF5A" KeyPath="yes" Source="$(var.BasePath)\System.Runtime.InteropServices.dll" />
             </Component>
-            <Component Id="cmp11FDD7837E3686618A8029176A611E38" Guid="{CC9DA960-A96C-4937-A120-4C8C86F45734}">
+            <Component Id="cmp11FDD7837E3686618A8029176A611E38" Guid="{779C6DC9-6209-458A-ABA3-815CBC8464BF}">
                 <File Id="fil43FDDFACC38DCF385E1070ABFC9FF8BD" KeyPath="yes" Source="$(var.BasePath)\System.Runtime.InteropServices.RuntimeInformation.dll" />
             </Component>
-            <Component Id="cmp0F60A0B28B81DBD5B8C177AAF52AD625" Guid="{ECE9F10F-82CA-4E3C-ACCC-6F01C141C170}">
+            <Component Id="cmp0F60A0B28B81DBD5B8C177AAF52AD625" Guid="{78903007-2D17-486D-BF13-E4592B0F7611}">
                 <File Id="filE6C14EC151107E809ED6D3E0C43A8068" KeyPath="yes" Source="$(var.BasePath)\System.Runtime.InteropServices.WindowsRuntime.dll" />
             </Component>
-            <Component Id="cmp273A336F9060204061CFFE2BC86D0659" Guid="{7D919D4C-D2AF-4EA6-ADC2-9CF1B0AED91E}">
+            <Component Id="cmp273A336F9060204061CFFE2BC86D0659" Guid="{3C9DEB8C-8231-41EE-AF79-B0A72ABDE0BB}">
                 <File Id="fil6230E5A48B2CF01AAE0828B6C7EB8723" KeyPath="yes" Source="$(var.BasePath)\System.Runtime.Intrinsics.dll" />
             </Component>
-            <Component Id="cmp53E46EBF44AF21F42A968A1F1DDABABF" Guid="{C91955D8-F774-419F-856E-19397A7B2CDD}">
+            <Component Id="cmp53E46EBF44AF21F42A968A1F1DDABABF" Guid="{09F2F188-FDEC-47CC-9FA0-9AC633FD7763}">
                 <File Id="fil87CFA7EACF3D6FF22EC0E4716A3E0C3D" KeyPath="yes" Source="$(var.BasePath)\System.Runtime.Loader.dll" />
             </Component>
-            <Component Id="cmpCCD6C0BE895B4EC8ED6FCEECB4A871C3" Guid="{4C74CAF3-B475-4C65-9677-CFA66491DCD7}">
+            <Component Id="cmpCCD6C0BE895B4EC8ED6FCEECB4A871C3" Guid="{BAABF46F-9DDD-451E-9E2D-851396BD6503}">
                 <File Id="fil02EF2737879749E35F209C9B7DCA391D" KeyPath="yes" Source="$(var.BasePath)\System.Runtime.Numerics.dll" />
             </Component>
-            <Component Id="cmp9921162130C9C55FC54CDFEEDAB5C5C4" Guid="{A3E9CE93-7EA3-4BFC-9261-BC34F5539009}">
+            <Component Id="cmp9921162130C9C55FC54CDFEEDAB5C5C4" Guid="{ED07B902-F0EB-4B97-87F0-7242D31C6688}">
                 <File Id="filF94677146D6FDC8166F77F31474AB37B" KeyPath="yes" Source="$(var.BasePath)\System.Runtime.Serialization.dll" />
             </Component>
-            <Component Id="cmp41A90A30E3B6DE65B53B94DD925F5178" Guid="{DCD375A3-2C10-4C84-BCD0-66B9693FB652}">
+            <Component Id="cmp41A90A30E3B6DE65B53B94DD925F5178" Guid="{BA550B56-7135-4BA7-8B83-B5432C15CED5}">
                 <File Id="filC968DB2890AADD4FA67468C2A7B10151" KeyPath="yes" Source="$(var.BasePath)\System.Runtime.Serialization.Formatters.dll" />
             </Component>
-            <Component Id="cmpD90C1CD2102284F981F3D046E35CA13E" Guid="{B048386D-2806-440A-B3C4-4F770C704904}">
+            <Component Id="cmpD90C1CD2102284F981F3D046E35CA13E" Guid="{0CE7266D-D1A6-4331-A5E6-DB1C8E805A84}">
                 <File Id="filD0901858A2CBFDA1564A60620AE9B302" KeyPath="yes" Source="$(var.BasePath)\System.Runtime.Serialization.Json.dll" />
             </Component>
-            <Component Id="cmp552DDD4A29039B8C3A99A908722A24F8" Guid="{0FF841A4-DC92-424A-8DB0-63ED4516AD78}">
+            <Component Id="cmp552DDD4A29039B8C3A99A908722A24F8" Guid="{6C8EC9B0-0C0C-4AE1-81FA-2D32BEE5EB69}">
                 <File Id="fil4EF07533CCADC5D11E070B55437037C4" KeyPath="yes" Source="$(var.BasePath)\System.Runtime.Serialization.Primitives.dll" />
             </Component>
-            <Component Id="cmp844E0AB3F4C9BC342C04985D37DDFEB2" Guid="{3885B6A4-B20E-49DA-A1A3-ED21E791D194}">
+            <Component Id="cmp844E0AB3F4C9BC342C04985D37DDFEB2" Guid="{33C8495A-307C-4A94-BAD6-30C1BD6BA2A4}">
                 <File Id="filEA5BDF8BC27AFF8E7E096CB7FADA4669" KeyPath="yes" Source="$(var.BasePath)\System.Runtime.Serialization.Xml.dll" />
             </Component>
-            <Component Id="cmp56EF90D7A3E7A7F9BD3A5800C8BCCF59" Guid="{928B9038-02E7-49D3-A588-F93DCE2AB922}">
+            <Component Id="cmp56EF90D7A3E7A7F9BD3A5800C8BCCF59" Guid="{3D7530B1-7BD4-4EBF-9F60-CA06ABF5375B}">
                 <File Id="fil2A64CEA140F491E6CE831357D8ABCC58" KeyPath="yes" Source="$(var.BasePath)\System.Runtime.WindowsRuntime.dll" />
             </Component>
-            <Component Id="cmp31174E1B9E40885BE9F253F8348E99BE" Guid="{443416A9-BC04-48F8-8F76-3BAA3CA74492}">
+            <Component Id="cmp31174E1B9E40885BE9F253F8348E99BE" Guid="{4BD94A81-D2A1-4CE3-AE55-50F2D8EEFF1F}">
                 <File Id="filA7609CDE10E0F619B9C2473C86760DCF" KeyPath="yes" Source="$(var.BasePath)\System.Runtime.WindowsRuntime.UI.Xaml.dll" />
             </Component>
-            <Component Id="cmpA79A142FCEA412B1ABBD7BE954692F65" Guid="{97D04D53-552F-4AA5-AEA3-EB7276ED481C}">
+            <Component Id="cmpA79A142FCEA412B1ABBD7BE954692F65" Guid="{1461E500-25D7-4DA4-BDC5-830C633432D0}">
                 <File Id="fil0B3269E73A503751E3461F1BA6DEB094" KeyPath="yes" Source="$(var.BasePath)\System.Security.AccessControl.dll" />
             </Component>
-            <Component Id="cmp184FC0E5FAD15B9D8278A9A58F76ABE4" Guid="{A6B9ACF1-1400-46B2-A6A6-6F6B2806BC47}">
+            <Component Id="cmp184FC0E5FAD15B9D8278A9A58F76ABE4" Guid="{ED4E5A3E-E101-41C0-BF81-AE6B82606434}">
                 <File Id="filF9336650B5D207916A83BC080A440D23" KeyPath="yes" Source="$(var.BasePath)\System.Security.Claims.dll" />
             </Component>
-            <Component Id="cmpFF30060800C65B79967082C32327291C" Guid="{473675F2-F1CD-4E61-B599-9CBF2D9CF9D7}">
+            <Component Id="cmpFF30060800C65B79967082C32327291C" Guid="{43DDED95-A5C0-4950-A793-7D266B4028A9}">
                 <File Id="filAB211F3F0ECB04AF6C2378C73893A0C8" KeyPath="yes" Source="$(var.BasePath)\System.Security.Cryptography.Algorithms.dll" />
             </Component>
-            <Component Id="cmp57EA072774F603C6027C2714CBDD71F1" Guid="{37ADBFCE-6577-415F-9FF6-759A2BED7B66}">
+            <Component Id="cmp57EA072774F603C6027C2714CBDD71F1" Guid="{19276FEE-7B7F-4B17-8685-263159410856}">
                 <File Id="filEA9C6EF0458E2F0D8620A7A9AE239BAD" KeyPath="yes" Source="$(var.BasePath)\System.Security.Cryptography.Cng.dll" />
             </Component>
-            <Component Id="cmp77638A88DFF018673C9539C4C63849F1" Guid="{BE6D747B-F063-4C59-8CC9-885A364E643B}">
+            <Component Id="cmp77638A88DFF018673C9539C4C63849F1" Guid="{DA5575FD-84F3-40A1-9AA7-F8C49D7996C8}">
                 <File Id="filA76FAFC53D43269049D637292976CF51" KeyPath="yes" Source="$(var.BasePath)\System.Security.Cryptography.Csp.dll" />
             </Component>
-            <Component Id="cmp29603EF04B0BDD3AB6C82CAA97838E8B" Guid="{D80BA9DE-3A92-4DAB-81A0-A0F39BAAD0AA}">
+            <Component Id="cmp29603EF04B0BDD3AB6C82CAA97838E8B" Guid="{53314355-0DFD-48E2-9A4E-1BB23DEF9947}">
                 <File Id="filED8707AB753EEF87C2288DCB64CF7A12" KeyPath="yes" Source="$(var.BasePath)\System.Security.Cryptography.Encoding.dll" />
             </Component>
-            <Component Id="cmpA9787BFE4425DEDA95F9804E039493C7" Guid="{AA9CD77C-9092-45CE-BFD4-E584D6091C1A}">
+            <Component Id="cmpA9787BFE4425DEDA95F9804E039493C7" Guid="{1C1043A9-B165-44C3-BF1E-7722750CE991}">
                 <File Id="fil9E245C4B61E184F9BB2287A28934E1D4" KeyPath="yes" Source="$(var.BasePath)\System.Security.Cryptography.OpenSsl.dll" />
             </Component>
-            <Component Id="cmp39CE60B301084AE368282EBF261464F0" Guid="{AB2AE91A-ABEE-4293-A3E0-300DCCB4D5DF}">
+            <Component Id="cmp39CE60B301084AE368282EBF261464F0" Guid="{45379813-2396-49E8-B60E-8C308E0F722C}">
                 <File Id="fil4665CC7D527931E3A52770E88AF61542" KeyPath="yes" Source="$(var.BasePath)\System.Security.Cryptography.Pkcs.dll" />
             </Component>
-            <Component Id="cmp0136E6693E0DF16DBA25B9082AEA0615" Guid="{601A7356-6A5B-49C6-937B-3024210CC105}">
+            <Component Id="cmp0136E6693E0DF16DBA25B9082AEA0615" Guid="{32D7A252-8FCD-4F1E-931E-E036BED350D0}">
                 <File Id="fil25474CD58A18AB4C2CD00F08A6BC9775" KeyPath="yes" Source="$(var.BasePath)\System.Security.Cryptography.Primitives.dll" />
             </Component>
-            <Component Id="cmp9D1519D872AF6E420B3F121C523F1D76" Guid="{6F00CCD2-6577-4BB2-9F79-0E17DCAFA4B1}">
+            <Component Id="cmp9D1519D872AF6E420B3F121C523F1D76" Guid="{C1AA22CB-6674-484C-BF77-DC09A978A366}">
                 <File Id="fil66E90D2D4495A8A6DC2B7FB12981C567" KeyPath="yes" Source="$(var.BasePath)\System.Security.Cryptography.ProtectedData.dll" />
             </Component>
-            <Component Id="cmp5A1F20CF9AD2DA0DF26622F317779E8C" Guid="{FAC82F37-B7C3-456E-BC3B-67CAAC2F98D2}">
+            <Component Id="cmp5A1F20CF9AD2DA0DF26622F317779E8C" Guid="{5424ACC5-6709-4D6D-8B61-A9FFED1405D4}">
                 <File Id="fil442CB099348F299818A47DAF4107BAD6" KeyPath="yes" Source="$(var.BasePath)\System.Security.Cryptography.X509Certificates.dll" />
             </Component>
-            <Component Id="cmp95A37E8A028C851830744CDF1819488E" Guid="{17F4827F-A553-4EF9-9CF6-303858D980E5}">
+            <Component Id="cmp95A37E8A028C851830744CDF1819488E" Guid="{D2878B86-DCA1-4168-B164-FB8CECD5D7E6}">
                 <File Id="fil28658B4F32ED5005033968B539DB3BB3" KeyPath="yes" Source="$(var.BasePath)\System.Security.Cryptography.Xml.dll" />
             </Component>
-            <Component Id="cmpDFFE618E8AC344E46858291F305EFC70" Guid="{EABCEDE6-F1E5-43F6-8BD7-3728D45CC1A0}">
+            <Component Id="cmpDFFE618E8AC344E46858291F305EFC70" Guid="{C26D0E8E-87C6-4734-9161-72C9C524365F}">
                 <File Id="fil8A2775F263A5D803080BAA65121B5ABE" KeyPath="yes" Source="$(var.BasePath)\System.Security.dll" />
             </Component>
-            <Component Id="cmp5CC6136D6E2A90DE115411181360DDDC" Guid="{0CE0234C-A808-4329-94DF-2D18EA9C82BC}">
+            <Component Id="cmp5CC6136D6E2A90DE115411181360DDDC" Guid="{C4129B61-DC78-4058-A2DC-EFA48655F786}">
                 <File Id="fil207371132F5873BD864FD57447824213" KeyPath="yes" Source="$(var.BasePath)\System.Security.Permissions.dll" />
             </Component>
-            <Component Id="cmp82F2DB94B35989B5500883F0A3BD8505" Guid="{D1BE09DB-B208-45BB-8AEB-BA3B0253A958}">
+            <Component Id="cmp82F2DB94B35989B5500883F0A3BD8505" Guid="{1F17F49D-2D33-4765-9EF0-298990F258E7}">
                 <File Id="filD2D8BE6ECEE6993CF4F1FF23EB2E93BB" KeyPath="yes" Source="$(var.BasePath)\System.Security.Principal.dll" />
             </Component>
-            <Component Id="cmp98A131703008D3AC809721FE16EEAFF8" Guid="{DE368812-DABE-4104-8882-0829141C76BA}">
+            <Component Id="cmp98A131703008D3AC809721FE16EEAFF8" Guid="{B29F363E-0506-4E5B-995B-300A05D20ECD}">
                 <File Id="fil50D3CD433FCD76F25C71E81C31B6DD3A" KeyPath="yes" Source="$(var.BasePath)\System.Security.Principal.Windows.dll" />
             </Component>
-            <Component Id="cmp2A096C150C80DB6CCD87D4C38C958489" Guid="{B2246F96-6739-4291-A16A-DF47E21AC643}">
+            <Component Id="cmp2A096C150C80DB6CCD87D4C38C958489" Guid="{4FB319BE-2D3F-47CE-A97D-2A87D89FFA8A}">
                 <File Id="filFB2A4DE274D08F22C08A1322C26E75AC" KeyPath="yes" Source="$(var.BasePath)\System.Security.SecureString.dll" />
             </Component>
-            <Component Id="cmp620839BF764CD7009FF89E1B0BD7B196" Guid="{CB0E7646-EEB1-4903-8860-61A45AD8F9D2}">
+            <Component Id="cmp620839BF764CD7009FF89E1B0BD7B196" Guid="{8D3CCBAF-7ECE-44A2-A1C8-BB9A749297FE}">
                 <File Id="fil603ADF24EF580548918F9B4C65F4AF59" KeyPath="yes" Source="$(var.BasePath)\System.ServiceModel.Web.dll" />
             </Component>
-            <Component Id="cmp150E466C3DC9FBED2C4CCA56AC064337" Guid="{C60B7F0B-1C53-4612-9B43-7B9EE39DF359}">
+            <Component Id="cmp150E466C3DC9FBED2C4CCA56AC064337" Guid="{A227D092-367D-4547-872E-8306F171AC0D}">
                 <File Id="fil32336B6D8A333D5D300D3AA48DEA8318" KeyPath="yes" Source="$(var.BasePath)\System.ServiceProcess.dll" />
             </Component>
-            <Component Id="cmp3111300711520E1E5FE2933E642DA29F" Guid="{180F937C-3170-4080-BBCC-340B34DA1F84}">
+            <Component Id="cmp3111300711520E1E5FE2933E642DA29F" Guid="{C37F6A13-279D-4926-9FC6-F57C9A0D0C94}">
                 <File Id="fil1A0D25A762964F5C1F5E598DAE4D7F6C" KeyPath="yes" Source="$(var.BasePath)\System.Text.Encoding.CodePages.dll" />
             </Component>
-            <Component Id="cmp06F6E0D21752727B7ACAD0B512A6023D" Guid="{AE639726-AA26-4B72-85D1-F98BDA629603}">
+            <Component Id="cmp06F6E0D21752727B7ACAD0B512A6023D" Guid="{F0F070B6-EFE6-49CA-A304-BC0CD08A4DBB}">
                 <File Id="fil701E2765A9E92F8724B2DE3CCDB46360" KeyPath="yes" Source="$(var.BasePath)\System.Text.Encoding.dll" />
             </Component>
-            <Component Id="cmp3874A45D344B330AFBCC3A8F554FA9E4" Guid="{E1DDDF91-4D63-4B97-85C0-818A9EED5A5A}">
+            <Component Id="cmp3874A45D344B330AFBCC3A8F554FA9E4" Guid="{37F1EE6F-73AD-40EA-8091-CA2287E3C4DC}">
                 <File Id="filCE8884160ED3E0EC381AFA6BE7E9D787" KeyPath="yes" Source="$(var.BasePath)\System.Text.Encoding.Extensions.dll" />
             </Component>
-            <Component Id="cmpB8A7E5BEDFB4B8D0CC7AF759CF02E85C" Guid="{D47A2BA9-DA74-411C-9794-CAC1CF2029FB}">
+            <Component Id="cmpB8A7E5BEDFB4B8D0CC7AF759CF02E85C" Guid="{1CBA28D5-5D01-4D3B-A094-28CAB794DD8C}">
                 <File Id="filA40308264694C0D9CFCDD77B25AB3F6A" KeyPath="yes" Source="$(var.BasePath)\System.Text.Encodings.Web.dll" />
             </Component>
-            <Component Id="cmpA5817A2BB296EF3C39CAFA8A07CD6B59" Guid="{670879DE-A6BB-4C16-8766-862A1F3BE135}">
+            <Component Id="cmpA5817A2BB296EF3C39CAFA8A07CD6B59" Guid="{7ACDDF09-7F7A-4CB4-985C-011A7AE119F7}">
                 <File Id="fil1FBF587862F484BB82A1D65565F935B6" KeyPath="yes" Source="$(var.BasePath)\System.Text.Json.dll" />
             </Component>
-            <Component Id="cmp0B61CF5FB51B4607DDD38343361694DD" Guid="{24A85572-6865-4817-97DB-213C0E660270}">
+            <Component Id="cmp0B61CF5FB51B4607DDD38343361694DD" Guid="{F884C677-C654-458E-AFB8-63BAA4DF2886}">
                 <File Id="filDF47AF6394D3BCA07F18B1B1DED956F6" KeyPath="yes" Source="$(var.BasePath)\System.Text.RegularExpressions.dll" />
             </Component>
-            <Component Id="cmp8E8EA57B48D2BD63C9E8D3EC582861D3" Guid="{5E80B60B-CCE0-4F34-816C-2B12CC1675DE}">
+            <Component Id="cmp8E8EA57B48D2BD63C9E8D3EC582861D3" Guid="{A4BD5995-EBDE-4215-AFD1-0F2D889F7F17}">
                 <File Id="fil4B2D5661D53891DA830E6E4D5AB48714" KeyPath="yes" Source="$(var.BasePath)\System.Threading.AccessControl.dll" />
             </Component>
-            <Component Id="cmp0184D18E528218AEE24F1BA5ADE5F6DE" Guid="{0223BC59-A064-4D27-8D83-1D2D57424D74}">
+            <Component Id="cmp0184D18E528218AEE24F1BA5ADE5F6DE" Guid="{F2558346-8BF0-476D-A453-B359401222A1}">
                 <File Id="filCE5E95E53290025E921DE807F2B82032" KeyPath="yes" Source="$(var.BasePath)\System.Threading.Channels.dll" />
             </Component>
-            <Component Id="cmpC0197A786E74E0C6CC67B1F2BF47A69D" Guid="{4E86242E-C0D3-4F9F-85A6-FEBBA99ADA0D}">
+            <Component Id="cmpC0197A786E74E0C6CC67B1F2BF47A69D" Guid="{4B24A226-5D60-457D-8E51-4C0A7589AADE}">
                 <File Id="fil36048FD39C076898D35F88983802BDEF" KeyPath="yes" Source="$(var.BasePath)\System.Threading.dll" />
             </Component>
-            <Component Id="cmp1847EF90CD4FF710D3FD7F535A04B4FF" Guid="{7F3DD15B-FE81-436B-BBDE-D8E2A4FB4393}">
+            <Component Id="cmp1847EF90CD4FF710D3FD7F535A04B4FF" Guid="{5E7F3955-7ECA-45EE-A34F-B2E0177D855B}">
                 <File Id="filE727C34A4C970EEE21C677C885EC28B8" KeyPath="yes" Source="$(var.BasePath)\System.Threading.Overlapped.dll" />
             </Component>
-            <Component Id="cmp398D02F4C589AF2198F8B946CDE5C85B" Guid="{1A11A67D-0E6C-4840-8861-F7DA275046C5}">
+            <Component Id="cmp398D02F4C589AF2198F8B946CDE5C85B" Guid="{0AFCBDF7-3F04-43F6-80B2-7E93D5CE1CFC}">
                 <File Id="filA3572DEFBE032CFD5E8C097BC94831CE" KeyPath="yes" Source="$(var.BasePath)\System.Threading.Tasks.Dataflow.dll" />
             </Component>
-            <Component Id="cmp174FEA916F072AFEF2DC68827B08C208" Guid="{B17FCF2F-158B-4153-8029-AB57CE9D6D4B}">
+            <Component Id="cmp174FEA916F072AFEF2DC68827B08C208" Guid="{D5BAD3D9-951B-4EFD-9C3F-EB3779546807}">
                 <File Id="fil7F3C8D53605A91C20728F321E6100DC4" KeyPath="yes" Source="$(var.BasePath)\System.Threading.Tasks.dll" />
             </Component>
-            <Component Id="cmpB3AE432D48BF3A5AB43C6DAF12AB454A" Guid="{2DBF7CEF-92B6-4382-B5B6-E19E337AE709}">
+            <Component Id="cmpB3AE432D48BF3A5AB43C6DAF12AB454A" Guid="{5C1F0EE4-562E-47B8-B5ED-6C8E6DCDF3B3}">
                 <File Id="filF7CF33617C2B93F6EEF50C0DEB533B07" KeyPath="yes" Source="$(var.BasePath)\System.Threading.Tasks.Extensions.dll" />
             </Component>
-            <Component Id="cmp9CBB1F7669BA2F45772EFFAF1C3C270D" Guid="{C9618504-8D88-47F9-8043-8B91E43BE4F2}">
+            <Component Id="cmp9CBB1F7669BA2F45772EFFAF1C3C270D" Guid="{BDE17F6C-76B8-4610-8C5B-F741999B95D2}">
                 <File Id="filFDA046DB7FA1CA15A62337B4F259E5FF" KeyPath="yes" Source="$(var.BasePath)\System.Threading.Tasks.Parallel.dll" />
             </Component>
-            <Component Id="cmpFB7FE4390A8C062AD58E42F7C37E1CBA" Guid="{0CA9231C-089D-4BF6-B5C2-11F64D09AFF9}">
+            <Component Id="cmpFB7FE4390A8C062AD58E42F7C37E1CBA" Guid="{BBE5F5E9-FE19-49E1-9C23-EE947D9FD68C}">
                 <File Id="filC3127284977EB9FDD14629243C84A2EE" KeyPath="yes" Source="$(var.BasePath)\System.Threading.Thread.dll" />
             </Component>
-            <Component Id="cmp152A2FECC9863B1FFDB0C5513DC288DD" Guid="{2979F12C-866B-4703-B487-F0C908420566}">
+            <Component Id="cmp152A2FECC9863B1FFDB0C5513DC288DD" Guid="{78950651-07C7-454E-88D3-A743D688D8CA}">
                 <File Id="fil809F8EEF88425034C1A71DE3AD93D6A4" KeyPath="yes" Source="$(var.BasePath)\System.Threading.ThreadPool.dll" />
             </Component>
-            <Component Id="cmp6677FF43E08DCC24B1D67EBAA25DABE0" Guid="{FD397193-021F-4AE9-A1E0-8603C5117CA1}">
+            <Component Id="cmp6677FF43E08DCC24B1D67EBAA25DABE0" Guid="{2989B0F3-BEE1-4A9C-8751-E68354308F52}">
                 <File Id="fil4E367B544B133435C24048994E32C006" KeyPath="yes" Source="$(var.BasePath)\System.Threading.Timer.dll" />
             </Component>
-            <Component Id="cmp90147152125E2CB07AF519EFCC6BAF1E" Guid="{58471CCE-CFA7-467D-8535-FDB175DD6326}">
+            <Component Id="cmp90147152125E2CB07AF519EFCC6BAF1E" Guid="{95A131B2-8FAC-4522-A39B-6CF4B5CC2639}">
                 <File Id="fil0281F8470FF5BF38B71435E50758D337" KeyPath="yes" Source="$(var.BasePath)\System.Transactions.dll" />
             </Component>
-            <Component Id="cmp4F66696435AF52B4004244E4317C3A36" Guid="{B3308564-62DE-4B4F-95E6-5B228F0AF3C4}">
+            <Component Id="cmp4F66696435AF52B4004244E4317C3A36" Guid="{4EABBAB1-A4EF-4CE3-AC84-83C9F10DB0CD}">
                 <File Id="fil60A034579633C7885272AE77DE2AA308" KeyPath="yes" Source="$(var.BasePath)\System.Transactions.Local.dll" />
             </Component>
-            <Component Id="cmp3A99A623A71A716A198559E0C9D59400" Guid="{1FD4891E-73A3-4DAD-8DA5-812A7E193533}">
+            <Component Id="cmp3A99A623A71A716A198559E0C9D59400" Guid="{F04E1204-40C0-464E-9748-A6CA320AB890}">
                 <File Id="filE6242AE03AF2509440ADF395C76688A4" KeyPath="yes" Source="$(var.BasePath)\System.ValueTuple.dll" />
             </Component>
-            <Component Id="cmp2C717DE28D044231C380B83FE5AD06E3" Guid="{7DE909BF-07CB-444C-88D5-92EF52BBBD3F}">
+            <Component Id="cmp2C717DE28D044231C380B83FE5AD06E3" Guid="{72CEB9B6-EA6E-4FCC-B322-1EB6CC25FDC7}">
                 <File Id="fil1576C95DE9D005CD60BED72918B07784" KeyPath="yes" Source="$(var.BasePath)\System.Web.dll" />
             </Component>
-            <Component Id="cmpA5774BD36A00FF5D107F46EB126528A3" Guid="{76FAD276-5B88-4228-89DA-8082E1D6FB02}">
+            <Component Id="cmpA5774BD36A00FF5D107F46EB126528A3" Guid="{F9B72267-7A1A-4DDB-88D8-CFB0B44B2067}">
                 <File Id="fil53E383DA0EC4498EDD0FFAFE486C2D5D" KeyPath="yes" Source="$(var.BasePath)\System.Web.HttpUtility.dll" />
             </Component>
-            <Component Id="cmpE63C0A565DB74BE08F23A9D610407413" Guid="{D2C22B85-54BF-48AB-8201-C5ABDEA7C945}">
+            <Component Id="cmpE63C0A565DB74BE08F23A9D610407413" Guid="{DB95813B-9493-4A6D-B943-8E819609BC89}">
                 <File Id="fil37F9A6CA9204C217CED2048991C175BC" KeyPath="yes" Source="$(var.BasePath)\System.Windows.Controls.Ribbon.dll" />
             </Component>
-            <Component Id="cmpBA305A85CC1FB7CEDA79533FFAD1ABB9" Guid="{11CC4FEC-C4C3-4E10-95A6-D5D286DEBF5F}">
+            <Component Id="cmpBA305A85CC1FB7CEDA79533FFAD1ABB9" Guid="{4F9C09D7-0EE9-43B6-86DB-F9AE1DE5B834}">
                 <File Id="filC250BB1D19E348819737B485BF7F82F4" KeyPath="yes" Source="$(var.BasePath)\System.Windows.dll" />
             </Component>
-            <Component Id="cmp7A71D580195DAAACCB57D588C484657A" Guid="{DFBAE62E-C273-4E6F-A5D7-B477D3DC7B4F}">
+            <Component Id="cmp7A71D580195DAAACCB57D588C484657A" Guid="{D0AF8762-8642-42E5-8EA6-9F30240D946E}">
                 <File Id="fil00EFB213307938756EDF494BE5BB3249" KeyPath="yes" Source="$(var.BasePath)\System.Windows.Extensions.dll" />
             </Component>
-            <Component Id="cmpAEC98FB71938FD4364565558EE776BD4" Guid="{A8368A35-6663-437D-9965-2CA87F5929FF}">
+            <Component Id="cmpAEC98FB71938FD4364565558EE776BD4" Guid="{9EEDCC70-97BF-4FB2-BF48-E72569C2EF8C}">
                 <File Id="fil0D923380B454DDA39D1020FF220F5233" KeyPath="yes" Source="$(var.BasePath)\System.Windows.Forms.Design.dll" />
             </Component>
-            <Component Id="cmp2F196B9FB56CA647B83163A117E72477" Guid="{7E93C57F-DA1B-43B6-B2DF-009BFB17A0FA}">
+            <Component Id="cmp2F196B9FB56CA647B83163A117E72477" Guid="{208F8528-4C2B-44F5-B379-CF46EE63A5CD}">
                 <File Id="filB928B12B62AC4A00932458567964DEFF" KeyPath="yes" Source="$(var.BasePath)\System.Windows.Forms.Design.Editors.dll" />
             </Component>
-            <Component Id="cmpB046E91662B851417BED50DB5519E0D5" Guid="{92BF3290-E26A-45E6-9172-BE673D7B0088}">
+            <Component Id="cmpB046E91662B851417BED50DB5519E0D5" Guid="{D1458924-366C-4254-B257-40D1CA50DFA6}">
                 <File Id="fil1859C46144BA5DE56F15ED3228B777AD" KeyPath="yes" Source="$(var.BasePath)\System.Windows.Forms.dll" />
             </Component>
-            <Component Id="cmp5FB637BA2371431470E636C06FA97276" Guid="{28BE443A-A8F4-49C9-81DB-23278F08B7EB}">
+            <Component Id="cmp5FB637BA2371431470E636C06FA97276" Guid="{551813EC-C4DF-43F2-A10E-42A10D3599BC}">
                 <File Id="filA45E5E86CAE77C31C65F2B5E5746E73A" KeyPath="yes" Source="$(var.BasePath)\System.Windows.Input.Manipulations.dll" />
             </Component>
-            <Component Id="cmp775F527A83138E850933BC79AFD0B26E" Guid="{2B056F31-2CF8-43B4-B127-AFA787BDD668}">
+            <Component Id="cmp775F527A83138E850933BC79AFD0B26E" Guid="{D1495823-5F3A-4364-988C-EE317AE18D23}">
                 <File Id="fil4997B1EB7D70C814DF70CCEC49615D7B" KeyPath="yes" Source="$(var.BasePath)\System.Windows.Presentation.dll" />
             </Component>
-            <Component Id="cmpD696A85C732F8F7C838398DD674B6BCE" Guid="{9511146A-4D8C-4332-A10D-40B5FD43BE6D}">
+            <Component Id="cmpD696A85C732F8F7C838398DD674B6BCE" Guid="{4D00E7D0-CFEE-4382-94DD-E926C006EC3F}">
                 <File Id="fil215275A6671B4E98F240E2FCA9B92203" KeyPath="yes" Source="$(var.BasePath)\System.Xaml.dll" />
             </Component>
-            <Component Id="cmp9730A019F71491B79BF94DB6F95AC72A" Guid="{1381754D-6304-4CEC-B5BC-FB937252A75C}">
+            <Component Id="cmp9730A019F71491B79BF94DB6F95AC72A" Guid="{A15617D3-E1F4-4385-836E-B2F2B5B2EEE7}">
                 <File Id="filF2C8A5504A7072454F353C2515A31F1A" KeyPath="yes" Source="$(var.BasePath)\System.Xml.dll" />
             </Component>
-            <Component Id="cmp6AB96EF9D9C17656DA180708DCCB46FC" Guid="{0B01864B-4FB5-4A71-92D5-13D9A1BFF284}">
+            <Component Id="cmp6AB96EF9D9C17656DA180708DCCB46FC" Guid="{AFA8FFBE-AA11-4ACD-B665-B937675EE8C3}">
                 <File Id="fil16287EC04399B657E1F4EF7789861473" KeyPath="yes" Source="$(var.BasePath)\System.Xml.Linq.dll" />
             </Component>
-            <Component Id="cmpD98009700F9DCCB585336348A2CEBE64" Guid="{499DC296-4F28-4A38-80AE-1F995956CF72}">
+            <Component Id="cmpD98009700F9DCCB585336348A2CEBE64" Guid="{C5C43671-7E42-420D-8D24-2A56D46BEEEA}">
                 <File Id="fil59BFCC2292F134CBDC4AA4926AAAB976" KeyPath="yes" Source="$(var.BasePath)\System.Xml.ReaderWriter.dll" />
             </Component>
-            <Component Id="cmp609A8E19837FA6F01FD6E99285544CEC" Guid="{4B287C18-7AED-4E17-8EF4-E4232F38A360}">
+            <Component Id="cmp609A8E19837FA6F01FD6E99285544CEC" Guid="{A97BEEEE-AD87-4354-B901-268B9E32D261}">
                 <File Id="fil1488C9A1B387F6FB4CDD97A9BB1F3580" KeyPath="yes" Source="$(var.BasePath)\System.Xml.Serialization.dll" />
             </Component>
-            <Component Id="cmp93CA91D57F6251A2235F591E2C255B14" Guid="{C74DA5B4-17DF-445D-ABBC-674B471BB6FD}">
+            <Component Id="cmp93CA91D57F6251A2235F591E2C255B14" Guid="{F441962B-3AAD-4235-9012-83C151E8E865}">
                 <File Id="filB8061B25037EA2CD370763F882C39C0A" KeyPath="yes" Source="$(var.BasePath)\System.Xml.XDocument.dll" />
             </Component>
-            <Component Id="cmp381A6662B7BE775E2AD4E35F205D99D1" Guid="{5E84A9DE-E640-4073-8794-A9226766E259}">
+            <Component Id="cmp381A6662B7BE775E2AD4E35F205D99D1" Guid="{C7EC8966-CE1B-474A-9973-753DE742E859}">
                 <File Id="filFFB639F3D3E0F93F264FDFE3E81A5A62" KeyPath="yes" Source="$(var.BasePath)\System.Xml.XmlDocument.dll" />
             </Component>
-            <Component Id="cmp57336CA638C7E423596479419F1908F1" Guid="{93782D6D-7776-45F1-947B-08EEC7D2E977}">
+            <Component Id="cmp57336CA638C7E423596479419F1908F1" Guid="{861000D2-F3CB-4422-B636-42F2EFD7DA2B}">
                 <File Id="filE7B8C062C7AE0B6604F0B9B573658E56" KeyPath="yes" Source="$(var.BasePath)\System.Xml.XmlSerializer.dll" />
             </Component>
-            <Component Id="cmp8B647EE9E403FBA68E5A3BA65BF324DF" Guid="{1D8E52B9-E27A-4D83-B119-A6F4ACC580A7}">
+            <Component Id="cmp8B647EE9E403FBA68E5A3BA65BF324DF" Guid="{9354F9FF-4BD5-419B-9C36-D84B5B47C783}">
                 <File Id="fil3D1A64312153AD0A9A7D324647F1DEFA" KeyPath="yes" Source="$(var.BasePath)\System.Xml.XPath.dll" />
             </Component>
-            <Component Id="cmp74AD17100EF04DA9E0B6DB1AFA6D8D5C" Guid="{79957A71-02EC-47DD-96B9-8449452A2C7D}">
+            <Component Id="cmp74AD17100EF04DA9E0B6DB1AFA6D8D5C" Guid="{138FF48F-DEC1-47A5-B1D3-9C0EC8B1C2A5}">
                 <File Id="filB19DBCF818AC2F26DEA82AF27E664FD3" KeyPath="yes" Source="$(var.BasePath)\System.Xml.XPath.XDocument.dll" />
             </Component>
-            <Component Id="cmpB67698E8021557AB8B9CC56808EA4FD2" Guid="{64D4E471-C7F5-4318-9FFE-300E8FEB5F12}">
+            <Component Id="cmpB67698E8021557AB8B9CC56808EA4FD2" Guid="{2A16A8BB-2C8F-472D-92FD-8051E5AFA17B}">
                 <File Id="fil4632E4BAE83C5DDA6408E46C4A1F0259" KeyPath="yes" Source="$(var.BasePath)\ucrtbase.dll" />
             </Component>
-            <Component Id="cmpAFCEDBC73E9FDA068971A20EDBE65C65" Guid="{1028E412-03FF-45C1-AEB0-34179D695D5B}">
+            <Component Id="cmpAFCEDBC73E9FDA068971A20EDBE65C65" Guid="{DC5D65B6-2032-4143-ABD3-E6E9A2613FDD}">
                 <File Id="fil5B820C2894FBE928B130550B0A098F71" KeyPath="yes" Source="$(var.BasePath)\UIAutomationClient.dll" />
             </Component>
-            <Component Id="cmp0E5552011A4255B38A05F3407AD17D91" Guid="{022F483C-5DB7-485C-AF6F-3AD1B8845445}">
+            <Component Id="cmp0E5552011A4255B38A05F3407AD17D91" Guid="{EC472481-3E1C-42CD-A7B4-B1278548F1D1}">
                 <File Id="fil33409FC68CC5C84E302AF0A4A0938948" KeyPath="yes" Source="$(var.BasePath)\UIAutomationClientSideProviders.dll" />
             </Component>
-            <Component Id="cmpDDAAD6797413B7B96573B11388F934E8" Guid="{0E252A14-CF9C-4BC4-8D1A-242F69009750}">
+            <Component Id="cmpDDAAD6797413B7B96573B11388F934E8" Guid="{2649DB54-262B-4215-B3C0-CC45BCCAA76A}">
                 <File Id="fil79FACDD1F56F0769E9112BBA957A3D64" KeyPath="yes" Source="$(var.BasePath)\UIAutomationProvider.dll" />
             </Component>
-            <Component Id="cmp6BA5886C12C916C3F0EF34E00FEEF361" Guid="{C5098DA4-38F8-417B-91E1-89ED66D4ED4B}">
+            <Component Id="cmp6BA5886C12C916C3F0EF34E00FEEF361" Guid="{9811FF02-77F9-42A1-A8C9-34D971ECD9D3}">
                 <File Id="fil7E936AF928A4AAE4E900A6F8C5F4DD16" KeyPath="yes" Source="$(var.BasePath)\UIAutomationTypes.dll" />
             </Component>
-            <Component Id="cmp1E4357D9F189E6D5B80BEE033AF7F3DB" Guid="{091F16C5-0E72-40C1-B16E-0C4FAEE7961A}">
+            <Component Id="cmp1E4357D9F189E6D5B80BEE033AF7F3DB" Guid="{24CB8D97-A352-47A5-A409-E80E342F2CA2}">
                 <File Id="filF0F89071B3DAA242D3DD17663C707EE7" KeyPath="yes" Source="$(var.BasePath)\vcruntime140_cor3.dll" />
             </Component>
-            <Component Id="cmp8F05B7249E8F5435FA819D11F229C4D4" Guid="{BA053F7E-D8C3-4567-83E2-8C966145BDAB}">
+            <Component Id="cmp8F05B7249E8F5435FA819D11F229C4D4" Guid="{9AD63B1E-031B-4ED3-A390-861BC3D703B0}">
                 <File Id="fil55D6443EE4CCA9B4C4E03A128C2D6CD7" KeyPath="yes" Source="$(var.BasePath)\WebSocket4Net.dll" />
             </Component>
-            <Component Id="cmpDAA3391D8641EF11234B08CC2E598C87" Guid="{63179CBD-1AA9-47F3-8E82-6D95AADF6D2A}">
+            <Component Id="cmpDAA3391D8641EF11234B08CC2E598C87" Guid="{812C07F0-680F-47AD-B99F-8EE19306F1E8}">
                 <File Id="fil327DED7675664D46042FF952F3C8C1EF" KeyPath="yes" Source="$(var.BasePath)\WindowsBase.dll" />
             </Component>
-            <Component Id="cmp718BE03668C8935CC5955D24D4A44514" Guid="{835F6113-1A6F-4CB1-BF7D-32E72AD4A30A}">
+            <Component Id="cmp718BE03668C8935CC5955D24D4A44514" Guid="{4143F338-4365-4B37-8B2E-5E440C68A6ED}">
                 <File Id="fil8B654B13D001C995FA336DE3FBB043C1" KeyPath="yes" Source="$(var.BasePath)\WindowsFormsIntegration.dll" />
             </Component>
-            <Component Id="cmpF115E4FEBD6E5B33656C807D055137BF" Guid="{EAE8F374-78D8-4A68-ACAB-CD906221074E}">
+            <Component Id="cmpF115E4FEBD6E5B33656C807D055137BF" Guid="{1F7CD97F-A4E5-4029-A867-AC0D90458AC4}">
                 <File Id="fil06589CA8F8E9A8611E0C0FD554762ED9" KeyPath="yes" Source="$(var.BasePath)\wpfgfx_cor3.dll" />
             </Component>
-            <Component Id="cmp3A072CB636CFA4F8D3A70D6D70681AB7" Guid="{A510C5E0-3427-4FB6-A1C2-92830E84DD19}">
+            <Component Id="cmp3A072CB636CFA4F8D3A70D6D70681AB7" Guid="{CE5060C9-FFE3-426A-A171-CF0C113C6653}">
                 <File Id="fil5AFEE917330AEF1D029FF91A31D5D401" KeyPath="yes" Source="$(var.BasePath)\XamlAnimatedGif.dll" />
             </Component>
             <Directory Id="dir41772C233BE465DE0D167364B3BB566C" Name="Resources">
                 <Directory Id="dirEFF080831BB2A2966018A510DC8B4327" Name="Videos">
-                    <Component Id="cmp2FCD10E6B52E68C17CDEA45C21F7C9C2" Guid="{9B0C47F9-E55E-4B3B-957A-18EB02D21F9A}">
+                    <Component Id="cmp2FCD10E6B52E68C17CDEA45C21F7C9C2" Guid="{721D6A91-59A5-4B7C-A93F-B657B8F24D8E}">
                         <File Id="fil65A16EF69F30BC64BFF6C29997A269EC" KeyPath="yes" Source="$(var.BasePath)\Resources\Videos\GollumQMFound.mp4" />
                     </Component>
-                    <Component Id="cmpB33BE73E4FEBB8366D395A708844A066" Guid="{3E8E7E6B-96A0-4DC4-B4A9-305D2305045A}">
+                    <Component Id="cmpB33BE73E4FEBB8366D395A708844A066" Guid="{C1763D20-276E-43F1-B0D2-17F81B8CAB97}">
                         <File Id="filA364A30BECC6BDC51A02B334175ACF51" KeyPath="yes" Source="$(var.BasePath)\Resources\Videos\GollumQMLoop.mp4" />
                     </Component>
                 </Directory>
             </Directory>
             <Directory Id="dir0ADCB00C61F5565B7D34B66DDAC491CF" Name="tap">
-                <Component Id="cmp7D466880D471B3FEA519132C193408AF" Guid="{AC29F38F-7338-46CC-9F7F-99FD876E7067}">
+                <Component Id="cmp7D466880D471B3FEA519132C193408AF" Guid="{AA194271-291B-455F-9477-8E4EA4FAE963}">
                     <File Id="filD07276432ADDE6E54ADAEC44946E815C" KeyPath="yes" Source="$(var.BasePath)\tap\OemVista.inf" />
                 </Component>
-                <Component Id="cmp53E414EC5C64DA84F366C13B30FFF353" Guid="{22F5D200-C698-4A0D-8FE5-FDC77A267665}">
+                <Component Id="cmp53E414EC5C64DA84F366C13B30FFF353" Guid="{39BFE347-711A-4EF6-9998-E7E0494BCD28}">
                     <File Id="fil43121C3FC7ADF7459A608BF37A6485A1" KeyPath="yes" Source="$(var.BasePath)\tap\tap0901.cat" />
                 </Component>
-                <Component Id="cmpD5BBEF303960212C1F1FAC297FDAB160" Guid="{FA541B74-1274-4D7B-A8B3-AFBC8477E0E1}">
+                <Component Id="cmpD5BBEF303960212C1F1FAC297FDAB160" Guid="{B773F37A-ED65-41F8-AAD1-B980DF89036B}">
                     <File Id="fil9F8980C77820444E0EFBE5D594BE141E" KeyPath="yes" Source="$(var.BasePath)\tap\tap0901.sys" />
                 </Component>
-                <Component Id="cmpC81EB15F964621781B1384D94C0D3240" Guid="{A9834C6B-D8AE-473D-9E75-8AD732B43AFA}">
+                <Component Id="cmpC81EB15F964621781B1384D94C0D3240" Guid="{0B05DFC5-EA4C-42FA-9D3C-ED32CB0FA534}">
                     <File Id="filC13C40F5B3247B447005BF78C913C5F0" KeyPath="yes" Source="$(var.BasePath)\tap\tapinstall.exe" />
                 </Component>
             </Directory>
@@ -929,7 +926,6 @@
             <ComponentRef Id="cmp34831A79EBBEDE365CF8E47BB8DA4AEE" />
             <ComponentRef Id="cmpC5B1C289707493DC1A9765CBF1619688" />
             <ComponentRef Id="cmpBDCBA58D640E71BC077901A457EFAA06" />
-            <ComponentRef Id="cmp5555B17514BB9BCBAF7845DEE241FB74" />
             <ComponentRef Id="cmp74F6E981444243E078C5E033BD078819" />
             <ComponentRef Id="cmp20DD0168324B65A2B89EB723FB32E7F3" />
             <ComponentRef Id="cmpDD9A8434CB4A6317B4BA2A55410983F6" />
@@ -967,7 +963,7 @@
             <ComponentRef Id="cmp2257790539B8870843640B5857727F5B" />
             <ComponentRef Id="cmpA1B1DF3E25658385276D302BEA14E565" />
             <ComponentRef Id="cmpC9CE6FD0F9E9DFB943DBB4F09D32F05A" />
-            <ComponentRef Id="cmpD0A27145DF91E42A761E3A37B2CB9DDC" />
+            <ComponentRef Id="cmp4B6065E0A17CF05299642017B84D7228" />
             <ComponentRef Id="cmp8EC381C8860EA0402AE3BBCE36881CD6" />
             <ComponentRef Id="cmp31C9A362EFEB77E9A39782026B90E97C" />
             <ComponentRef Id="cmpC089979D7EDD0520871FCF59E4512F6A" />
@@ -976,7 +972,7 @@
             <ComponentRef Id="cmp16861E24C897764CA922EC062BA74EC9" />
             <ComponentRef Id="cmpBB1767D7C200C536ABB2D361F40F9D92" />
             <ComponentRef Id="cmpE35DDB3C925C83E74C7DAAE6FEA6C156" />
-            <ComponentRef Id="cmp21BD15EB0B7A5577107F9F9F54133781" />
+            <ComponentRef Id="cmpE293C2B53136F1FA497C19D17CF90F6E" />
             <ComponentRef Id="cmpA5ABEAD31F33B1E5825EC6F159ABFB0F" />
             <ComponentRef Id="cmp5D6845991403E371A015DF7EBDF71F13" />
             <ComponentRef Id="cmpF9CF939A2A6923752CD1F985F06B6D81" />

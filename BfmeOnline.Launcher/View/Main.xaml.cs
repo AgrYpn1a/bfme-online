@@ -140,6 +140,8 @@ namespace BfmeOnline.Launcher.View
             {
                 while (Installer.State != InstallerState.FINISHED)
                 {
+                    Thread.Sleep(500);
+
                     Dispatcher.Invoke(() =>
                     {
                         lbInstaller.Content = Installer.State;

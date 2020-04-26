@@ -19,6 +19,7 @@ namespace BfmeOnline.Downloader
         public bool IsFinished => _isFinished;
 
         public Action<int> OnProgressUpdate;
+        public Action<Exception> OnError;
         public Action OnDownloadFinished;
 
         public int FileSizeMB = 0;
@@ -160,16 +161,24 @@ namespace BfmeOnline.Downloader
             long totalByteSize = 0;
             byte[] downBuffer = new byte[bufferSize];
 
-            while ((byteSize = smRespStream.Read(downBuffer, 0, downBuffer.Length)) > 0)
+            try
             {
-                totalByteSize += byteSize;
-                saveFileStream.Write(downBuffer, 0, byteSize);
+                while ((byteSize = smRespStream.Read(downBuffer, 0, downBuffer.Length)) > 0)
+                {
+                    totalByteSize += byteSize;
+                    saveFileStream.Write(downBuffer, 0, byteSize);
 
-                int progress = (int)((float)totalByteSize / fileSize * 100);
-                _progress[index] = progress;
+                    int progress = (int)((float)totalByteSize / fileSize * 100);
+                    _progress[index] = progress;
+                }
+
+                saveFileStream.Close();
+            }
+            catch (Exception e)
+            {
+                OnError?.Invoke(e);
             }
 
-            saveFileStream.Close();
         }
     }
 
