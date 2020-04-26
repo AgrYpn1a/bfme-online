@@ -71,11 +71,11 @@ namespace BfmeOnline.GameInstaller
             dl.DownloadFile(downloadUrl, downloadPath);
         }
 
-        private static void InstallRegistryKeys(string installPath)
+        internal static void InstallRegistryKeys(string installPath)
         {
             RegistryKey electronicArtsKey = Registry.LocalMachine
                                         .OpenSubKey("SOFTWARE", true)
-                                        .OpenSubKey("Wow6432Node", true)
+                                        .OpenSubKey("WOW6432Node", true)
                                         .CreateSubKey("Electronic Arts")
                                         .CreateSubKey("EA Games")
                                         .CreateSubKey("The Battle for Middle-earth");
@@ -91,7 +91,7 @@ namespace BfmeOnline.GameInstaller
             // Add ergc (serial number)
             RegistryKey ergc = Registry.LocalMachine
                                         .OpenSubKey("Software", true)
-                                        .OpenSubKey("Wow6432Node", true)
+                                        .OpenSubKey("WOW6432Node", true)
                                         .OpenSubKey("Electronic Arts", true)
                                         .OpenSubKey("EA Games", true)
                                         .OpenSubKey("The Battle for Middle-earth", true)
@@ -100,7 +100,7 @@ namespace BfmeOnline.GameInstaller
 
             RegistryKey bfmeKey = Registry.LocalMachine
                             .OpenSubKey("Software", true)
-                            .OpenSubKey("Wow6432Node", true)
+                            .OpenSubKey("WOW6432Node", true)
                             .CreateSubKey("EA Games")
                             .CreateSubKey("The Battle for Middle-earth");
 
@@ -139,6 +139,8 @@ namespace BfmeOnline.GameInstaller
                 zip.Password = "X4Ax6w2RN9zgrTVZUt7xEZpYG75kaqfz";
                 zip.ExtractAll(installPath, ExtractExistingFileAction.OverwriteSilently);
             }
+
+            File.Delete(filePath);
 
             Finished = true;
         }

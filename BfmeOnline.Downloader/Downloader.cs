@@ -21,6 +21,8 @@ namespace BfmeOnline.Downloader
         public Action<int> OnProgressUpdate;
         public Action OnDownloadFinished;
 
+        public int FileSizeMB = 0;
+
         private int CalculateProgress()
         {
             int progress = 0;
@@ -93,6 +95,11 @@ namespace BfmeOnline.Downloader
                 {
                     byte[] file = File.ReadAllBytes(fileName);
                     destinationStream.Write(file, 0, file.Length);
+                }
+
+                foreach (var fileName in fileNames)
+                {
+                    File.Delete(fileName);
                 }
             }
 

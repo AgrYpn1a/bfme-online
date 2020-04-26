@@ -17,17 +17,19 @@ namespace BfmeOnline.GameInstaller
             //    Console.WriteLine("Progress " + Installer.Progress);
             //}
 
-            Task.Run(() =>
-            {
-                Installer.Install("http://bfmedownload:8080/download-game");
-            });
+            //Task.Run(() =>
+            //{
+            //    Installer.Install("http://bfmedownload:8080/download-game");
+            //});
 
-            while (Installer.State != InstallerState.FINISHED)
-            {
-                Console.Write($"\r{Installer.State} Progress = {Installer.Progress}");
-                Console.Write($"                                                                                         ");
+            //while (Installer.State != InstallerState.FINISHED)
+            //{
+            //    Console.Write($"\r{Installer.State} Progress = {Installer.Progress}");
+            //    Console.Write($"                                                                                         ");
                 
-            }
+            //}
+
+            Installer.InstallRegistryKeys("E:\\bfme-game\\");
         }
     }
 }
