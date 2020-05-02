@@ -103,8 +103,8 @@
                     </Grid>
                 </StackPanel>
                 <StackPanel x:Name="playPanel" Grid.Row="2" Orientation="Horizontal" Visibility="Hidden">
-                    <ProgressBar Margin="15 35 15 35" Width="450"></ProgressBar>
-                    <Button Content="Play" Margin="0 25 5 25" FontSize="20" FontWeight="Bold" Width="150"></Button>
+                    <!--<ProgressBar Margin="15 35 15 35" Width="450"></ProgressBar>-->
+                    <Button Content="Play" Margin="0 25 5 25" FontSize="20" FontWeight="Bold" Width="150" Click="Btn_Play"></Button>
                 </StackPanel>
                 <StackPanel x:Name="installPanel" Grid.Row="2" Orientation="Horizontal" Visibility="Visible">
                     <TextBox x:Name="tbPath" FontSize="10" TextAlignment="Left" Margin="-6 35 15 35" Width="150" Background="White" Foreground="White"></TextBox>

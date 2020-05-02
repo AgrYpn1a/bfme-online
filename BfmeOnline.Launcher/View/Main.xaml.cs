@@ -18,6 +18,8 @@ using System.Windows.Shapes;
 using BfmeOnline.Downloader;
 using System.Threading;
 using BfmeOnline.GameInstaller;
+using BfmeOnline.Launcher.Source.Http;
+using System.Diagnostics;
 
 namespace BfmeOnline.Launcher.View
 {
@@ -69,25 +71,51 @@ namespace BfmeOnline.Launcher.View
             tbPath.Text = System.Reflection.Assembly.GetExecutingAssembly().Location;
             Path = tbPath.Text;
 
-            //#if DEBUG_INSTALLED
-            //            installPanel.Visibility = Visibility.Hidden;
-            //            downloadPanel.Visibility = Visibility.Hidden;
-            //            playPanel.Visibility = Visibility.Visible;       
-            //#elif DEBUG_NOTINSTALLED
-            //            installPanel.Visibility = Visibility.Visible;
-            //            downloadPanel.Visibility = Visibility.Hidden;
-            //            playPanel.Visibility = Visibility.Hidden;
-            //#elif DEBUG_INSTALLING
-            //            installPanel.Visibility = Visibility.Hidden;
-            //            downloadPanel.Visibility = Visibility.Visible;
-            //            playPanel.Visibility = Visibility.Hidden;
-            //#endif
+            if (IsGameInstalled())
+            {
+                installPanel.Visibility = Visibility.Hidden;
+                downloadPanel.Visibility = Visibility.Hidden;
+                playPanel.Visibility = Visibility.Visible;
+            }
+
+#if DEBUG_INSTALLED
+                        installPanel.Visibility = Visibility.Hidden;
+                        downloadPanel.Visibility = Visibility.Hidden;
+                        playPanel.Visibility = Visibility.Visible;       
+#elif DEBUG_NOTINSTALLED
+                        installPanel.Visibility = Visibility.Visible;
+                        downloadPanel.Visibility = Visibility.Hidden;
+                        playPanel.Visibility = Visibility.Hidden;
+#elif DEBUG_INSTALLING
+                        installPanel.Visibility = Visibility.Hidden;
+                        downloadPanel.Visibility = Visibility.Visible;
+                        playPanel.Visibility = Visibility.Hidden;
+#endif
         }
 
         ~Main()
         {
             // Unbind
             _bfmeApp.OnOnlinePlayersChanged -= BfmeApp_OnOnlinePlayersChanged;
+        }
+
+        private bool IsGameInstalled()
+        {
+            RegistryKey electronicArtsKey = Registry.LocalMachine
+                            .OpenSubKey("SOFTWARE", true)
+                            .OpenSubKey("WOW6432Node", true)
+                            ?.OpenSubKey("Electronic Arts")
+                            ?.OpenSubKey("EA Games")
+                            ?.OpenSubKey("The Battle for Middle-earth");
+
+            string gamePath = electronicArtsKey.GetValue("InstallPath", RegistryValueKind.String) as string;
+            if (gamePath != null)
+            {
+                LauncherData.bfmeGameInstallPath = gamePath;
+                return true;
+            }
+
+            return false;
         }
 
         private void BfmeApp_OnOnlinePlayersChanged(int value) => OnlinePlayers = value;
@@ -135,7 +163,7 @@ namespace BfmeOnline.Launcher.View
             Task.Run(() =>
             {
                 //Installer.Install("https://bfme-games.fra1.digitaloceanspaces.com/The%20Battle%20for%20Middle-earth.zip", Path);
-                Installer.Install("http://bfmedownload/download-game", Path);
+                Installer.Install(NetworkAddresses.BFME_DOWNLOAD, Path);
             });
             Task.Run(() =>
             {
@@ -166,6 +194,12 @@ namespace BfmeOnline.Launcher.View
             dlg.ShowDialog();
             tbPath.Text = dlg.SelectedPath;
             Path = tbPath.Text;
+        }
+
+        private void Btn_Play(object sender, RoutedEventArgs e)
+        {
+            string bfmeGameFile = $"{LauncherData.bfmeGameInstallPath}\\lotrbfme.exe";
+            Process.Start(bfmeGameFile);
         }
     }
 }

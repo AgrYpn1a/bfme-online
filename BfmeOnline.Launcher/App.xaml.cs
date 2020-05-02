@@ -9,6 +9,7 @@ using BfmeOnline.Launcher.Source.Auth;
 using WebSocket4Net;
 using BfmeOnline.Launcher.Source.WS;
 using BfmeOnline.Launcher.Source.Updates;
+using BfmeOnline.OptionsEditor.View;
 
 namespace BfmeOnline.Launcher
 {
@@ -166,7 +167,7 @@ namespace BfmeOnline.Launcher
             new Main().Show();
             return true;
 #elif DEBUG_OPTIONS_WIN
-            new Main().Show();
+            new Options().Show();
             return true;
 #endif
             return false;

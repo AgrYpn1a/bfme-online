@@ -41,6 +41,8 @@ namespace BfmeOnline.Downloader
             _sourceUrl = sourceUrl;
             _destinationPath = destinationPath;
 
+            File.Delete(destinationPath);
+
             long fileChunkSize = GetFileSize() / (long)THREADS;
 
             Thread[] dlThreads = new Thread[THREADS];

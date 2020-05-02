@@ -65,7 +65,7 @@
   <!-- Before build -->
   <Target Name="BeforeBuild">
     <!-- Clean old files -->
-    <Exec Command="rd /s /q ..\bin\netcoreapp3.0\win-$(Platform)">
+    <Exec Command="rd /s /q $(SolutionDir)\BfmeOnline.Launcher\bin\$(Configuration)\netcoreapp3.0\win-$(Platform)">
     </Exec>
     <!-- Publish dotnet core app -->
     <Exec Command="dotnet publish $(SolutionDir)\BfmeOnline.Launcher\ -c $(Configuration) -r win-$(Platform) /p:TrimUnusedDependencies=true">
@@ -98,20 +98,20 @@
     <Exec Command="RD /S /Q ..\bin\netcoreapp3.0\win-$(Platform)\publish\zh-Hant">
     </Exec>-->
     <!-- Copy External Apps -->
-    <Exec Command="xcopy /E /I $(SolutionDir)External $(SolutionDir)bin\netcoreapp3.0\win-$(Platform)\publish\">
+    <Exec Command="xcopy /E /I $(SolutionDir)External $(SolutionDir)BfmeOnline.Launcher\bin\$(Configuration)\netcoreapp3.0\win-$(Platform)\publish\">
     </Exec>
     <!-- Get assembly version  -->
-    <GetAssemblyIdentity AssemblyFiles="$(SolutionDir)BfmeOnline.Launcher\bin\netcoreapp3.0\win-$(Platform)\publish\BfmeOnline.Launcher.dll">
+    <GetAssemblyIdentity AssemblyFiles="$(SolutionDir)BfmeOnline.Launcher\bin\$(Configuration)\netcoreapp3.0\win-$(Platform)\publish\BfmeOnline.Launcher.dll">
       <Output TaskParameter="Assemblies" ItemName="AssemblyVersion" />
     </GetAssemblyIdentity>
     <PropertyGroup>
       <DefineConstants>
         BuildVersion=%(AssemblyVersion.Version);
-        BasePath=$(SolutionDir)BfmeOnline.Launcher\bin\netcoreapp3.0\win-$(Platform)\publish
+        BasePath=$(SolutionDir)BfmeOnline.Launcher\bin\$(Configuration)\netcoreapp3.0\win-$(Platform)\publish
       </DefineConstants>
     </PropertyGroup>
     <!-- Harvest file components from the publish folder -->
-    <HeatDirectory OutputFile="ComponentsGenerated.wxs" DirectoryRefId="INSTALLFOLDER" ComponentGroupName="PublishedComponents" SuppressCom="true" Directory="$(SolutionDir)BfmeOnline.Launcher\bin\netcoreapp3.0\win-$(Platform)\publish" SuppressFragments="true" SuppressRegistry="true" SuppressRootDirectory="true" AutoGenerateGuids="false" GenerateGuidsNow="true" ToolPath="$(WixToolPath)" PreprocessorVariable="var.BasePath" />
+    <HeatDirectory OutputFile="ComponentsGenerated.wxs" DirectoryRefId="INSTALLFOLDER" ComponentGroupName="PublishedComponents" SuppressCom="true" Directory="$(SolutionDir)BfmeOnline.Launcher\bin\$(Configuration)\netcoreapp3.0\win-$(Platform)\publish" SuppressFragments="true" SuppressRegistry="true" SuppressRootDirectory="true" AutoGenerateGuids="false" GenerateGuidsNow="true" ToolPath="$(WixToolPath)" PreprocessorVariable="var.BasePath" />
   </Target>
   <Target Name="AfterBuild">
   </Target>
