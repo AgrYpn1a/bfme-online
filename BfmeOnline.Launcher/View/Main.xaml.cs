@@ -58,14 +58,13 @@ namespace BfmeOnline.Launcher.View
             private set { }
         }
 
+        #region Constructor
+
         public Main()
         {
             InitializeComponent();
 
             _bfmeApp = (App)Application.Current;
-
-            // Get hashsums
-            GameUpdateManager.GetHashSums("E:\\The Battle for Middle-earth (tm)");
 
             // Bind data
             DataContext = this;
@@ -77,7 +76,7 @@ namespace BfmeOnline.Launcher.View
             tbPath.Text = System.Reflection.Assembly.GetExecutingAssembly().Location;
             Path = tbPath.Text;
 
-            if (IsGameInstalled())
+            if (RegistryManager.IsGameInstalled())
             {
                 installPanel.Visibility = Visibility.Hidden;
                 downloadPanel.Visibility = Visibility.Hidden;
@@ -85,17 +84,17 @@ namespace BfmeOnline.Launcher.View
             }
 
 #if DEBUG_INSTALLED
-                        installPanel.Visibility = Visibility.Hidden;
-                        downloadPanel.Visibility = Visibility.Hidden;
-                        playPanel.Visibility = Visibility.Visible;       
+            installPanel.Visibility = Visibility.Hidden;
+            downloadPanel.Visibility = Visibility.Hidden;
+            playPanel.Visibility = Visibility.Visible;       
 #elif DEBUG_NOTINSTALLED
-                        installPanel.Visibility = Visibility.Visible;
-                        downloadPanel.Visibility = Visibility.Hidden;
-                        playPanel.Visibility = Visibility.Hidden;
+            installPanel.Visibility = Visibility.Visible;
+            downloadPanel.Visibility = Visibility.Hidden;
+            playPanel.Visibility = Visibility.Hidden;
 #elif DEBUG_INSTALLING
-                        installPanel.Visibility = Visibility.Hidden;
-                        downloadPanel.Visibility = Visibility.Visible;
-                        playPanel.Visibility = Visibility.Hidden;
+            installPanel.Visibility = Visibility.Hidden;
+            downloadPanel.Visibility = Visibility.Visible;
+            playPanel.Visibility = Visibility.Hidden;
 #endif
         }
 
@@ -105,24 +104,19 @@ namespace BfmeOnline.Launcher.View
             _bfmeApp.OnOnlinePlayersChanged -= BfmeApp_OnOnlinePlayersChanged;
         }
 
-        private bool IsGameInstalled()
+        #endregion
+
+        #region Lifecycle Methods
+
+        protected override void OnContentRendered(EventArgs e)
         {
-            RegistryKey electronicArtsKey = Registry.LocalMachine
-                            .OpenSubKey("SOFTWARE", true)
-                            .OpenSubKey("WOW6432Node", true)
-                            ?.OpenSubKey("Electronic Arts")
-                            ?.OpenSubKey("EA Games")
-                            ?.OpenSubKey("The Battle for Middle-earth");
+            base.OnContentRendered(e);
 
-            string gamePath = electronicArtsKey.GetValue("InstallPath", RegistryValueKind.String) as string;
-            if (gamePath != null)
-            {
-                LauncherData.bfmeGameInstallPath = gamePath;
-                return true;
-            }
-
-            return false;
+            // Get hashsums
+            GameUpdateManager.GetHashSums(RegistryManager.GetInstallPath());
         }
+
+        #endregion
 
         private void BfmeApp_OnOnlinePlayersChanged(int value) => OnlinePlayers = value;
 

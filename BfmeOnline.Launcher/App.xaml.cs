@@ -43,60 +43,62 @@ namespace BfmeOnline.Launcher
             //TaskScheduler.UnobservedTaskException += TaskScheduler_UnobservedTaskException;
 
 
-            UpdateManager.OnDownloadProgressChange += progress =>
-            {
-                _winUpdater.SetDownloadProgress(progress);
-            };
+            //UpdateManager.OnDownloadProgressChange += progress =>
+            //{
+            //    _winUpdater.SetDownloadProgress(progress);
+            //};
 
-            UpdateManager.OnUpdateFound += () =>
-            {
-                _winUpdater.Show();
-                _winUpdater.SetMessage("Downloading updates...");
-            };
+            //UpdateManager.OnUpdateFound += () =>
+            //{
+            //    _winUpdater.Show();
+            //    _winUpdater.SetMessage("Downloading updates...");
+            //};
 
-            UpdateManager.OnUpdateNotFound += () =>
-            {
-                // Actually start the app
-                new Main().Show();
-            };
+            //UpdateManager.OnUpdateNotFound += () =>
+            //{
+            //    // Actually start the app
+            //    new Main().Show();
+            //};
 
-            UpdateManager.OnUpdateFinishedDownloading += () =>
-            {
-                Logger.LogMessage("Updates finished downloading.");
-            };
+            //UpdateManager.OnUpdateFinishedDownloading += () =>
+            //{
+            //    Logger.LogMessage("Updates finished downloading.");
+            //};
 
-            UpdateManager.OnUpdatesBeginInstalling += () =>
-            {
-                _winUpdater.SetMessage("Installing updates, please wait...");
-            };
+            //UpdateManager.OnUpdatesBeginInstalling += () =>
+            //{
+            //    _winUpdater.SetMessage("Installing updates, please wait...");
+            //};
 
-            UpdateManager.OnUpdatesFinshedInstalling += () =>
-            {
-                Logger.LogMessage("Updates finished installing.");
+            //UpdateManager.OnUpdatesFinshedInstalling += () =>
+            //{
+            //    Logger.LogMessage("Updates finished installing.");
 
-                //_winUpdater.Close();
-                //lw.Close();
+            //    //_winUpdater.Close();
+            //    //lw.Close();
 
-                //Application.Current.Shutdown();
-                //System.Diagnostics.Process.Start(Environment.GetCommandLineArgs()[0]);
+            //    //Application.Current.Shutdown();
+            //    //System.Diagnostics.Process.Start(Environment.GetCommandLineArgs()[0]);
 
-                //System.Windows.Form.Application.Restart();
-                //System.Windows.Application.Current.Shutdown();
+            //    //System.Windows.Form.Application.Restart();
+            //    //System.Windows.Application.Current.Shutdown();
 
-                //Application.Current.Shutdown();
+            //    //Application.Current.Shutdown();
 
-                System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
-                Application.Current.Shutdown();
+            //    System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+            //    Application.Current.Shutdown();
 
-                //System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
-            };
+            //    //System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+            //};
 
             lw = new LogWindow();
             lw.Show();
 
-            await UpdateManager.BeginUpdating();
+            new Main().Show();
 
-            Logger.LogMessage("Checking for updates finished.");
+            //await UpdateManager.BeginUpdating();
+
+            //Logger.LogMessage("Checking for updates finished.");
 
             // Check for updates
             //if (await UpdateManager.CheckForUpdates())

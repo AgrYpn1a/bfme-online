@@ -101,4 +101,8 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Source\Commands\Window\Main\" />
+  </ItemGroup>
+
 </Project>
