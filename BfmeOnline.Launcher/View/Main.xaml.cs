@@ -20,6 +20,9 @@ using System.Threading;
 using BfmeOnline.GameInstaller;
 using BfmeOnline.Launcher.Source.Http;
 using System.Diagnostics;
+using BfmeOnline.Launcher.Source.Updates;
+using System.Security.Cryptography;
+using System.IO;
 
 namespace BfmeOnline.Launcher.View
 {
@@ -60,6 +63,9 @@ namespace BfmeOnline.Launcher.View
             InitializeComponent();
 
             _bfmeApp = (App)Application.Current;
+
+            // Get hashsums
+            GameUpdateManager.GetHashSums("E:\\The Battle for Middle-earth (tm)");
 
             // Bind data
             DataContext = this;
@@ -198,8 +204,16 @@ namespace BfmeOnline.Launcher.View
 
         private void Btn_Play(object sender, RoutedEventArgs e)
         {
-            string bfmeGameFile = $"{LauncherData.bfmeGameInstallPath}\\lotrbfme.exe";
-            Process.Start(bfmeGameFile);
+            try
+            {
+                string bfmeGameFile = $"{LauncherData.bfmeGameInstallPath}\\lotrbfme.exe";
+                Process.Start(bfmeGameFile);
+
+            }
+            catch(Exception err) {
+                MessageBox.Show("Game files not found!");
+                //TODO: Registry cleanup
+            }
         }
     }
 }

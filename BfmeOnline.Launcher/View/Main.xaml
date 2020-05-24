@@ -102,11 +102,26 @@
                         <Button Grid.Column="1" Content="Cancel" Margin="0 25 5 25" FontSize="20" FontWeight="Bold" Width="150"></Button>
                     </Grid>
                 </StackPanel>
-                <StackPanel x:Name="playPanel" Grid.Row="2" Orientation="Horizontal" Visibility="Hidden">
-                    <!--<ProgressBar Margin="15 35 15 35" Width="450"></ProgressBar>-->
-                    <Button Content="Play" Margin="0 25 5 25" FontSize="20" FontWeight="Bold" Width="150" Click="Btn_Play"></Button>
+
+                <StackPanel x:Name="playPanel" Grid.Row="2" Orientation="Horizontal" Visibility="Visible">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="6*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0" VerticalContentAlignment="Center" Content="State: " FontSize="18" Foreground="#FFB9B9B9"></Label>
+                            <ProgressBar Grid.Row="1" Margin="7 -5 15 25" Width="450" Foreground="#FFE4A703" Background="#FF2C2C2C" BorderBrush="Black" Visibility="Hidden"></ProgressBar>
+                        </Grid>
+                        <Button Grid.Column="1" Content="Play" Margin="0 25 5 25" FontSize="20" FontWeight="Bold" Width="150" Click="Btn_Play"></Button>
+                    </Grid>
                 </StackPanel>
-                <StackPanel x:Name="installPanel" Grid.Row="2" Orientation="Horizontal" Visibility="Visible">
+
+                <StackPanel x:Name="installPanel" Grid.Row="2" Orientation="Horizontal" Visibility="Hidden">
                     <TextBox x:Name="tbPath" FontSize="10" TextAlignment="Left" Margin="-6 35 15 35" Width="150" Background="White" Foreground="White"></TextBox>
                     <Button x:Name="BtnBrowse" Content="Browse" Margin="0 35 50 35" Width="80" Click="BtnBrowse_Click"></Button>
                     <Button x:Name="BtnInstall" Content="Install" FontSize="20" FontWeight="Bold" Margin="90 25 5 25" Width="150" Click="BtnInstall_Click"></Button>
