@@ -23,65 +23,42 @@ using System.Diagnostics;
 using BfmeOnline.Launcher.Source.Updates;
 using System.Security.Cryptography;
 using System.IO;
+using BfmeOnline.Launcher.Source.ViewModel;
 
 namespace BfmeOnline.Launcher.View
 {
     /// <summary>
     /// Interaction logic for Main.xaml
     /// </summary>
-    public partial class Main : Window, INotifyPropertyChanged
+    public partial class Main : Window
     {
         private App _bfmeApp;
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        public string Path;
-
-        protected void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        private int _onlinePlayers;
-        public int OnlinePlayers
-        {
-            get { return _onlinePlayers; }
-            private set
-            {
-                _onlinePlayers = value;
-                OnPropertyChanged(nameof(OnlinePlayers));
-            }
-        }
-
-        public string Version
-        {
-            get { return Util.GetLocalVersion().ToString(); }
-            private set { }
-        }
+        private MainViewModel _viewModel;
 
         #region Constructor
-
         public Main()
         {
             InitializeComponent();
 
             _bfmeApp = (App)Application.Current;
 
-            // Bind data
-            DataContext = this;
+            // Setup view model and data context
+            _viewModel = new MainViewModel();
+            DataContext = _viewModel;
 
-            // Bind events
-            _bfmeApp.OnOnlinePlayersChanged += BfmeApp_OnOnlinePlayersChanged;
+
+            // Bind data
+
             //_bfmeApp.OnQueued += BfmeApp_OnQueued;
             //_bfmeApp.OnMatchFound += BfmeApp_OnMatchFound;
-            tbPath.Text = System.Reflection.Assembly.GetExecutingAssembly().Location;
-            Path = tbPath.Text;
 
-            if (RegistryManager.IsGameInstalled())
-            {
-                installPanel.Visibility = Visibility.Hidden;
-                downloadPanel.Visibility = Visibility.Hidden;
-                playPanel.Visibility = Visibility.Visible;
-            }
+            //if (RegistryManager.IsGameInstalled())
+            //{
+            //    installPanel.Visibility = Visibility.Hidden;
+            //    downloadPanel.Visibility = Visibility.Hidden;
+            //    playPanel.Visibility = Visibility.Visible;
+            //}
 
 #if DEBUG_INSTALLED
             installPanel.Visibility = Visibility.Hidden;
@@ -100,8 +77,6 @@ namespace BfmeOnline.Launcher.View
 
         ~Main()
         {
-            // Unbind
-            _bfmeApp.OnOnlinePlayersChanged -= BfmeApp_OnOnlinePlayersChanged;
         }
 
         #endregion
@@ -113,12 +88,10 @@ namespace BfmeOnline.Launcher.View
             base.OnContentRendered(e);
 
             // Get hashsums
-            GameUpdateManager.GetHashSums(RegistryManager.GetInstallPath());
+            //GameUpdateManager.GetHashSums(RegistryManager.GetInstallPath());
         }
 
         #endregion
-
-        private void BfmeApp_OnOnlinePlayersChanged(int value) => OnlinePlayers = value;
 
         private void Btn_FindMatch_Click(object sender, RoutedEventArgs e)
         {
@@ -163,7 +136,7 @@ namespace BfmeOnline.Launcher.View
             Task.Run(() =>
             {
                 //Installer.Install("https://bfme-games.fra1.digitaloceanspaces.com/The%20Battle%20for%20Middle-earth.zip", Path);
-                Installer.Install(NetworkAddresses.BFME_DOWNLOAD, Path);
+                Installer.Install(NetworkAddresses.BFME_DOWNLOAD, _viewModel.InstallPath);
             });
             Task.Run(() =>
             {
@@ -193,7 +166,6 @@ namespace BfmeOnline.Launcher.View
             System.Windows.Forms.FolderBrowserDialog dlg = new System.Windows.Forms.FolderBrowserDialog();
             dlg.ShowDialog();
             tbPath.Text = dlg.SelectedPath;
-            Path = tbPath.Text;
         }
 
         private void Btn_Play(object sender, RoutedEventArgs e)
@@ -204,7 +176,8 @@ namespace BfmeOnline.Launcher.View
                 Process.Start(bfmeGameFile);
 
             }
-            catch(Exception err) {
+            catch (Exception err)
+            {
                 MessageBox.Show("Game files not found!");
                 //TODO: Registry cleanup
             }

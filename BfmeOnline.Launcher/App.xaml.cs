@@ -1,15 +1,14 @@
 ﻿using BfmeOnline.Launcher.Source;
+using BfmeOnline.Launcher.Source.Auth;
+using BfmeOnline.Launcher.Source.logger;
+using BfmeOnline.Launcher.Source.WS;
 using BfmeOnline.Launcher.View;
 using System;
 using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
-using BfmeOnline.Launcher.Source.Auth;
 using WebSocket4Net;
-using BfmeOnline.Launcher.Source.WS;
-using BfmeOnline.Launcher.Source.Updates;
-using BfmeOnline.OptionsEditor.View;
 
 namespace BfmeOnline.Launcher
 {

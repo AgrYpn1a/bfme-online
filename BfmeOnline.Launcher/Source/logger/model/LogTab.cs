@@ -1,11 +1,7 @@
-﻿using BfmeOnline.Launcher.Interfaces;
-using BfmeOnline.Launcher.Source;
+﻿using BfmeOnline.Launcher.Source.logger;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Text;
 
-namespace BfmeOnline.Launcher.Model
+namespace BfmeOnline.Launcher.logger.model
 {
     public class LogTab : Tab
     {

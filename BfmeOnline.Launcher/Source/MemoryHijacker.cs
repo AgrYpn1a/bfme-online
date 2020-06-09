@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BfmeOnline.Launcher.Source.logger;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.InteropServices;

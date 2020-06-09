@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BfmeOnline.Launcher.View"
         xmlns:lwvm="clr-namespace:BfmeOnline.Launcher.ViewModel" 
-        xmlns:tab="clr-namespace:BfmeOnline.Launcher.Interfaces"
-        xmlns:model="clr-namespace:BfmeOnline.Launcher.Model"
+        xmlns:tab="clr-namespace:BfmeOnline.Launcher.logger"
+        xmlns:model="clr-namespace:BfmeOnline.Launcher.logger.model"
         mc:Ignorable="d"
         Title="LogWindow" Height="450" Width="800"
         d:DataContext="{d:DesignInstance lwvm:LogWindowViewModel}">

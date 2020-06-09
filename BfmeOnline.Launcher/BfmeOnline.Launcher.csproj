@@ -18,7 +18,7 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutputPath>bin</OutputPath>
-    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;DEBUG_NOTINSTALLED</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
@@ -32,6 +32,7 @@
   
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutputPath>bin</OutputPath>
+    <DefineConstants>TRACE;DEBUG_NOTINSTALLED</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>
@@ -48,6 +49,19 @@
     <None Remove="Resources\Images\bfme2Active.png" />
     <None Remove="Resources\Images\bfme3Active.png" />
     <None Remove="Resources\Images\buttonBackgrounds.png" />
+    <None Remove="Resources\Images\Games\Bfme1.jpg" />
+    <None Remove="Resources\Images\Games\Bfme1_Hover.jpg" />
+    <None Remove="Resources\Images\Games\Bfme2.jpg" />
+    <None Remove="Resources\Images\Games\Bfme2_Hover.jpg" />
+    <None Remove="Resources\Images\Games\BfmeCustomize.jpg" />
+    <None Remove="Resources\Images\Games\BfmeCustomize_Hover.jpg" />
+    <None Remove="Resources\Images\Games\BfmeRotwk.jpg" />
+    <None Remove="Resources\Images\Games\BfmeRotwkHover.jpg" />
+    <None Remove="Resources\Images\News\NewsBackground.jpg" />
+    <None Remove="Resources\Images\News\NewsCardTest.jpg" />
+    <None Remove="Resources\Images\News\NewsFrame.png" />
+    <None Remove="Resources\Images\News\NewsTitleBar.png" />
+    <None Remove="Resources\Images\News\NewsTitleBar_Hover.png" />
     <None Remove="Resources\Images\vertLine.png" />
     <None Remove="Resources\Videos\GollumQMFound.mp4" />
     <None Remove="Resources\Videos\GollumQMLoop.mp4" />
@@ -71,6 +85,19 @@
     <Resource Include="Resources\Images\bfme2Active.png" />
     <Resource Include="Resources\Images\bfme3Active.png" />
     <Resource Include="Resources\Images\buttonBackgrounds.png" />
+    <Resource Include="Resources\Images\Games\Bfme1.jpg" />
+    <Resource Include="Resources\Images\Games\Bfme1_Hover.jpg" />
+    <Resource Include="Resources\Images\Games\Bfme2.jpg" />
+    <Resource Include="Resources\Images\Games\Bfme2_Hover.jpg" />
+    <Resource Include="Resources\Images\Games\BfmeCustomize.jpg" />
+    <Resource Include="Resources\Images\Games\BfmeCustomize_Hover.jpg" />
+    <Resource Include="Resources\Images\Games\BfmeRotwk.jpg" />
+    <Resource Include="Resources\Images\Games\BfmeRotwkHover.jpg" />
+    <Resource Include="Resources\Images\News\NewsBackground.jpg" />
+    <Resource Include="Resources\Images\News\NewsCardTest.jpg" />
+    <Resource Include="Resources\Images\News\NewsFrame.png" />
+    <Resource Include="Resources\Images\News\NewsTitleBar.png" />
+    <Resource Include="Resources\Images\News\NewsTitleBar_Hover.png" />
     <Resource Include="Resources\Images\vertLine.png" />
     <Content Include="Resources\Videos\GollumQMFound.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

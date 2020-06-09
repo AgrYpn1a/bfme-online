@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32;
+﻿using BfmeOnline.Launcher.Source.logger;
+using Microsoft.Win32;
 using System;
 
 namespace BfmeOnline.Launcher.Source

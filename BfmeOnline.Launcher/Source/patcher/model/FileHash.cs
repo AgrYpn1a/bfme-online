@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BfmeOnline.Launcher.Source.Model
+namespace BfmeOnline.Launcher.Source.patcher.model
 {
     public class FileHash
     {

@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BfmeOnline.Launcher.Model;
 using BfmeOnline.Launcher.Source;
+using BfmeOnline.Launcher.Source.logger;
 using BfmeOnline.Launcher.ViewModel;
 
 namespace BfmeOnline.Launcher

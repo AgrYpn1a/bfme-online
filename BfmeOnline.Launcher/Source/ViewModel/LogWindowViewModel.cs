@@ -1,14 +1,11 @@
-﻿using BfmeOnline.Launcher.Commands;
-using BfmeOnline.Launcher.Interfaces;
-using BfmeOnline.Launcher.Model;
+﻿using BfmeOnline.Launcher.logger;
+using BfmeOnline.Launcher.logger.model;
+using BfmeOnline.Launcher.Source.logger;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
-using System.Text;
-using System.Windows.Input;
-using BfmeOnline.Launcher.Source;
-using static BfmeOnline.Launcher.Source.Logger;
+using static BfmeOnline.Launcher.Source.logger.Logger;
 
 namespace BfmeOnline.Launcher.ViewModel
 {

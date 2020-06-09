@@ -1,4 +1,5 @@
 ﻿using BfmeOnline.Launcher.Source.Auth;
+using BfmeOnline.Launcher.Source.logger;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;

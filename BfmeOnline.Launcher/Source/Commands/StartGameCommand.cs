@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using BfmeOnline.Launcher.Source.logger;
+using System;
 using System.Windows;
 using System.Windows.Input;
 

@@ -1,15 +1,13 @@
-﻿using BfmeOnline.Launcher.Interfaces;
-using BfmeOnline.Launcher.Model;
+﻿using BfmeOnline.Launcher.logger;
+using BfmeOnline.Launcher.logger.model;
 using BfmeOnline.Launcher.View;
 using BfmeOnline.Launcher.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Windows;
-using System.Windows.Threading;
 
-namespace BfmeOnline.Launcher.Source
+namespace BfmeOnline.Launcher.Source.logger
 {
     /// <summary>
     /// Use this class to output log instead Console.WriteLine.
