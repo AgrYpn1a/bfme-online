@@ -17,19 +17,7 @@
             </Setter>
         </Style>
 
-        <!-- Fonts -->
-        <Style x:Key="CustomFont">
-            <Setter Property="TextElement.FontFamily" 
-                    Value="/Resources/Fonts/#RingBearer.ttf">
-            </Setter>
-            <Setter Property="TextElement.FontFamily" 
-                    Value="/Resources/Fonts/#Crimson.ttf">
-            </Setter>
-        </Style>
-
-        <!--#FFFFA500-->
-
-        <Style x:Key="Button_TitleBar" TargetType="{x:Type Button}">
+        <Style TargetType="{x:Type Button}" x:Key="Button_TitleBar">
             <Setter Property="Foreground" Value="#ffffff" />
             <Setter Property="Background" Value="#00000000"/>
             <Setter Property="Template">
@@ -47,6 +35,18 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+
+        <!-- Fonts -->
+        <Style x:Key="CustomFont">
+            <Setter Property="TextElement.FontFamily" 
+                    Value="/Resources/Fonts/#RingBearer.ttf">
+            </Setter>
+            <Setter Property="TextElement.FontFamily" 
+                    Value="/Resources/Fonts/#Crimson.ttf">
+            </Setter>
+        </Style>
+
+        <!--#FFFFA500-->
 
         <Style x:Key="TB_CustomInput" TargetType="TextBox">
             <Setter Property="Padding" Value="5"/>

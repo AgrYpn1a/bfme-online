@@ -5,6 +5,8 @@
         // Shows home screen
         Default = 0,
 
+        GameNotInstalled,
+
         Installing,
 
         // Shows launcher customization screen

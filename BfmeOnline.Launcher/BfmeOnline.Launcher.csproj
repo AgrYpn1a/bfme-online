@@ -31,6 +31,8 @@
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Resources\Background.png" />
+    <None Remove="Resources\Fonts\Crimson.ttf" />
+    <None Remove="Resources\Fonts\RingBearer.TTF" />
     <None Remove="Resources\GIF\OneRingLoading.gif" />
     <None Remove="Resources\GIF\one_ring.gif" />
     <None Remove="Resources\GIF\Ring.gif" />
@@ -72,6 +74,12 @@
     <PackageReference Include="XamlAnimatedGif" Version="1.2.2" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\Fonts\Crimson.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Fonts\RingBearer.TTF">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\GIF\OneRingLoading.gif" />
     <Resource Include="Resources\GUI\Logo.png" />
     <Resource Include="Resources\GUI\Main\Main.jpg">

@@ -74,7 +74,7 @@
                         </Image>
                     </Button>
 
-                    <Button x:Name="bfme2" Grid.Row="0" Grid.Column="1" Style="{StaticResource ImageButtonStyle}" Command="{Binding SelectGameCmd}" CommandParameter="bfme2">
+                    <Button IsEnabled="False" x:Name="bfme2" Grid.Row="0" Grid.Column="1" Style="{StaticResource ImageButtonStyle}" Command="{Binding SelectGameCmd}" CommandParameter="bfme2">
                         <Image Margin="5 5" Cursor="Hand">
                             <Image.Style>
                                 <Style>
@@ -89,7 +89,7 @@
                         </Image>
                     </Button>
 
-                    <Button x:Name="bfme3" Grid.Row="1" Grid.Column="1" Style="{StaticResource ImageButtonStyle}" Command="{Binding SelectGameCmd}" CommandParameter="bfme3">
+                    <Button IsEnabled="False" x:Name="bfme3" Grid.Row="1" Grid.Column="1" Style="{StaticResource ImageButtonStyle}" Command="{Binding SelectGameCmd}" CommandParameter="bfme3">
                         <Image Margin="5 5" Cursor="Hand">
                             <Image.Style>
                                 <Style>

@@ -13,6 +13,7 @@ namespace BfmeOnline.GameInstaller
         DOWNLOADING,
         EXTRACTING,
         INSTALLING,
+        CANCELLED,
         FINISHED
     }
 
@@ -24,53 +25,91 @@ namespace BfmeOnline.GameInstaller
         }
 
         public static InstallerState State { get; private set; } = InstallerState.NONE;
-        public static int Progress { get; private set; } = 0;
+        public static long Progress { get; private set; } = 0;
         public static bool Finished { get; private set; } = false;
         private static int TotalFiles;
         private static int FilesExtracted;
 
         private static object _root = new object();
 
-        public static void Install(string downloadUrl, string installPath = @"E:\Program Files (x86)\EA GAMES\The Battle for Middle-earth\")
+        private static string _downloadPath;
+
+        private static Downloader.Downloader dl = new Downloader.Downloader();
+
+        public static async Task Download(string downloadUrl)
         {
             string downloadPath = $"{Path.GetTempPath()}bfme1.zip";
+            _downloadPath = downloadPath;
+
             State = InstallerState.DOWNLOADING;
 
-            // First download files
-            Downloader.Downloader dl = new Downloader.Downloader();
+            dl = new Downloader.Downloader();
             Progress = 0;
 
+            // Bind progress change handler
             dl.OnProgressUpdate = progress =>
             {
                 Progress = progress;
             };
 
-            dl.OnDownloadFinished = () =>
+            try
             {
-                lock (_root)
-                {
-                    State = InstallerState.EXTRACTING;
-                }
+                await dl.Download(downloadUrl, downloadPath);
+            }
+            catch (Exception e)
+            {
+                // Throw further
+                throw e;
+            }
 
-                Task.Run(() =>
-                {
-                    ExtractFiles(downloadPath, installPath);
 
-                    lock (_root)
-                    {
-                        State = InstallerState.INSTALLING;
-                    }
+            //dl.OnDownloadFinished = () =>
+            //{
+            //    lock (_root)
+            //    {
+            //        State = InstallerState.EXTRACTING;
+            //    }
 
-                    InstallRegistryKeys(installPath);
+            //    Task.Run(() =>
+            //    {
+            //        ExtractFiles(downloadPath, installPath);
 
-                    lock (_root)
-                    {
-                        State = InstallerState.FINISHED;
-                    }
-                });
-            };
+            //        lock (_root)
+            //        {
+            //            State = InstallerState.INSTALLING;
+            //        }
 
-            dl.Download(downloadUrl, downloadPath);
+            //        InstallRegistryKeys(installPath);
+
+            //        lock (_root)
+            //        {
+            //            State = InstallerState.FINISHED;
+            //        }
+            //    });
+            //};
+
+        }
+
+        public static async Task Install(string installPath = @"E:\Program Files (x86)\EA GAMES\The Battle for Middle-earth\")
+        {
+            // Prepare install file
+            State = InstallerState.EXTRACTING;
+
+            await dl.CreateInstallationFile();
+            ExtractFiles(_downloadPath, installPath);
+        }
+
+        public static void Cancel()
+        {
+            if (State == InstallerState.DOWNLOADING)
+            {
+                dl.CancelDownload();
+                State = InstallerState.CANCELLED;
+            }
+            else
+            {
+                // Can't cancel now just ignore
+            }
         }
 
         internal static void InstallRegistryKeys(string installPath)
@@ -164,8 +203,9 @@ namespace BfmeOnline.GameInstaller
             //trying global extract progress
             if (e.EventType != ZipProgressEventType.Extracting_BeforeExtractEntry)
                 return;
+
             FilesExtracted++;
-            Progress = 100 * FilesExtracted / TotalFiles;
+            Progress = 100 * e.BytesTransferred / e.TotalBytesToTransfer;
 
         }
     }

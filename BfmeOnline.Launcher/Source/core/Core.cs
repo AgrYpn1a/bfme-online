@@ -61,6 +61,13 @@ namespace BfmeOnline.Launcher.Source.core
         RUNNING = 1
     }
 
+    public enum Game
+    {
+        Bfme1,
+        Bfme2,
+        BfmeRotwk
+    }
+
     /// <summary>
     /// Singleton, launcher's main class.
     /// </summary>
@@ -102,6 +109,24 @@ namespace BfmeOnline.Launcher.Source.core
         {
             LauncherState = newState;
             OnLauncherStateChange?.Invoke(newState);
+        }
+
+        /// <summary>
+        /// Not all games are supported right away. Use this to make
+        /// sure that the game is currently supported.
+        /// </summary>
+        /// <param name="game"></param>
+        /// <returns></returns>
+        public bool IsGameSupported(Game game) => game == Game.Bfme1;
+
+        /// <summary>
+        /// Checks if the given game is installed.
+        /// </summary>
+        /// <param name="game"></param>
+        /// <returns></returns>
+        public bool IsGameInstalled(Game game)
+        {
+            return false;
         }
     }
 }

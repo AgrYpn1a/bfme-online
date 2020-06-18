@@ -23,9 +23,17 @@
     <StackPanel>
 
         <!-- Should render always, on top the stack panel -->
-        <components:TitleBar Margin="0 0 0 20"/>
+        <components:TitleBar Margin="0 0 0 20" />
 
-        <Grid Margin="20 0 20 0" Visibility="Visible">
+        <!-- Loading -->
+        <StackPanel x:Name="LoadingScreen" Margin="0 160 0 0" Visibility="{Binding ShowLoading, FallbackValue=Collapsed}">
+            <Image 
+                    x:Name="Loading"
+                    Height="65" Width="65" 
+                    gif:AnimationBehavior.SourceUri="/Resources/GIF/OneRingLoading.gif" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </StackPanel>
+
+        <Grid Margin="20 0 20 0" Visibility="{Binding ShowUserTitleBar, FallbackValue=Collapsed}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*" />
                 <ColumnDefinition Width="1*" />
@@ -42,9 +50,9 @@
             <components:ImageSlideshow />
 
             <StackPanel Margin="60 10">
-                <TextBlock Text="Installing game please wait..." Foreground="#FFE4E4E4" FontFamily="Crimson Text" FontSize="16" />
-                <ProgressBar Height="20" Margin="0 5 0 10" Value="30" Foreground="#FFFFB400" Background="#7F000000" BorderBrush="#FF191919"/>
-                <Button Content="Cancel" HorizontalAlignment="Right" Margin="0 0 0 10" FontSize="16"/>
+                <TextBlock Text="{Binding InstallState}" Foreground="#FFE4E4E4" FontFamily="Crimson Text" FontSize="16" />
+                <ProgressBar Height="20" Margin="0 5 0 10" Value="{Binding InstallProgress}" Foreground="#FFFFB400" Background="#7F000000" BorderBrush="#FF191919"/>
+                <Button Command="{Binding CancelInstallCmd}" Content="Cancel" HorizontalAlignment="Right" Margin="0 0 0 10" FontSize="16"/>
             </StackPanel>
         </StackPanel>
 
@@ -54,9 +62,9 @@
         -->
         <components:HomeScreen Visibility="{Binding ShowHome, FallbackValue=Collapsed}"/>
 
-        <StackPanel Margin="20 0" Visibility="Collapsed">
+        <StackPanel Margin="20 0" Visibility="{Binding ShowGameNotInstalled}">
             <StackPanel>
-                <Button Content="Go Back" HorizontalAlignment="Left" FontSize="18"/>
+                <Button Command="{Binding BackToHomeCmd}" Content="Go Back" HorizontalAlignment="Left" FontSize="18"/>
             </StackPanel>
 
             <StackPanel Margin="60 120">
@@ -65,7 +73,7 @@
                 <TextBlock Text="The Battle for Middle-Earth I" HorizontalAlignment="Center" FontSize="28" Foreground="White" FontFamily="Ringbearer"/>
                 <TextBlock Text="is not installed." Margin="0 0 0 40" HorizontalAlignment="Center" FontSize="32" Foreground="White" FontFamily="Crimson Text"/>
 
-                <Button Content="Install" Width="160" Height="60" Margin="0 0 0 30" FontSize="42" FontFamily="Crimson Text" Command="{Binding InstallGameCmd}" />
+                <Button Content="Install" Width="160" Height="60" Margin="0 0 0 30" FontSize="42" FontFamily="Crimson Text" Command="{Binding InstallGameCmd}" CommandParameter="{Binding}" />
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox 
@@ -74,8 +82,8 @@
                         HorizontalAlignment="Left"
                         VerticalAlignment="Center"
                         x:Name="SelectedPathTxtBox"
-                        Text="{Binding InstallPath, FallbackValue=C:/Program Files/Bfme}" TextAlignment="Left" FontSize="18" />
-                    <Button Margin="10 0" Width="80" Content="Browse" Click="BtnBrowse_Click" HorizontalAlignment="Right" />
+                        Text="{Binding InstallPath, FallbackValue=C:\\Program Files\\Bfme}" TextAlignment="Left" FontSize="18" />
+                    <Button Margin="10 0" Width="80" Content="Browse" Command="{Binding BrowseInstallPathCmd}" CommandParameter="{Binding}" HorizontalAlignment="Right" />
                 </StackPanel>
             </StackPanel>
         </StackPanel>
@@ -151,7 +159,7 @@
                             <Label x:Name="lbInstaller" Grid.Row="0" VerticalContentAlignment="Center" Content="State: " FontSize="18" Foreground="#FFB9B9B9"/>
                             <ProgressBar Grid.Row="1" x:Name="pbInstaller" Margin="7 -5 15 25" Width="450" Foreground="#FFE4A703" Background="#FF2C2C2C" BorderBrush="Black"/>
                         </Grid>
-                        <Button Grid.Column="1" Content="Cancel" Margin="0 25 5 25" FontSize="20" FontWeight="Bold" Width="150"/>
+                        <Button Command="{Binding CancelInstallCmd}" Grid.Column="1" Content="Cancel" Margin="0 25 5 25" FontSize="20" FontWeight="Bold" Width="150"/>
                     </Grid>
                 </StackPanel>
 
@@ -175,7 +183,7 @@
 
                 <StackPanel x:Name="installPanel" Grid.Row="2" Orientation="Horizontal" Visibility="Hidden">
                     <TextBox x:Name="tbPath" Text="{Binding InstallPath}" FontSize="10" TextAlignment="Left" Margin="-6 35 15 35" Width="150" Background="White" Foreground="White"/>
-                    <Button x:Name="BtnBrowse" Content="Browse" Margin="0 35 50 35" Width="80" Click="BtnBrowse_Click"/>
+                    <Button x:Name="BtnBrowse" Content="Browse" Margin="0 35 50 35" Width="80" />
                     <Button x:Name="BtnInstall" Content="Install" FontSize="20" FontWeight="Bold" Margin="90 25 5 25" Width="150" Click="BtnInstall_Click"/>
                 </StackPanel>
             </Grid>

@@ -1,75 +1,18 @@
-﻿using BfmeOnline.Launcher.Source.commands.window.main;
-using BfmeOnline.Launcher.Source.core;
-using BfmeOnline.Launcher.Source.Model;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.IO;
-using System.Text;
+﻿using BfmeOnline.Launcher.Source.core;
+using BfmeOnline.Launcher.Source.model;
 using System.Windows;
-using System.Windows.Input;
 
 namespace BfmeOnline.Launcher.Source.ViewModel
 {
-    public class MainViewModel : INotifyPropertyChanged
+    public class MainViewModel
     {
-        private string _installPath;
-        public string InstallPath
-        {
-            get => _installPath;
-            set
-            {
-                _installPath = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(InstallPath)));
-            }
-        }
-
-        private int _onlinePlayers;
-        public int OnlinePlayers
-        {
-            get => _onlinePlayers;
-            set
-            {
-                _onlinePlayers = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(OnlinePlayers)));
-            }
-        }
-
-        private Visibility _showHome = Visibility.Visible;
-        public Visibility ShowHome
-        {
-            get => _showHome;
-            private set
-            {
-                _showHome = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ShowHome)));
-            }
-        }
-
-        private Visibility _showInstall = Visibility.Collapsed;
-        public Visibility ShowInstall
-        {
-            get => _showInstall; private set
-            {
-                _showInstall = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ShowInstall)));
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-
-        /** Comamnds */
-        public ICommand InstallGameCmd { get; private set; }
-        public ICommand SelectGameCmd { get; private set; }
+        public MainModel Model;
 
         public MainViewModel()
         {
-            OnlinePlayers = 0;
-            InstallPath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            Model = new MainModel(this);
 
-            InstallGameCmd = new InstallGameCommand();
-            SelectGameCmd = new SelectGameCommand();
+            Model.OnlinePlayers = 0;
 
             // Subscribe to events
             Core.Instance.OnLauncherStateChange += HandleStateChange;
@@ -86,14 +29,39 @@ namespace BfmeOnline.Launcher.Source.ViewModel
             logger.Logger.LogMessage("State change");
             switch (newState)
             {
+                case LauncherState.Default:
+                    {
+                        // Show
+                        Model.ShowHome = Visibility.Visible;
+                        Model.ShowUserTitleBar = Visibility.Visible;
+
+                        Model.ShowInstall = Visibility.Collapsed;
+                        Model.ShowGameNotInstalled = Visibility.Collapsed;
+                        break;
+                    }
+
                 case LauncherState.Installing:
                     {
                         logger.Logger.LogMessage($"State change {newState.ToString()}");
 
-                        ShowInstall = Visibility.Visible;
-                        ShowHome = Visibility.Collapsed;
+                        Model.ShowInstall = Visibility.Visible;
+                        Model.ShowHome = Visibility.Collapsed;
+                        Model.ShowUserTitleBar = Visibility.Collapsed;
+                        Model.ShowGameNotInstalled = Visibility.Collapsed;
                         break;
                     }
+
+                case LauncherState.GameNotInstalled:
+                    {
+                        logger.Logger.LogMessage($"State change {newState.ToString()}");
+
+                        Model.ShowInstall = Visibility.Collapsed;
+                        Model.ShowHome = Visibility.Collapsed;
+                        Model.ShowUserTitleBar = Visibility.Collapsed;
+                        Model.ShowGameNotInstalled = Visibility.Visible;
+                        break;
+                    }
+
             }
         }
     }

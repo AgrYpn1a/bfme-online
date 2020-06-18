@@ -45,7 +45,7 @@ namespace BfmeOnline.Launcher.View
 
             // Setup view model and data context
             _viewModel = new MainViewModel();
-            DataContext = _viewModel;
+            DataContext = _viewModel.Model;
 
 
             // Bind data
@@ -131,41 +131,34 @@ namespace BfmeOnline.Launcher.View
 
         private void BtnInstall_Click(object sender, RoutedEventArgs e)
         {
-            installPanel.Visibility = Visibility.Hidden;
-            downloadPanel.Visibility = Visibility.Visible;
-            Task.Run(() =>
-            {
-                //Installer.Install("https://bfme-games.fra1.digitaloceanspaces.com/The%20Battle%20for%20Middle-earth.zip", Path);
-                Installer.Install(NetworkAddresses.BFME_DOWNLOAD, _viewModel.InstallPath);
-            });
-            Task.Run(() =>
-            {
-                while (Installer.State != InstallerState.FINISHED)
-                {
-                    Thread.Sleep(500);
+            //installPanel.Visibility = Visibility.Hidden;
+            //downloadPanel.Visibility = Visibility.Visible;
+            //Task.Run(() =>
+            //{
+            //    //Installer.Install("https://bfme-games.fra1.digitaloceanspaces.com/The%20Battle%20for%20Middle-earth.zip", Path);
+            //    Installer.Install(NetworkAddresses.BFME_DOWNLOAD, _viewModel.InstallPath);
+            //});
+            //Task.Run(() =>
+            //{
+            //    while (Installer.State != InstallerState.FINISHED)
+            //    {
+            //        Thread.Sleep(500);
 
-                    Dispatcher.Invoke(() =>
-                    {
-                        lbInstaller.Content = Installer.State;
-                        pbInstaller.Value = Installer.Progress;
-                    });
+            //        Dispatcher.Invoke(() =>
+            //        {
+            //            lbInstaller.Content = Installer.State;
+            //            pbInstaller.Value = Installer.Progress;
+            //        });
 
-                }
-                FinalizeInstall();
-            });
+            //    }
+            //    FinalizeInstall();
+            //});
         }
 
         private void FinalizeInstall()
         {
             MessageBox.Show("Installation finnished!");
             //playPanel.Visibility = Visibility.Hidden;
-        }
-
-        private void BtnBrowse_Click(object sender, RoutedEventArgs e)
-        {
-            System.Windows.Forms.FolderBrowserDialog dlg = new System.Windows.Forms.FolderBrowserDialog();
-            dlg.ShowDialog();
-            tbPath.Text = dlg.SelectedPath;
         }
 
         private void Btn_Play(object sender, RoutedEventArgs e)

@@ -24,10 +24,32 @@ namespace BfmeOnline.Launcher.Source.commands.window.main
                 case "bfme1":
                     {
                         logger.Logger.LogMessage("Bfme 1 Selected", "Button");
-                        Core.Instance.ChangeState(LauncherState.Installing);
+                        //Core.Instance.ChangeState(LauncherState.Game);
+                        DetermineGameState(Game.Bfme1);
                         break;
                     }
                 default: break;
+            }
+        }
+
+        private void DetermineGameState(Game game)
+        {
+            switch (game)
+            {
+                case Game.Bfme1:
+                    {
+                        if (Core.Instance.IsGameInstalled(game))
+                        {
+                            // Show main game screen
+                        }
+                        else
+                        {
+                            // Show installation screen
+                            Core.Instance.ChangeState(LauncherState.GameNotInstalled);
+                        }
+
+                        break;
+                    }
             }
         }
     }
