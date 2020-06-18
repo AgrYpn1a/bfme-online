@@ -5,21 +5,37 @@
              ShutdownMode="OnExplicitShutdown"
              Exit="Application_Exit">
     <Application.Resources>
+
+        <!-- Button styles -->
+        <Style TargetType="{x:Type Button}" x:Key="ImageButtonStyle">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <ContentPresenter/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Fonts -->
         <Style x:Key="CustomFont">
             <Setter Property="TextElement.FontFamily" 
                     Value="/Resources/Fonts/#RingBearer.ttf">
+            </Setter>
+            <Setter Property="TextElement.FontFamily" 
+                    Value="/Resources/Fonts/#Crimson.ttf">
             </Setter>
         </Style>
 
         <!--#FFFFA500-->
 
-        <Style TargetType="{x:Type Button}">
+        <Style x:Key="Button_TitleBar" TargetType="{x:Type Button}">
             <Setter Property="Foreground" Value="#ffffff" />
-            <Setter Property="Background" Value="#CC020202"/>
+            <Setter Property="Background" Value="#00000000"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
-                        <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="1">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="0">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                     </ControlTemplate>
@@ -27,20 +43,12 @@
             </Setter>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="{x:Type Button}">
-                                <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="3">
-                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
+                    <Setter Property="Foreground" Value="#e5a61e"></Setter>
                 </Trigger>
             </Style.Triggers>
         </Style>
 
-        <Style TargetType="TextBox">
+        <Style x:Key="TB_CustomInput" TargetType="TextBox">
             <Setter Property="Padding" Value="5"/>
             <Setter Property="Margin" Value="5"/>
             <Setter Property="FontSize" Value="20"/>

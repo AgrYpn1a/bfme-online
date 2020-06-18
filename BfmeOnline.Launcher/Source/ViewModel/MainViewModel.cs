@@ -1,8 +1,13 @@
-﻿using BfmeOnline.Launcher.Source.Model;
+﻿using BfmeOnline.Launcher.Source.commands.window.main;
+using BfmeOnline.Launcher.Source.core;
+using BfmeOnline.Launcher.Source.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Text;
+using System.Windows;
+using System.Windows.Input;
 
 namespace BfmeOnline.Launcher.Source.ViewModel
 {
@@ -30,18 +35,66 @@ namespace BfmeOnline.Launcher.Source.ViewModel
             }
         }
 
-        public string Version
+        private Visibility _showHome = Visibility.Visible;
+        public Visibility ShowHome
         {
-            get { return Util.GetLocalVersion().ToString(); }
-            private set { }
+            get => _showHome;
+            private set
+            {
+                _showHome = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ShowHome)));
+            }
+        }
+
+        private Visibility _showInstall = Visibility.Collapsed;
+        public Visibility ShowInstall
+        {
+            get => _showInstall; private set
+            {
+                _showInstall = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ShowInstall)));
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
+
+        /** Comamnds */
+        public ICommand InstallGameCmd { get; private set; }
+        public ICommand SelectGameCmd { get; private set; }
+
         public MainViewModel()
         {
             OnlinePlayers = 0;
-            InstallPath = System.Reflection.Assembly.GetExecutingAssembly().Location;
+            InstallPath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+
+            InstallGameCmd = new InstallGameCommand();
+            SelectGameCmd = new SelectGameCommand();
+
+            // Subscribe to events
+            Core.Instance.OnLauncherStateChange += HandleStateChange;
+        }
+
+        ~MainViewModel()
+        {
+            // Unsubscribe from events
+            Core.Instance.OnLauncherStateChange -= HandleStateChange;
+        }
+
+        private void HandleStateChange(LauncherState newState)
+        {
+            logger.Logger.LogMessage("State change");
+            switch (newState)
+            {
+                case LauncherState.Installing:
+                    {
+                        logger.Logger.LogMessage($"State change {newState.ToString()}");
+
+                        ShowInstall = Visibility.Visible;
+                        ShowHome = Visibility.Collapsed;
+                        break;
+                    }
+            }
         }
     }
 }

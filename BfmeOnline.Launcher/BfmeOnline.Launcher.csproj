@@ -1,5 +1,5 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
-
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.0</TargetFramework>
@@ -10,31 +10,25 @@
     <AssemblyVersion>0.0.3.0</AssemblyVersion>
     <FileVersion>0.0.3.0</FileVersion>
   </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <OutputPath>bin</OutputPath>
     <DefineConstants>TRACE;DEBUG</DefineConstants>
   </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutputPath>bin</OutputPath>
     <DefineConstants>TRACE;DEBUG;DEBUG_NOTINSTALLED</DefineConstants>
   </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
     <OutputPath>bin</OutputPath>
     <DefineConstants>TRACE;DEBUG;DEBUG_MAIN_WIN;DEBUG_NOTINSTALLED</DefineConstants>
   </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
     <OutputPath>bin</OutputPath>
   </PropertyGroup>
-  
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutputPath>bin</OutputPath>
     <DefineConstants>TRACE;DEBUG_NOTINSTALLED</DefineConstants>
   </PropertyGroup>
-
   <ItemGroup>
     <None Remove="Resources\Background.png" />
     <None Remove="Resources\GIF\OneRingLoading.gif" />
@@ -49,6 +43,9 @@
     <None Remove="Resources\Images\bfme2Active.png" />
     <None Remove="Resources\Images\bfme3Active.png" />
     <None Remove="Resources\Images\buttonBackgrounds.png" />
+    <None Remove="Resources\Images\Carousel\bfme1_0.jpg" />
+    <None Remove="Resources\Images\Carousel\bfme1_1.jpg" />
+    <None Remove="Resources\Images\Carousel\bfme1_2.jpg" />
     <None Remove="Resources\Images\Games\Bfme1.jpg" />
     <None Remove="Resources\Images\Games\Bfme1_Hover.jpg" />
     <None Remove="Resources\Images\Games\Bfme2.jpg" />
@@ -62,11 +59,11 @@
     <None Remove="Resources\Images\News\NewsFrame.png" />
     <None Remove="Resources\Images\News\NewsTitleBar.png" />
     <None Remove="Resources\Images\News\NewsTitleBar_Hover.png" />
+    <None Remove="Resources\Images\Profile.png" />
     <None Remove="Resources\Images\vertLine.png" />
     <None Remove="Resources\Videos\GollumQMFound.mp4" />
     <None Remove="Resources\Videos\GollumQMLoop.mp4" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="FluentAssertions" Version="5.9.0" />
     <PackageReference Include="Microsoft-WindowsAPICodePack-Core" Version="1.1.4" />
@@ -74,7 +71,6 @@
     <PackageReference Include="WebSocket4Net" Version="0.15.2" />
     <PackageReference Include="XamlAnimatedGif" Version="1.2.2" />
   </ItemGroup>
-
   <ItemGroup>
     <Resource Include="Resources\GIF\OneRingLoading.gif" />
     <Resource Include="Resources\GUI\Logo.png" />
@@ -85,6 +81,9 @@
     <Resource Include="Resources\Images\bfme2Active.png" />
     <Resource Include="Resources\Images\bfme3Active.png" />
     <Resource Include="Resources\Images\buttonBackgrounds.png" />
+    <Resource Include="Resources\Images\Carousel\bfme1_0.jpg" />
+    <Resource Include="Resources\Images\Carousel\bfme1_1.jpg" />
+    <Resource Include="Resources\Images\Carousel\bfme1_2.jpg" />
     <Resource Include="Resources\Images\Games\Bfme1.jpg" />
     <Resource Include="Resources\Images\Games\Bfme1_Hover.jpg" />
     <Resource Include="Resources\Images\Games\Bfme2.jpg" />
@@ -98,6 +97,7 @@
     <Resource Include="Resources\Images\News\NewsFrame.png" />
     <Resource Include="Resources\Images\News\NewsTitleBar.png" />
     <Resource Include="Resources\Images\News\NewsTitleBar_Hover.png" />
+    <Resource Include="Resources\Images\Profile.png" />
     <Resource Include="Resources\Images\vertLine.png" />
     <Content Include="Resources\Videos\GollumQMFound.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -106,13 +106,19 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\BfmeOnline.Downloader\BfmeOnline.Downloader.csproj" />
     <ProjectReference Include="..\BfmeOnline.GameInstaller\BfmeOnline.GameInstaller.csproj" />
     <ProjectReference Include="..\BfmeOnline.OptionsEditor\BfmeOnline.OptionsEditor.csproj" />
   </ItemGroup>
-
+  <ItemGroup>
+    <Reference Include="Syncfusion.SfProgressBar.WPF">
+      <HintPath>..\..\..\Program Files (x86)\Syncfusion\Essential Studio\WPF\18.1.0.42\Assemblies\4.6\Syncfusion.SfProgressBar.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Shared.WPF">
+      <HintPath>E:\Program Files (x86)\Syncfusion\Essential Studio\WPF\18.1.0.42\precompiledassemblies\netcoreapp3.0\Syncfusion.Shared.WPF.dll</HintPath>
+    </Reference>
+  </ItemGroup>
   <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -120,16 +126,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
   </ItemGroup>
-
   <ItemGroup>
     <EmbeddedResource Update="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Source\Commands\Window\Main\" />
-  </ItemGroup>
-
 </Project>
