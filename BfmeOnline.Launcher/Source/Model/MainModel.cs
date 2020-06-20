@@ -1,4 +1,5 @@
 ﻿using BfmeOnline.Launcher.Source.commands.window.main;
+using BfmeOnline.Launcher.Source.Commands;
 using BfmeOnline.Launcher.Source.Commands.window.main;
 using BfmeOnline.Launcher.Source.ViewModel;
 using System.ComponentModel;
@@ -76,6 +77,17 @@ namespace BfmeOnline.Launcher.Source.model
             }
         }
 
+        private Visibility _showPlayScreen;
+        public Visibility ShowPlayScreen
+        {
+            get => _showPlayScreen;
+            set
+            {
+                _showPlayScreen = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ShowPlayScreen)));
+            }
+        }
+
         public Visibility _showGameNotInstalled = Visibility.Collapsed;
         public Visibility ShowGameNotInstalled
         {
@@ -87,8 +99,8 @@ namespace BfmeOnline.Launcher.Source.model
             }
         }
 
-        private int _progress;
-        public int InstallProgress
+        private long _progress;
+        public long InstallProgress
         {
             get => _progress;
             set
@@ -115,6 +127,7 @@ namespace BfmeOnline.Launcher.Source.model
         public ICommand SelectGameCmd { get; private set; }
         public ICommand BrowseInstallPathCmd { get; private set; }
         public ICommand CancelInstallCmd { get; private set; }
+        public ICommand StartGameCmd { get; private set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -133,6 +146,7 @@ namespace BfmeOnline.Launcher.Source.model
             BrowseInstallPathCmd = new BrowseInstallPathCommand();
             BackToHomeCmd = new BackToHomeCommand();
             CancelInstallCmd = new CancelInstallationCommand();
+            StartGameCmd = new StartGameCommand();
         }
 
     }

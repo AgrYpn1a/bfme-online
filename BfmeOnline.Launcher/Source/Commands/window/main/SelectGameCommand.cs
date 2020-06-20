@@ -41,6 +41,7 @@ namespace BfmeOnline.Launcher.Source.commands.window.main
                         if (Core.Instance.IsGameInstalled(game))
                         {
                             // Show main game screen
+                            Core.Instance.ChangeState(LauncherState.Game);
                         }
                         else
                         {

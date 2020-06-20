@@ -24,8 +24,6 @@ namespace BfmeOnline.Launcher.Source.Updates
                 {
                     Logger.LogMessage("Error downloading updates.");
                     Logger.LogMessage(error);
-                }, () =>
-                {
                 });
             }
             else
@@ -64,10 +62,8 @@ namespace BfmeOnline.Launcher.Source.Updates
 
         private static Action _dlCompleteAction;
 
-        public static void DownloadUpdates(Action<string> errCallback, Action downloadComplete)
+        public static async Task DownloadUpdates(Action<string> errCallback)
         {
-            _dlCompleteAction = downloadComplete;
-
             using (var client = new WebClient())
             {
                 // Bind events
@@ -75,7 +71,7 @@ namespace BfmeOnline.Launcher.Source.Updates
                 client.DownloadProgressChanged += Client_DownloadProgressChanged;
 
                 // Begin download
-                client.DownloadFileAsync(new Uri(NetworkAddresses.ADMIN_DOWNLOAD), DOWNLOAD_PATH);
+                await client.DownloadFileTaskAsync(new Uri(NetworkAddresses.ADMIN_DOWNLOAD), DOWNLOAD_PATH);
             }
         }
 

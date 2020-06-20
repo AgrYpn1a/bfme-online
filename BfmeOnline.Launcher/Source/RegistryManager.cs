@@ -30,7 +30,7 @@ namespace BfmeOnline.Launcher.Source
                     ?.OpenSubKey("EA Games")
                     ?.OpenSubKey("The Battle for Middle-earth");
 
-                return electronicArtsKey.GetValue("InstallPath", RegistryValueKind.String) as string;
+                return electronicArtsKey?.GetValue("InstallPath", RegistryValueKind.String) as string;
             }
             catch (Exception e)
             {

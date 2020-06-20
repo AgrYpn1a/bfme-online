@@ -45,6 +45,11 @@ namespace BfmeOnline.Downloader
 
         private CancellationTokenSource _ctsDownloadOperation = new CancellationTokenSource();
 
+        public void SetDestinationPath(string destPath)
+        {
+            _destinationPath = destPath;
+        }
+
         public async Task Download(string sourceUrl, string destinationPath)
         {
             _isFinished = false;
@@ -128,6 +133,11 @@ namespace BfmeOnline.Downloader
 
         public async Task CreateInstallationFile()
         {
+            if(File.Exists(_destinationPath))
+            {
+                return;
+            }
+
             using (FileStream destinationStream = new FileStream(_destinationPath, FileMode.Append))
             {
                 foreach (var fileName in _fileNames)

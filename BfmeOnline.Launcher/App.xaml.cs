@@ -1,6 +1,7 @@
 ﻿using BfmeOnline.Launcher.Source;
 using BfmeOnline.Launcher.Source.Auth;
 using BfmeOnline.Launcher.Source.logger;
+using BfmeOnline.Launcher.Source.Updates;
 using BfmeOnline.Launcher.Source.WS;
 using BfmeOnline.Launcher.View;
 using System;
@@ -35,6 +36,29 @@ namespace BfmeOnline.Launcher
             base.OnStartup(e);
 
             if (DebugWindows()) return;
+
+
+            //bool hasUpdates = await UpdateManager.CheckForUpdates();
+            //if (hasUpdates)
+            //{
+            //    // Bind progress watcher
+            //    UpdateManager.OnDownloadProgressChange += progress =>
+            //    {
+            //        _winUpdater.SetDownloadProgress(progress);
+            //    };
+
+            //    _winUpdater.Show();
+            //    _winUpdater.SetMessage("Downloading updates...");
+
+            //    // Wait for updates to finish
+            //    await UpdateManager.DownloadUpdates(err => { });
+
+            //    Logger.LogMessage("Updates finished installing.");
+
+            //    // Restart the app
+            //    System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+            //    Application.Current.Shutdown();
+            //}
 
             // Bind event handlers
             //AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;

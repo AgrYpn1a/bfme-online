@@ -27,7 +27,7 @@ namespace BfmeOnline.Launcher.Source.Commands
         public void Execute(object parameter)
         {
             Logger.LogMessage("[CMD] StartGame");
-            MessageBox.Show("[CMD] StartGame");
+            System.Diagnostics.Process.Start($"{RegistryManager.GetInstallPath()}/lotrbfme.exe");
         }
     }
 }

@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="BfmeOnline.Launcher.View.Components.PlayScreen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BfmeOnline.Launcher.View.Components"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800">
+    <StackPanel Margin="20 40 20 0" Visibility="Visible">
+        <Button Command="{Binding BackToHomeCmd}" Content="Go Back" HorizontalAlignment="Left" FontSize="18"/>
+
+        <Grid Margin="0 10 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+
+            <StackPanel x:Name="LeftSideBar" Grid.Row="0" Grid.Column="0" >
+                <StackPanel x:Name="PnLadder" Height="360" Background="#7F000000">
+                    <TextBlock Text="Ladder" Foreground="#FFE4E4E4" HorizontalAlignment="Center" FontFamily="Crimson Text" FontSize="22" />
+                </StackPanel>
+                <StackPanel Margin="0 10" Height="80" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image Margin="0 0 30 0" Width="80" Source="/Resources/Images/Games/BfmeCustomize.jpg"/>
+                    <Button Width="140" IsEnabled="False" Content="  Find Match" FontFamily="Crimson Text" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center" Height="80"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel x:Name="RightMainContent" Grid.Row="0" Grid.Column="1" Margin="10 0 0 0">
+                <StackPanel Height="360" Background="#99000000">
+
+                </StackPanel>
+
+                <StackPanel Height="80" Margin="0 10 0 0" Orientation="Horizontal">
+                    <TextBlock TextWrapping="Wrap" Width="300" Text="Up to date! Version 1.09.0" Foreground="White" FontSize="16"/>
+                    <Button Width="200" Content="play" FontFamily="Ringbearer" FontSize="36" Command="{Binding StartGameCmd}"/>
+                </StackPanel>
+            </StackPanel>
+
+        </Grid>
+    </StackPanel>
+</UserControl>

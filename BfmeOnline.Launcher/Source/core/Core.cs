@@ -126,7 +126,7 @@ namespace BfmeOnline.Launcher.Source.core
         /// <returns></returns>
         public bool IsGameInstalled(Game game)
         {
-            return false;
+            return RegistryManager.IsGameInstalled();
         }
     }
 }

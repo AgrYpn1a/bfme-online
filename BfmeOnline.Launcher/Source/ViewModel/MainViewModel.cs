@@ -40,6 +40,17 @@ namespace BfmeOnline.Launcher.Source.ViewModel
                         break;
                     }
 
+                case LauncherState.Game:
+                    {
+                        Model.ShowPlayScreen = Visibility.Visible;
+
+                        Model.ShowHome = Visibility.Collapsed;
+                        Model.ShowUserTitleBar = Visibility.Collapsed;
+                        Model.ShowInstall = Visibility.Collapsed;
+                        Model.ShowGameNotInstalled = Visibility.Collapsed;
+                        break;
+                    }
+
                 case LauncherState.Installing:
                     {
                         logger.Logger.LogMessage($"State change {newState.ToString()}");

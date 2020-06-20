@@ -10,6 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media;
 using System.Windows.Threading;
 
 namespace BfmeOnline.Launcher.Source.commands.window.main
@@ -37,9 +38,13 @@ namespace BfmeOnline.Launcher.Source.commands.window.main
         {
             MainModel model = (MainModel)parameter;
 
-            Logger.LogMessage("[CMD] InstallGame");
+            //Logger.LogMessage("[CMD] InstallGame");
 
             Core.Instance.ChangeState(LauncherState.Installing);
+
+            MediaPlayer mp = new MediaPlayer();
+            mp.Open(new Uri(@"Resources/Sound/install.mp3", UriKind.Relative));
+            mp.Play();
 
             // Track progress
             new Thread(() =>
@@ -108,9 +113,15 @@ namespace BfmeOnline.Launcher.Source.commands.window.main
                 await Installer.Install(model.InstallPath);
             });
 
+            // Finalize installation
+            Installer.InstallRegistryKeys(model.InstallPath);
 
-            //MessageBox.Show("Finished downloading game files.");
-            //Core.Instance.ChangeState(LauncherState.Default);
+            MessageBox.Show("Game installed!");
+            Core.Instance.ChangeState(LauncherState.Game);
+
+            // Stop music
+            mp.Stop();
+            mp.Close();
         }
     }
 }

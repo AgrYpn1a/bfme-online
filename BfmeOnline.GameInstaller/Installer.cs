@@ -41,6 +41,13 @@ namespace BfmeOnline.GameInstaller
             string downloadPath = $"{Path.GetTempPath()}bfme1.zip";
             _downloadPath = downloadPath;
 
+            // Check if download already exists
+            if (File.Exists(downloadPath))
+            {
+                dl.SetDestinationPath(downloadPath);
+                return;
+            }
+
             State = InstallerState.DOWNLOADING;
 
             dl = new Downloader.Downloader();
@@ -112,7 +119,7 @@ namespace BfmeOnline.GameInstaller
             }
         }
 
-        internal static void InstallRegistryKeys(string installPath)
+        public static void InstallRegistryKeys(string installPath)
         {
             RegistryKey electronicArtsKey = Registry.LocalMachine
                                         .OpenSubKey("SOFTWARE", true)
@@ -170,15 +177,22 @@ namespace BfmeOnline.GameInstaller
             bfme1Key.SetValue("Language", 0x00000001, RegistryValueKind.DWord);
             bfme1Key.SetValue("DisplayName", "The Battle for Middle-earth (tm)", RegistryValueKind.String);
             bfme1Key.SetValue("LanguageName", "English US", RegistryValueKind.String);
+
+            State = InstallerState.FINISHED;
         }
+
+        private static int[] _extractProgress;
 
         public static void ExtractFiles(string filePath, string installPath)
         {
+
             using (Ionic.Zip.ZipFile zip = Ionic.Zip.ZipFile.Read(filePath))
             {
                 //global progress count
                 TotalFiles = zip.Count;
                 FilesExtracted = 0;
+
+                _extractProgress = new int[zip.Count];
 
                 zip.ExtractProgress += Zip_ExtractProgress;
                 zip.Password = "X4Ax6w2RN9zgrTVZUt7xEZpYG75kaqfz";
@@ -205,7 +219,7 @@ namespace BfmeOnline.GameInstaller
                 return;
 
             FilesExtracted++;
-            Progress = 100 * e.BytesTransferred / e.TotalBytesToTransfer;
+            Progress = 100 * e.EntriesExtracted / e.EntriesTotal;
 
         }
     }

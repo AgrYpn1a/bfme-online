@@ -63,6 +63,7 @@
     <None Remove="Resources\Images\News\NewsTitleBar_Hover.png" />
     <None Remove="Resources\Images\Profile.png" />
     <None Remove="Resources\Images\vertLine.png" />
+    <None Remove="Resources\Sound\install.mp3" />
     <None Remove="Resources\Videos\GollumQMFound.mp4" />
     <None Remove="Resources\Videos\GollumQMLoop.mp4" />
   </ItemGroup>
@@ -107,6 +108,9 @@
     <Resource Include="Resources\Images\News\NewsTitleBar_Hover.png" />
     <Resource Include="Resources\Images\Profile.png" />
     <Resource Include="Resources\Images\vertLine.png" />
+    <Content Include="Resources\Sound\install.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Videos\GollumQMFound.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -62,7 +62,9 @@
         -->
         <components:HomeScreen Visibility="{Binding ShowHome, FallbackValue=Collapsed}"/>
 
-        <StackPanel Margin="20 0" Visibility="{Binding ShowGameNotInstalled}">
+        <components:PlayScreen Visibility="{Binding ShowPlayScreen}" />
+
+        <StackPanel Margin="20 0" Visibility="{Binding ShowGameNotInstalled, FallbackValue=Collapsed}">
             <StackPanel>
                 <Button Command="{Binding BackToHomeCmd}" Content="Go Back" HorizontalAlignment="Left" FontSize="18"/>
             </StackPanel>
