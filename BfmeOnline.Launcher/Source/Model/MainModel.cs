@@ -77,7 +77,7 @@ namespace BfmeOnline.Launcher.Source.model
             }
         }
 
-        private Visibility _showPlayScreen;
+        private Visibility _showPlayScreen = Visibility.Collapsed;
         public Visibility ShowPlayScreen
         {
             get => _showPlayScreen;

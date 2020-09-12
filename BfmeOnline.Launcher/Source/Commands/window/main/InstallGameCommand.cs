@@ -90,11 +90,11 @@ namespace BfmeOnline.Launcher.Source.commands.window.main
             }).Start();
 
             // Download game files
-            await Task.Run(async () =>
+            await Task.Run(() =>
             {
                 try
                 {
-                    await Installer.Download("https://bfme-games.fra1.digitaloceanspaces.com/The%20Battle%20for%20Middle-earth.zip");
+                    Installer.Download("https://bfme-games.fra1.digitaloceanspaces.com/The%20Battle%20for%20Middle-earth.zip");
                 }
                 catch (Exception e)
                 {
@@ -110,7 +110,7 @@ namespace BfmeOnline.Launcher.Source.commands.window.main
             // Extract game files
             await Task.Run(async () =>
             {
-                await Installer.Install(model.InstallPath);
+                Installer.Install(model.InstallPath);
             });
 
             // Finalize installation

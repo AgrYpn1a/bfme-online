@@ -19,7 +19,7 @@ namespace BfmeOnline.Downloader
 
         public abstract void Cancel();
 
-        public abstract Task Download();
+        public abstract void Download();
 
     }
 }

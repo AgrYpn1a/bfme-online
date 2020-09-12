@@ -24,7 +24,6 @@ namespace BfmeOnline.Launcher.Source.commands.window.main
                 case "bfme1":
                     {
                         logger.Logger.LogMessage("Bfme 1 Selected", "Button");
-                        //Core.Instance.ChangeState(LauncherState.Game);
                         DetermineGameState(Game.Bfme1);
                         break;
                     }

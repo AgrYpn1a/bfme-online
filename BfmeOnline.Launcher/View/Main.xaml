@@ -62,7 +62,7 @@
         -->
         <components:HomeScreen Visibility="{Binding ShowHome, FallbackValue=Collapsed}"/>
 
-        <components:PlayScreen Visibility="{Binding ShowPlayScreen}" />
+        <components:PlayScreen Visibility="{Binding ShowPlayScreen, FallbackValue=Collapsed}" />
 
         <StackPanel Margin="20 0" Visibility="{Binding ShowGameNotInstalled, FallbackValue=Collapsed}">
             <StackPanel>

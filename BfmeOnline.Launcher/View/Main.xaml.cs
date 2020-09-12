@@ -66,8 +66,8 @@ namespace BfmeOnline.Launcher.View
             playPanel.Visibility = Visibility.Visible;       
 #elif DEBUG_NOTINSTALLED
             installPanel.Visibility = Visibility.Visible;
-            downloadPanel.Visibility = Visibility.Hidden;
-            playPanel.Visibility = Visibility.Hidden;
+            downloadPanel.Visibility = Visibility.Collapsed;
+            playPanel.Visibility = Visibility.Collapsed;
 #elif DEBUG_INSTALLING
             installPanel.Visibility = Visibility.Hidden;
             downloadPanel.Visibility = Visibility.Visible;

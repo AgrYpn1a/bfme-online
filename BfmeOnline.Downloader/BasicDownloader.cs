@@ -45,7 +45,7 @@ namespace BfmeOnline.Downloader
             Console.WriteLine($"Download = {_downloadPath}");
         }
 
-        public async override Task Download()
+        public override void Download()
         {
             lock (_root)
             {
@@ -278,22 +278,23 @@ namespace BfmeOnline.Downloader
                 Console.WriteLine($"Progress {progress}");
             };
 
-            Thread t = new Thread(async () =>
-            {
-                try
-                {
-                    await downloader.Download();
-                    //await ((BasicDownloader)downloader).MergeTempFiles();
-                    Console.WriteLine("Download finished.");
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                }
-            });
+            //Thread t = new Thread(async () =>
+            //{
+            //    try
+            //    {
+            //        //await ((BasicDownloader)downloader).MergeTempFiles();
+            //        Console.WriteLine("Download finished.");
+            //    }
+            //    catch (Exception e)
+            //    {
+            //        Console.WriteLine(e.Message);
+            //    }
+            //});
 
-            t.Start();
-            t.Join();
+            downloader.Download();
+
+            //t.Start();
+            //t.Join();
         }
     }
 }

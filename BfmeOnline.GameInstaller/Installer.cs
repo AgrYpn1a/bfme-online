@@ -37,73 +37,27 @@ namespace BfmeOnline.GameInstaller
 
         private static ADownloader dl = new BasicDownloader("", "");
 
-        public static async Task Download(string downloadUrl)
+        public static void Download(string downloadUrl)
         {
             string downloadPath = $"{Path.GetTempPath()}bfme1.zip";
             _downloadPath = downloadPath;
 
-            // Check if download already exists
-            if (File.Exists(downloadPath))
-            {
-                //dl.SetDestinationPath(downloadPath);
-                return;
-            }
-
-            State = InstallerState.DOWNLOADING;
-
-            dl = new BasicDownloader("", "");
-            Progress = 0;
-
-            // Bind progress change handler
-            dl.OnProgressUpdate = progress =>
+            ADownloader downloader = new BasicDownloader(downloadUrl, downloadPath);
+            downloader.OnProgressUpdate = progress =>
             {
                 Progress = progress;
             };
+            State = InstallerState.DOWNLOADING;
 
-            try
-            {
-                //await dl.Download(downloadUrl, downloadPath);
-            }
-            catch (Exception e)
-            {
-                // Throw further
-                throw e;
-            }
-
-
-            //dl.OnDownloadFinished = () =>
-            //{
-            //    lock (_root)
-            //    {
-            //        State = InstallerState.EXTRACTING;
-            //    }
-
-            //    Task.Run(() =>
-            //    {
-            //        ExtractFiles(downloadPath, installPath);
-
-            //        lock (_root)
-            //        {
-            //            State = InstallerState.INSTALLING;
-            //        }
-
-            //        InstallRegistryKeys(installPath);
-
-            //        lock (_root)
-            //        {
-            //            State = InstallerState.FINISHED;
-            //        }
-            //    });
-            //};
-
+            // Wait for download to finish
+            downloader.Download();
+            //Install(@"c:\bfme");
         }
 
-        public static async Task Install(string installPath = @"E:\Program Files (x86)\EA GAMES\The Battle for Middle-earth\")
+        public static void Install(string installPath = @"E:\Program Files (x86)\EA GAMES\The Battle for Middle-earth\")
         {
             // Prepare install file
             State = InstallerState.EXTRACTING;
-
-            //await dl.MergeTempFiles();
             ExtractFiles(_downloadPath, installPath);
         }
 
