@@ -62,7 +62,7 @@ namespace BfmeOnline.GameInstaller
 
             try
             {
-                await dl.Download(downloadUrl, downloadPath);
+                //await dl.Download(downloadUrl, downloadPath);
             }
             catch (Exception e)
             {
@@ -103,7 +103,7 @@ namespace BfmeOnline.GameInstaller
             // Prepare install file
             State = InstallerState.EXTRACTING;
 
-            await dl.MergeTempFiles();
+            //await dl.MergeTempFiles();
             ExtractFiles(_downloadPath, installPath);
         }
 
@@ -111,7 +111,7 @@ namespace BfmeOnline.GameInstaller
         {
             if (State == InstallerState.DOWNLOADING)
             {
-                dl.CancelDownload();
+                //dl.CancelDownload();
                 State = InstallerState.CANCELLED;
             }
             else
