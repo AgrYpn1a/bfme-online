@@ -96,12 +96,21 @@ namespace BfmeOnline.Downloader
                     task.Start();
                 }
 
-                await Task.WhenAll(_tasks);
+                //var t = Task.WhenAll(_tasks);
 
-                lock (_root)
+                try
                 {
-                    MergeTempFiles();
+                    Task.WaitAll(_tasks);
+                    //t.Wait();
+
                     IsFinished = true;
+                    MergeTempFiles();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    ClearDownloadFiles(_downloadPath);
+                    ClearTempFiles();
                 }
             }
             catch (Exception e)
