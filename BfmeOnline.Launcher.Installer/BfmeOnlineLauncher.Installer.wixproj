@@ -9,25 +9,27 @@
     <OutputName>BFME Online Launcher</OutputName>
     <OutputType>Package</OutputType>
   </PropertyGroup>
+  
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
-    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <OutputPath>$(SolutionDir)bin\BfmeOnline.Installer\$(Configuration)\$(Platform)\</OutputPath>
     <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
     <DefineConstants>Debug</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
-    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <OutputPath>$(SolutionDir)bin\BfmeOnline.Installer\$(Configuration)\$(Platform)\</OutputPath>
     <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
-    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <OutputPath>$(SolutionDir)bin\BfmeOnline.Installer\$(Configuration)\$(Platform)\</OutputPath>
     <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
     <DefineConstants>Debug</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
-    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <OutputPath>$(SolutionDir)bin\BfmeOnline.Installer\$(Configuration)\$(Platform)\</OutputPath>
     <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
     <SuppressPdbOutput>False</SuppressPdbOutput>
   </PropertyGroup>
+  
   <ItemGroup>
     <Compile Include="Components.wxs" />
     <Compile Include="ComponentsGenerated.wxs" />
@@ -62,14 +64,17 @@
   <Target Name="EnsureWixToolsetInstalled" Condition=" '$(WixTargetsImported)' != 'true' ">
     <Error Text="The WiX Toolset v3.11 (or newer) build tools must be installed to build this project. To download the WiX Toolset, see http://wixtoolset.org/releases/" />
   </Target>
+  
   <!-- Before build -->
   <Target Name="BeforeBuild">
+    
     <!-- Clean old files -->
-    <Exec Command="rd /s /q $(SolutionDir)\BfmeOnline.Launcher\bin\$(Configuration)\netcoreapp3.0\win-$(Platform)">
-    </Exec>
+    <Exec Command="rd /s /q $(SolutionDir)BfmeOnline.Launcher\bin\$(Configuration)\" />
+    
     <!-- Publish dotnet core app -->
-    <Exec Command="dotnet publish $(SolutionDir)\BfmeOnline.Launcher\ -c $(Configuration) -r win-$(Platform) /p:TrimUnusedDependencies=true">
-    </Exec>
+    <!--<Exec Command="dotnet publish $(SolutionDir)BfmeOnline.Launcher\ -c $(Configuration) -r win-$(Platform) /p:TrimUnusedDependencies=true - -output $(SolutionDir)bin\BfmeOnline.Launcher\$(Configuration)\$(Platform)" />-->
+    <Exec Command="dotnet publish $(SolutionDir)BfmeOnline.Launcher\ -c $(Configuration) /p:TrimUnusedDependencies=true --output $(SolutionDir)bin\BfmeOnline.Launcher\$(Configuration)\$(Platform)" />
+    
     <!-- Delete localizations -->
     <!--<Exec Command="RD /S /Q ..\bin\netcoreapp3.0\win-$(Platform)\publish\cs">
     </Exec>
@@ -97,21 +102,23 @@
     </Exec>
     <Exec Command="RD /S /Q ..\bin\netcoreapp3.0\win-$(Platform)\publish\zh-Hant">
     </Exec>-->
+    
     <!-- Copy External Apps -->
-    <Exec Command="xcopy /E /I $(SolutionDir)External $(SolutionDir)BfmeOnline.Launcher\bin\$(Configuration)\netcoreapp3.0\win-$(Platform)\publish\">
-    </Exec>
+    <Exec Command="xcopy /E /I $(SolutionDir)External $(SolutionDir)bin\BfmeOnline.Launcher\$(Configuration)\$(Platform)" />
+    
     <!-- Get assembly version  -->
-    <GetAssemblyIdentity AssemblyFiles="$(SolutionDir)BfmeOnline.Launcher\bin\$(Configuration)\netcoreapp3.0\win-$(Platform)\publish\BfmeOnline.Launcher.dll">
+    <GetAssemblyIdentity AssemblyFiles="$(SolutionDir)bin\BfmeOnline.Launcher\$(Configuration)\$(Platform)\BfmeOnline.Launcher.dll">
       <Output TaskParameter="Assemblies" ItemName="AssemblyVersion" />
     </GetAssemblyIdentity>
+    
     <PropertyGroup>
       <DefineConstants>
         BuildVersion=%(AssemblyVersion.Version);
-        BasePath=$(SolutionDir)BfmeOnline.Launcher\bin\$(Configuration)\netcoreapp3.0\win-$(Platform)\publish
+        BasePath=$(SolutionDir)bin\BfmeOnline.Launcher\$(Configuration)\$(Platform)
       </DefineConstants>
     </PropertyGroup>
     <!-- Harvest file components from the publish folder -->
-    <HeatDirectory OutputFile="ComponentsGenerated.wxs" DirectoryRefId="INSTALLFOLDER" ComponentGroupName="PublishedComponents" SuppressCom="true" Directory="$(SolutionDir)BfmeOnline.Launcher\bin\$(Configuration)\netcoreapp3.0\win-$(Platform)\publish" SuppressFragments="true" SuppressRegistry="true" SuppressRootDirectory="true" AutoGenerateGuids="false" GenerateGuidsNow="true" ToolPath="$(WixToolPath)" PreprocessorVariable="var.BasePath" />
+    <HeatDirectory OutputFile="ComponentsGenerated.wxs" DirectoryRefId="INSTALLFOLDER" ComponentGroupName="PublishedComponents" SuppressCom="true" Directory="$(SolutionDir)bin\BfmeOnline.Launcher\$(Configuration)\$(Platform)" SuppressFragments="true" SuppressRegistry="true" SuppressRootDirectory="true" AutoGenerateGuids="false" GenerateGuidsNow="true" ToolPath="$(WixToolPath)" PreprocessorVariable="var.BasePath" />
   </Target>
   <Target Name="AfterBuild">
   </Target>

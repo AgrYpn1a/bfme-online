@@ -42,6 +42,7 @@ namespace BfmeOnline.Launcher.Source.commands.window.main
                         {
                             // Show main game screen
                             Core.Instance.ChangeState(LauncherState.Game);
+                            //Core.Instance.ChangeState(LauncherState.CheckingForGameUpdates);
                         }
                         else
                         {

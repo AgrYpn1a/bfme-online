@@ -15,6 +15,10 @@
         // Shows currently selected game
         Game,
 
+        CheckingForGameUpdates,
+
+        CheckingForUpdates,
+
         // Screen for finding quick matches
         Matchmaking
     }

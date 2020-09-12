@@ -4,10 +4,11 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Security.Cryptography;
+using System.Threading.Tasks;
 
 namespace BfmeOnline.Launcher.Source.Updates
 {
-    sealed class GameUpdateManager
+    sealed class GameUpdateManager : IUpdateManager
     {
 
         private static string[] GetFilePaths(string rootDir)
@@ -31,7 +32,8 @@ namespace BfmeOnline.Launcher.Source.Updates
                 {
                     var stream = File.OpenRead(path);
                     {
-                        fileHashList.Add(new FileHash { 
+                        fileHashList.Add(new FileHash
+                        {
                             Path = path.Replace(rootDir, "").Substring(1),
                             Hash = BitConverter.ToString(md5.ComputeHash(stream)).Replace("-", "").ToLowerInvariant()
                         });
@@ -40,6 +42,16 @@ namespace BfmeOnline.Launcher.Source.Updates
             }
 
             return fileHashList;
+        }
+
+        public Task<bool> HasUpdates()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task Update()
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -4,6 +4,7 @@ using System;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
+using BfmeOnline.Downloader;
 
 namespace BfmeOnline.GameInstaller
 {
@@ -34,7 +35,7 @@ namespace BfmeOnline.GameInstaller
 
         private static string _downloadPath;
 
-        private static Downloader.Downloader dl = new Downloader.Downloader();
+        private static ADownloader dl = new BasicDownloader("", "");
 
         public static async Task Download(string downloadUrl)
         {
@@ -44,13 +45,13 @@ namespace BfmeOnline.GameInstaller
             // Check if download already exists
             if (File.Exists(downloadPath))
             {
-                dl.SetDestinationPath(downloadPath);
+                //dl.SetDestinationPath(downloadPath);
                 return;
             }
 
             State = InstallerState.DOWNLOADING;
 
-            dl = new Downloader.Downloader();
+            dl = new BasicDownloader("", "");
             Progress = 0;
 
             // Bind progress change handler
@@ -102,7 +103,7 @@ namespace BfmeOnline.GameInstaller
             // Prepare install file
             State = InstallerState.EXTRACTING;
 
-            await dl.CreateInstallationFile();
+            await dl.MergeTempFiles();
             ExtractFiles(_downloadPath, installPath);
         }
 

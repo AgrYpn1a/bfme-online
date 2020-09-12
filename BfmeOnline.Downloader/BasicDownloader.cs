@@ -1,26 +1,25 @@
 ﻿using System;
 using System.IO;
 using System.Net;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace BfmeOnline.Downloader
 {
 
-    public class Downloader : IDownloader
+    public class BasicDownloader : ADownloader
     {
         private string _sourceUrl;
-        private string _destinationPath;
+        private string _destPath;
         private const int THREADS = 4;
 
         private int[] _progress = new int[THREADS];
 
-        private volatile bool _isFinished = false;
-        public bool IsFinished => _isFinished;
+        public bool IsFinished { get; private set; }
 
         private volatile bool _isCancelled = false;
 
-        public Action<int> OnProgressUpdate;
         public Action<Exception> OnError;
         public Action OnDownloadFinished;
 
@@ -41,31 +40,31 @@ namespace BfmeOnline.Downloader
 
         private Task[] _tasks = new Task[THREADS];
         private string[] _fileNames = new string[THREADS];
-        private CancellationTokenSource[] _taskTokens = new CancellationTokenSource[THREADS];
 
-        private CancellationTokenSource _ctsDownloadOperation = new CancellationTokenSource();
-
-        public void SetDestinationPath(string destPath)
+        public BasicDownloader(string sourceUrl, string downloadPath) : base(sourceUrl, downloadPath)
         {
-            _destinationPath = destPath;
         }
 
-        public async Task Download(string sourceUrl, string destinationPath)
+        public async override Task Download(string url, string destPath)
         {
-            _isFinished = false;
-            _sourceUrl = sourceUrl;
-            _destinationPath = destinationPath;
+            lock (_root)
+            {
+                IsFinished = false;
+            }
 
-            File.Delete(destinationPath);
+            _destPath = destPath;
+
+            // Clear old files
+            ClearDownloadFiles(destPath);
+            ClearTempFiles(destPath);
 
             try
             {
                 long fileChunkSize = GetFileSize() / (long)THREADS;
-
                 _fileNames = new string[THREADS];
 
                 // Start progress report thread
-                new Thread(() =>
+                Thread progress = new Thread(() =>
                 {
                     while (!IsFinished)
                     {
@@ -73,7 +72,8 @@ namespace BfmeOnline.Downloader
                         int progress = CalculateProgress();
                         OnProgressUpdate?.Invoke(progress);
                     }
-                }).Start();
+                });
+                progress.Start();
 
                 // Create threads
                 for (int i = 0; i < THREADS; i++)
@@ -83,11 +83,8 @@ namespace BfmeOnline.Downloader
                     _tasks[i] = new Task(() =>
                     {
                         // Save file names
-                        string fileName = $"{_destinationPath}_tmp_{index}";
+                        string fileName = GetChunkName(destPath, i);
                         _fileNames[index] = fileName;
-
-                        // Initiate download
-                        //Console.WriteLine($"Thread {index} started.");
 
                         int offset = (index > 0) ? 1 : 0;
 
@@ -101,44 +98,38 @@ namespace BfmeOnline.Downloader
                 }
 
                 await Task.WhenAll(_tasks);
-
+                lock (_root)
+                {
+                    IsFinished = true;
+                }
             }
             catch (Exception e)
             {
                 // Throw further
                 throw e;
             }
-
-            // Merge files
-            //using (FileStream destinationStream = new FileStream(destinationPath, FileMode.Append))
-            //{
-            //    foreach (var fileName in fileNames)
-            //    {
-            //        byte[] file = File.ReadAllBytes(fileName);
-            //        destinationStream.Write(file, 0, file.Length);
-            //    }
-
-            //    // Make sure stream is closed after writing
-            //    destinationStream.Close();
-
-            //    foreach (var fileName in fileNames)
-            //    {
-            //        File.Delete(fileName);
-            //    }
-            //}
-
-            //_isFinished = true;
-            //OnDownloadFinished?.Invoke();
         }
 
-        public async Task CreateInstallationFile()
+        public void CancelDownload()
         {
-            if(File.Exists(_destinationPath))
+            lock (_root)
+            {
+                _isCancelled = true;
+                IsFinished = true;
+            }
+
+            ClearTempFiles(_destPath);
+            ClearDownloadFiles(_destPath);
+        }
+
+        public async Task MergeTempFiles()
+        {
+            if (File.Exists(_destPath))
             {
                 return;
             }
 
-            using (FileStream destinationStream = new FileStream(_destinationPath, FileMode.Append))
+            using (FileStream destinationStream = new FileStream(_destPath, FileMode.Append))
             {
                 foreach (var fileName in _fileNames)
                 {
@@ -157,17 +148,20 @@ namespace BfmeOnline.Downloader
             }
         }
 
-        public void CancelDownload()
+        private string GetChunkName(string destPath, int chunkId) => $"{destPath}_tmp_{chunkId}";
+
+        private void ClearTempFiles(string destPath)
         {
-            //foreach (var token in _taskTokens)
-            //{
-            //    token.Cancel();
-            //}
-            lock (_root)
+            for (int i = 0; i < THREADS; i++)
             {
-                _isCancelled = true;
-                _isFinished = true;
+                string fileName = GetChunkName(destPath, i);
+                File.Delete(fileName);
             }
+        }
+
+        private void ClearDownloadFiles(string destPath)
+        {
+            File.Delete(destPath);
         }
 
         private long GetFileSize()
@@ -248,22 +242,30 @@ namespace BfmeOnline.Downloader
             }
         }
 
-        void IDownloader.Download(string sourceUrl, string destinationPath)
+        public override void Cancel()
         {
         }
 
-        public void Cancel()
-        {
-        }
+
     }
 
     class Program
     {
-
         static void Main(string[] args)
         {
-            Downloader downloader = new Downloader();
-            downloader.Download("https://speed.hetzner.de/100MB.bin", @"e:\temp\100mb.bin");
+            ADownloader downloader = new BasicDownloader("", "");
+            downloader.OnProgressUpdate = (progress) =>
+            {
+                Console.WriteLine($"Progress {progress}");
+            };
+
+            Thread t = new Thread(async () =>
+            {
+                await downloader.Download("https://speed.hetzner.de/100MB.bin", @"e:\temp\100mb.bin");
+                Console.WriteLine("Download finished.");
+            });
+
+            t.Start();
         }
     }
 }

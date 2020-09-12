@@ -21,12 +21,12 @@ namespace BfmeOnline.Launcher.Source.Commands
 
         public bool CanExecute(object parameter)
         {
-            return true;
+            return core.Core.Instance.LauncherState != core.LauncherState.CheckingForGameUpdates;
         }
 
         public void Execute(object parameter)
         {
-            Logger.LogMessage("[CMD] StartGame");
+            Logger.LogMessage("StartGame", "[CMD]");
             System.Diagnostics.Process.Start($"{RegistryManager.GetInstallPath()}/lotrbfme.exe");
         }
     }
