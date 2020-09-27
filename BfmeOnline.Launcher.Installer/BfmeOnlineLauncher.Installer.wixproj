@@ -104,7 +104,7 @@
     </Exec>-->
     
     <!-- Copy External Apps -->
-    <Exec Command="xcopy /E /I $(SolutionDir)External $(SolutionDir)bin\BfmeOnline.Launcher\$(Configuration)\$(Platform)" />
+    <Exec Command="xcopy /E /I /Y $(SolutionDir)External $(SolutionDir)bin\BfmeOnline.Launcher\$(Configuration)\$(Platform)" />
     
     <!-- Get assembly version  -->
     <GetAssemblyIdentity AssemblyFiles="$(SolutionDir)bin\BfmeOnline.Launcher\$(Configuration)\$(Platform)\BfmeOnline.Launcher.dll">

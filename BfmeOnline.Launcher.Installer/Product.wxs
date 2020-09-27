@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-  
-  <!-- Give product a unique ID per platform --> 
+
+  <!-- Give product a unique ID per platform -->
+  <!-- Generate new IDs when releasing a new version --> 
   <?if $(var.Platform) = x64 ?>
-  <?define ProductCode = "{2E69FA65-11A7-400A-A1C7-38030ACC9A5F}"?>
+  <?define ProductCode = "{1F69FA65-11A7-400A-A1C7-38030ACC9A5F}"?>
   <?else?>
-  <?define ProductCode = "{2990CA62-AFA0-429A-A3FD-5E1E88C0BA7F}"?>
+  <?define ProductCode = "{1E90CA62-AFA0-429A-A3FD-5E1E88C0BA7F}"?>
   <?endif?>
 
-  <!-- Fixed upgrade ID -->
+  <!-- Fixed upgrade ID do not change! -->
   <?define UpgradeCode = "{72F89831-0DFB-4C36-8F65-2AEB43D90DFE}"?>
 
   <!-- Define main product -->

@@ -1,29 +1,9 @@
 ﻿using BfmeOnline.Launcher.Source;
-using BfmeOnline.Launcher.Source.WS;
-using Microsoft.Win32;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using BfmeOnline.Downloader;
-using System.Threading;
-using BfmeOnline.GameInstaller;
-using BfmeOnline.Launcher.Source.Http;
-using System.Diagnostics;
-using BfmeOnline.Launcher.Source.Updates;
-using System.Security.Cryptography;
-using System.IO;
 using BfmeOnline.Launcher.Source.ViewModel;
+using BfmeOnline.Launcher.Source.WS;
+using System;
+using System.Diagnostics;
+using System.Windows;
 
 namespace BfmeOnline.Launcher.View
 {
@@ -32,33 +12,17 @@ namespace BfmeOnline.Launcher.View
     /// </summary>
     public partial class Main : Window
     {
-        private App _bfmeApp;
+        private App m_bfmeApp;
 
-        private MainViewModel _viewModel;
+        private MainViewModel m_viewModel;
 
         #region Constructor
         public Main()
         {
             InitializeComponent();
 
-            _bfmeApp = (App)Application.Current;
-
-            // Setup view model and data context
-            _viewModel = new MainViewModel();
-            DataContext = _viewModel.Model;
-
-
-            // Bind data
-
-            //_bfmeApp.OnQueued += BfmeApp_OnQueued;
-            //_bfmeApp.OnMatchFound += BfmeApp_OnMatchFound;
-
-            //if (RegistryManager.IsGameInstalled())
-            //{
-            //    installPanel.Visibility = Visibility.Hidden;
-            //    downloadPanel.Visibility = Visibility.Hidden;
-            //    playPanel.Visibility = Visibility.Visible;
-            //}
+            m_bfmeApp = (App)Application.Current;
+            m_viewModel = new MainViewModel(this);
 
 #if DEBUG_INSTALLED
             installPanel.Visibility = Visibility.Hidden;
