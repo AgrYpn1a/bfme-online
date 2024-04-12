@@ -9,7 +9,7 @@ using System.Windows.Input;
 
 namespace BfmeOnline.Launcher.Source.model
 {
-    public sealed class MainModel : INotifyPropertyChanged
+    public sealed class MainModel : AModel<MainModel, MainViewModel>
     {
         private string _installPath;
         public string InstallPath
@@ -121,7 +121,23 @@ namespace BfmeOnline.Launcher.Source.model
             }
         }
 
-        /** Comamnds */
+        #region PlayScreen
+
+        private Visibility mv_checkingForUpdates = Visibility.Visible;
+
+        public Visibility v_CheckingForUpdates
+        {
+            get => mv_checkingForUpdates;
+            set
+            {
+                mv_checkingForUpdates = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(v_CheckingForUpdates)));
+            }
+        }
+
+        #endregion
+
+        /** Commands */
         public ICommand InstallGameCmd { get; private set; }
         public ICommand BackToHomeCmd { get; private set; }
         public ICommand SelectGameCmd { get; private set; }
@@ -129,16 +145,10 @@ namespace BfmeOnline.Launcher.Source.model
         public ICommand CancelInstallCmd { get; private set; }
         public ICommand StartGameCmd { get; private set; }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public override event PropertyChangedEventHandler PropertyChanged;
 
-        public MainViewModel ViewModel;
-
-        public MainModel(MainViewModel viewModel)
+        public MainModel(MainViewModel viewModel) : base(viewModel)
         {
-
-            // Link view model
-            ViewModel = viewModel;
-
             InstallPath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
 
             InstallGameCmd = new InstallGameCommand();

@@ -37,28 +37,41 @@ namespace BfmeOnline.Launcher
 
             if (DebugWindows()) return;
 
+            // Initialize logger window
+            lw = new LogWindow();
+            lw.Show();
 
-            //bool hasUpdates = await UpdateManager.CheckForUpdates();
-            //if (hasUpdates)
-            //{
-            //    // Bind progress watcher
-            //    UpdateManager.OnDownloadProgressChange += progress =>
-            //    {
-            //        _winUpdater.SetDownloadProgress(progress);
-            //    };
+            // Check for updates
+            IUpdateManager updates = new LauncherUpdateManager();
 
-            //    _winUpdater.Show();
-            //    _winUpdater.SetMessage("Downloading updates...");
+            if (await updates.HasUpdates())
+            {
+                // Bind progress watcher
+                LauncherUpdateManager.OnDownloadProgressChange += progress =>
+                {
+                    _winUpdater.SetDownloadProgress(progress);
+                };
 
-            //    // Wait for updates to finish
-            //    await UpdateManager.DownloadUpdates(err => { });
+                _winUpdater.Show();
+                _winUpdater.SetMessage("Downloading updates...");
 
-            //    Logger.LogMessage("Updates finished installing.");
+                // Wait for updates to finish
+                try
+                {
+                    await LauncherUpdateManager.DownloadUpdates(err => { });
+                    Logger.LogMessage("Updates finished installing.");
 
-            //    // Restart the app
-            //    System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
-            //    Application.Current.Shutdown();
-            //}
+                    LauncherUpdateManager.InstallUpdates();
+
+                    // Restart the app
+                    Application.Current.Shutdown();
+                    System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+                }
+                catch (Exception exception)
+                {
+                    Logger.LogMessage(exception.Message, "[DOWNLOADER]", Logger.LogType.Error);
+                }
+            }
 
             // Bind event handlers
             //AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
@@ -114,8 +127,8 @@ namespace BfmeOnline.Launcher
             //    //System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
             //};
 
-            lw = new LogWindow();
-            lw.Show();
+            //lw = new LogWindow();
+            //lw.Show();
 
             new Main().Show();
 
@@ -259,9 +272,6 @@ namespace BfmeOnline.Launcher
             new Main().Show();
 
             return;
-
-            new MainWindow().Show();
-
 
             pVPNManager = new Process();
             pVPNManager.StartInfo.FileName = "vpn.exe";

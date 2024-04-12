@@ -2,95 +2,95 @@
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
     <Fragment>
         <DirectoryRef Id="INSTALLFOLDER">
-            <Component Id="cmp3CAF20DB2EE79AC08E427971F5EEFE33" Guid="{A44E61EC-5282-4E4F-BF4B-BDF74322ACF0}">
+            <Component Id="cmp3CAF20DB2EE79AC08E427971F5EEFE33" Guid="{849D78B4-C6D3-4827-A270-73CF7B44D845}">
                 <File Id="fil7FE072F23EBDA0C59879CA1AE2D392F4" KeyPath="yes" Source="$(var.BasePath)\BfmeOnline.Downloader.dll" />
             </Component>
-            <Component Id="cmp3CB2323828D3448504523983AC98A04C" Guid="{13FEB103-404F-4DA8-B528-B79F3D38AE97}">
+            <Component Id="cmp3CB2323828D3448504523983AC98A04C" Guid="{5A07F375-B281-4C05-9595-AED74989F418}">
                 <File Id="fil458648459D079166D8FE77E132C06606" KeyPath="yes" Source="$(var.BasePath)\BfmeOnline.Downloader.pdb" />
             </Component>
-            <Component Id="cmp95E21A1E5DC6AD3725E44C5DDBCD1C04" Guid="{A1A4617F-179D-4765-AE4B-8838A15A9809}">
+            <Component Id="cmp95E21A1E5DC6AD3725E44C5DDBCD1C04" Guid="{92204883-37A4-4C3E-89A3-C5036D9C1AF5}">
                 <File Id="fil6DD360E354EA59980585B3C219303CC2" KeyPath="yes" Source="$(var.BasePath)\BfmeOnline.GameInstaller.dll" />
             </Component>
-            <Component Id="cmpE53EE743816341AEFEB2A00B141A0094" Guid="{671F5899-B1CE-4783-A835-A7AF54628490}">
+            <Component Id="cmpE53EE743816341AEFEB2A00B141A0094" Guid="{9558767D-AB3B-4FFD-B999-1853C444AEFB}">
                 <File Id="filD92F5CA6D87F024D2A932C18B6E7444D" KeyPath="yes" Source="$(var.BasePath)\BfmeOnline.GameInstaller.pdb" />
             </Component>
-            <Component Id="cmp0279231DCD3D3775B100675C576162A1" Guid="{0C1525BE-2588-4E48-8660-21E6390A5258}">
+            <Component Id="cmp0279231DCD3D3775B100675C576162A1" Guid="{E874E90A-A55A-4510-BDD9-9373F02CA6ED}">
                 <File Id="fil00BADC92F6F3960CACBF9A59D011C8D5" KeyPath="yes" Source="$(var.BasePath)\BfmeOnline.Launcher.deps.json" />
             </Component>
-            <Component Id="cmpEBEEFE3DCF1BC5B6270E728DACC5EDC5" Guid="{02B5D7BC-5BED-4EA3-94D5-34FDE624C67A}">
+            <Component Id="cmpEBEEFE3DCF1BC5B6270E728DACC5EDC5" Guid="{A56A8581-8C5D-45FE-A7A1-4133CFBEC193}">
                 <File Id="filBD5CCB124FEA79ED5D91BE74B13FAF9F" KeyPath="yes" Source="$(var.BasePath)\BfmeOnline.Launcher.dll" />
             </Component>
-            <Component Id="cmp8A89BB56843E37D652126B94C11104B3" Guid="{48E9F701-556F-4C9C-AEBC-531BEEBB7FDA}">
+            <Component Id="cmp8A89BB56843E37D652126B94C11104B3" Guid="{A4005E86-A599-4553-B920-3E40596A65F8}">
                 <File Id="fil5BCE97A74359941489B46F61FD4E495B" KeyPath="yes" Source="$(var.BasePath)\BfmeOnline.Launcher.exe" />
             </Component>
-            <Component Id="cmpB11DF5A0972E8284683F39B6315A8F69" Guid="{1F1FB165-5327-41A1-B29F-3F024C9EE666}">
+            <Component Id="cmpB11DF5A0972E8284683F39B6315A8F69" Guid="{EA5A80FF-CB55-4D2C-99EB-A91D17B6FEB2}">
                 <File Id="filC5139FDC155A72A2D53AA9E931448ABC" KeyPath="yes" Source="$(var.BasePath)\BfmeOnline.Launcher.pdb" />
             </Component>
-            <Component Id="cmp3E00C9E0A0C570F8EAF1DAB5FB6B3864" Guid="{D746009F-E138-4666-A033-E148509CE425}">
+            <Component Id="cmp3E00C9E0A0C570F8EAF1DAB5FB6B3864" Guid="{D7264112-54E1-4639-883E-01D818FB5D96}">
                 <File Id="filA521C03944777275FF6E389D0E0DD75D" KeyPath="yes" Source="$(var.BasePath)\BfmeOnline.Launcher.runtimeconfig.json" />
             </Component>
-            <Component Id="cmpC93CCD2BA4D06E48A8F70F9BE4E3C8AE" Guid="{9F4FC682-902E-4501-8621-96D75A6446E8}">
+            <Component Id="cmpC93CCD2BA4D06E48A8F70F9BE4E3C8AE" Guid="{D495863C-EFFE-4473-8396-23182CAAD8A8}">
                 <File Id="filC850148732E7F1C415B321317EE74483" KeyPath="yes" Source="$(var.BasePath)\BfmeOnline.OptionsEditor.dll" />
             </Component>
-            <Component Id="cmp7FCB1FE3F4D8C0AB43300495F6254104" Guid="{050D318E-2A7D-4EB9-9156-707704FC603E}">
+            <Component Id="cmp7FCB1FE3F4D8C0AB43300495F6254104" Guid="{C18260B0-BD3C-48F2-BAAE-8BFD3F821A7D}">
                 <File Id="fil3A271778384E225F357801CFB12ADA45" KeyPath="yes" Source="$(var.BasePath)\BfmeOnline.OptionsEditor.exe" />
             </Component>
-            <Component Id="cmpA1D3E4099AB68062CC8CE6DEA6AAE78A" Guid="{13E2351E-4ED5-46E3-8E5B-1E97F19610BB}">
+            <Component Id="cmpA1D3E4099AB68062CC8CE6DEA6AAE78A" Guid="{74B03071-1BB3-4479-801E-B5FBC2571F6F}">
                 <File Id="filEDF83E547A5FABBFEF4B500339CEB423" KeyPath="yes" Source="$(var.BasePath)\BfmeOnline.OptionsEditor.pdb" />
             </Component>
-            <Component Id="cmpB955D9B38C7C234C7BB5B427D5306A88" Guid="{070FFDBD-4326-48F7-A8E1-7555E5D7AFD4}">
+            <Component Id="cmpB955D9B38C7C234C7BB5B427D5306A88" Guid="{D4AE411A-1C4A-4A45-965A-756DCE5E6A80}">
                 <File Id="fil8A89501B56E70203FA5889466F0EF478" KeyPath="yes" Source="$(var.BasePath)\FluentAssertions.dll" />
             </Component>
-            <Component Id="cmpA1B1DF3E25658385276D302BEA14E565" Guid="{C6BDEE02-E1EA-4832-8D61-A847033919D1}">
+            <Component Id="cmpA1B1DF3E25658385276D302BEA14E565" Guid="{605484E9-DC30-4FAF-8077-2C9376DD889A}">
                 <File Id="fil9A525618F64C62D4C9AE79C02FB4FE38" KeyPath="yes" Source="$(var.BasePath)\Ionic.Zip.dll" />
             </Component>
-            <Component Id="cmp3E4F3E4686A9B425B5812E5171CCDEEF" Guid="{6989C3AB-18AA-49F9-BA6A-6793FD12352F}">
+            <Component Id="cmp3E4F3E4686A9B425B5812E5171CCDEEF" Guid="{2FE78335-CF3F-4B65-8F33-F8C218A28684}">
                 <File Id="fil24DC60A8CFEFE326A0444D71C66806C1" KeyPath="yes" Source="$(var.BasePath)\Microsoft.Win32.Registry.dll" />
             </Component>
-            <Component Id="cmpBB1767D7C200C536ABB2D361F40F9D92" Guid="{F38A8CB7-FBA6-4FB7-B413-A31E59159045}">
+            <Component Id="cmpBB1767D7C200C536ABB2D361F40F9D92" Guid="{99D75D6D-F96B-430C-B27B-942F9926E4C0}">
                 <File Id="fil4E0F4321F336BF83461A34116F3E30B7" KeyPath="yes" Source="$(var.BasePath)\Microsoft.WindowsAPICodePack.dll" />
             </Component>
-            <Component Id="cmpBC4FC00A26E7D32479D42D3411317FC5" Guid="{630D0E0A-1BB6-4965-853B-B1D9C4D67150}">
+            <Component Id="cmpBC4FC00A26E7D32479D42D3411317FC5" Guid="{456C0E76-F909-4A8F-960D-848B0E9E92F1}">
                 <File Id="fil90A8AAD9FC612906D405476D61CEA3F4" KeyPath="yes" Source="$(var.BasePath)\Newtonsoft.Json.dll" />
             </Component>
-            <Component Id="cmpECF9AF67F22A4B8E249ABC94D17E35B0" Guid="{EB6F369C-48CC-4B0D-B62B-EAF8BCCD0737}">
+            <Component Id="cmpECF9AF67F22A4B8E249ABC94D17E35B0" Guid="{CFCB2103-5FFE-4FF2-AE6D-3F13E1A7203C}">
                 <File Id="fil60FB823542E98D11B99AE00BD12E8F81" KeyPath="yes" Source="$(var.BasePath)\SuperSocket.ClientEngine.dll" />
             </Component>
-            <Component Id="cmp29C69E251B3C89DD6B3DC521065B9992" Guid="{F83E7884-C242-452A-88ED-1F597DF05F11}">
+            <Component Id="cmp29C69E251B3C89DD6B3DC521065B9992" Guid="{CC596F33-C912-47F6-91AC-629323D41D4D}">
                 <File Id="fil00CCEFDA0D8986A605957A8BC8A24D01" KeyPath="yes" Source="$(var.BasePath)\Syncfusion.SfProgressBar.WPF.dll" />
             </Component>
-            <Component Id="cmp710FB2C1D9B9F0D6CE2689FE3A641F1A" Guid="{57296CED-284D-4B61-BF48-D97D4AE2A623}">
+            <Component Id="cmp710FB2C1D9B9F0D6CE2689FE3A641F1A" Guid="{5FBE5795-4FC9-4959-933B-E13CEB39DEF9}">
                 <File Id="fil138B0445708196C910D5624DE16BDD74" KeyPath="yes" Source="$(var.BasePath)\Syncfusion.SfProgressBar.WPF.xml" />
             </Component>
-            <Component Id="cmp2B62EB54A81873E947A60724B27A4A20" Guid="{FA8C551D-084D-4BAA-816F-B037311479F7}">
+            <Component Id="cmp2B62EB54A81873E947A60724B27A4A20" Guid="{1CA62AFF-99A7-4F79-AA9E-C8FAB7A95C8E}">
                 <File Id="filA7A1BE632E8B8E30AA8B67174EF98465" KeyPath="yes" Source="$(var.BasePath)\Syncfusion.Shared.WPF.dll" />
             </Component>
-            <Component Id="cmpE043C22C919D5F863268265F39D85C37" Guid="{CC62A95C-EAAC-4B03-95B2-27CC1760C2BE}">
+            <Component Id="cmpE043C22C919D5F863268265F39D85C37" Guid="{007EA2D5-62B3-4DAE-A619-C02A65E52306}">
                 <File Id="fil6A05CA173BD3661A3C2172E9037B76C6" KeyPath="yes" Source="$(var.BasePath)\Syncfusion.Shared.WPF.xml" />
             </Component>
-            <Component Id="cmpA79A142FCEA412B1ABBD7BE954692F65" Guid="{2750EB99-2305-4DC8-AD48-B27EDBC1819A}">
+            <Component Id="cmpA79A142FCEA412B1ABBD7BE954692F65" Guid="{F1A2C8CB-E749-468D-8919-E108CA4349D5}">
                 <File Id="fil0B3269E73A503751E3461F1BA6DEB094" KeyPath="yes" Source="$(var.BasePath)\System.Security.AccessControl.dll" />
             </Component>
-            <Component Id="cmp98A131703008D3AC809721FE16EEAFF8" Guid="{C8DB5480-96F2-4517-B51D-3757864CE9CB}">
+            <Component Id="cmp98A131703008D3AC809721FE16EEAFF8" Guid="{91655060-2829-4E57-B1F7-0F7F7DC27EC8}">
                 <File Id="fil50D3CD433FCD76F25C71E81C31B6DD3A" KeyPath="yes" Source="$(var.BasePath)\System.Security.Principal.Windows.dll" />
             </Component>
-            <Component Id="cmp8F05B7249E8F5435FA819D11F229C4D4" Guid="{E5C7A495-D2C2-4E79-972C-D3F58BFBDF75}">
+            <Component Id="cmp8F05B7249E8F5435FA819D11F229C4D4" Guid="{7FC31CB2-E13A-417A-842B-2958D914E6D4}">
                 <File Id="fil55D6443EE4CCA9B4C4E03A128C2D6CD7" KeyPath="yes" Source="$(var.BasePath)\WebSocket4Net.dll" />
             </Component>
-            <Component Id="cmp3A072CB636CFA4F8D3A70D6D70681AB7" Guid="{1B29508D-E760-418A-8D0F-5AD8D58A4502}">
+            <Component Id="cmp3A072CB636CFA4F8D3A70D6D70681AB7" Guid="{4FCCD097-6502-4B49-B1EC-8DD68FF8E439}">
                 <File Id="fil5AFEE917330AEF1D029FF91A31D5D401" KeyPath="yes" Source="$(var.BasePath)\XamlAnimatedGif.dll" />
             </Component>
             <Directory Id="dir41772C233BE465DE0D167364B3BB566C" Name="Resources">
                 <Directory Id="dirCD8B8EE3216583DE0D5C48D027CA5FF6" Name="Sound">
-                    <Component Id="cmp98D131EA320CBDD9688DFCC1F56EBF56" Guid="{FA023CF2-8B49-403F-AD4D-FF70B7BF278B}">
+                    <Component Id="cmp98D131EA320CBDD9688DFCC1F56EBF56" Guid="{6B3B3F7D-CAB9-4ED6-AD23-99E305FD7A4A}">
                         <File Id="filFC973537B3CE81E8B2659B8D364CA9D4" KeyPath="yes" Source="$(var.BasePath)\Resources\Sound\install.mp3" />
                     </Component>
                 </Directory>
                 <Directory Id="dirEFF080831BB2A2966018A510DC8B4327" Name="Videos">
-                    <Component Id="cmp2FCD10E6B52E68C17CDEA45C21F7C9C2" Guid="{4F433199-5F7F-4E75-8CAE-FFD4B00E9C8C}">
+                    <Component Id="cmp2FCD10E6B52E68C17CDEA45C21F7C9C2" Guid="{C42A574D-AFCF-421D-B176-BB6DAA2D89C1}">
                         <File Id="fil65A16EF69F30BC64BFF6C29997A269EC" KeyPath="yes" Source="$(var.BasePath)\Resources\Videos\GollumQMFound.mp4" />
                     </Component>
-                    <Component Id="cmpB33BE73E4FEBB8366D395A708844A066" Guid="{F6AB5826-423E-45E4-9F4E-801172E4979E}">
+                    <Component Id="cmpB33BE73E4FEBB8366D395A708844A066" Guid="{38848F77-5871-48FB-BE23-D7A566694CFC}">
                         <File Id="filA364A30BECC6BDC51A02B334175ACF51" KeyPath="yes" Source="$(var.BasePath)\Resources\Videos\GollumQMLoop.mp4" />
                     </Component>
                 </Directory>
@@ -99,12 +99,12 @@
                 <Directory Id="dirDD6F90495A1A6169171F36CE85E975B6" Name="unix">
                     <Directory Id="dirF5C312D00ABBDC163194A7BEF01BFACF" Name="lib">
                         <Directory Id="dir6FAA93F403AFB5CB578180C70AA97B20" Name="netcoreapp2.1">
-                            <Component Id="cmp795B504A56BA08DE04E35D6184B9FCFB" Guid="{72075A7F-C82C-473D-8B9D-8F11D2E4E1BB}">
+                            <Component Id="cmp795B504A56BA08DE04E35D6184B9FCFB" Guid="{401E1F50-37BF-4BA4-84F2-8952FCF66B27}">
                                 <File Id="fil5BC91D7B6AC3B5686278424E66FEF3C6" KeyPath="yes" Source="$(var.BasePath)\runtimes\unix\lib\netcoreapp2.1\System.Security.Principal.Windows.dll" />
                             </Component>
                         </Directory>
                         <Directory Id="dir352B97B7988CCEBE29583D72A819B5E3" Name="netstandard2.0">
-                            <Component Id="cmpA8E0346EF805D0870E4339C452DD23EF" Guid="{034F6B79-4910-44A2-A88D-937CE17B6672}">
+                            <Component Id="cmpA8E0346EF805D0870E4339C452DD23EF" Guid="{1F030658-DB7E-4332-9F88-0E9E81FF2FA0}">
                                 <File Id="filA3C77D00AFC53E42A13C4D47C61CBF62" KeyPath="yes" Source="$(var.BasePath)\runtimes\unix\lib\netstandard2.0\Microsoft.Win32.Registry.dll" />
                             </Component>
                         </Directory>
@@ -113,17 +113,17 @@
                 <Directory Id="dir9BE9104649A116CC7BCCF4D9CCD3331B" Name="win">
                     <Directory Id="dirD19B0610952D1EE2D417EB5361695989" Name="lib">
                         <Directory Id="dirE6C91B9343029DAC8410CDFBF32A7D8C" Name="netcoreapp2.0">
-                            <Component Id="cmpB114F2B698A659ACAB170D2B54EE9CB5" Guid="{F1DA252B-1130-4054-AB57-55D6543371A6}">
+                            <Component Id="cmpB114F2B698A659ACAB170D2B54EE9CB5" Guid="{72132713-84EE-485B-9612-82F4BDF45B3E}">
                                 <File Id="filF1849767E48473D29549BDB12064DA20" KeyPath="yes" Source="$(var.BasePath)\runtimes\win\lib\netcoreapp2.0\System.Security.AccessControl.dll" />
                             </Component>
                         </Directory>
                         <Directory Id="dirC7A12D033E10A7A61C2BB3B7672AF3F7" Name="netcoreapp2.1">
-                            <Component Id="cmp9A78A28A91B83BACE07D5EE3901DFF2D" Guid="{8AE1224D-7692-4D0F-A873-07044A2AB975}">
+                            <Component Id="cmp9A78A28A91B83BACE07D5EE3901DFF2D" Guid="{1FDBAECE-474D-490D-8EAD-A4E4ADB5B2B3}">
                                 <File Id="fil552271C912E5D30F4EE720189FCCE34B" KeyPath="yes" Source="$(var.BasePath)\runtimes\win\lib\netcoreapp2.1\System.Security.Principal.Windows.dll" />
                             </Component>
                         </Directory>
                         <Directory Id="dir9B4F20F396822EEA06946FAEF0EA799A" Name="netstandard2.0">
-                            <Component Id="cmpF90002B1222DA17E183CAD493D52FC58" Guid="{9BCC1FFB-A13A-4C07-B8B4-EA05358F2AC5}">
+                            <Component Id="cmpF90002B1222DA17E183CAD493D52FC58" Guid="{76A69306-FF4F-4549-AC44-93DD3EE181AE}">
                                 <File Id="fil4AF721767270A387D7B545E13E92AC14" KeyPath="yes" Source="$(var.BasePath)\runtimes\win\lib\netstandard2.0\Microsoft.Win32.Registry.dll" />
                             </Component>
                         </Directory>
@@ -131,16 +131,16 @@
                 </Directory>
             </Directory>
             <Directory Id="dir0ADCB00C61F5565B7D34B66DDAC491CF" Name="tap">
-                <Component Id="cmp7D466880D471B3FEA519132C193408AF" Guid="{FE43227F-AFE3-4AEE-A382-493452848450}">
+                <Component Id="cmp7D466880D471B3FEA519132C193408AF" Guid="{D71581B8-C615-41BE-819F-1E75296A019A}">
                     <File Id="filD07276432ADDE6E54ADAEC44946E815C" KeyPath="yes" Source="$(var.BasePath)\tap\OemVista.inf" />
                 </Component>
-                <Component Id="cmp53E414EC5C64DA84F366C13B30FFF353" Guid="{C0BA5744-7B84-4A12-A13A-CAE9797F21C1}">
+                <Component Id="cmp53E414EC5C64DA84F366C13B30FFF353" Guid="{DC0C90F3-3330-4A32-9BBA-1135BB16B782}">
                     <File Id="fil43121C3FC7ADF7459A608BF37A6485A1" KeyPath="yes" Source="$(var.BasePath)\tap\tap0901.cat" />
                 </Component>
-                <Component Id="cmpD5BBEF303960212C1F1FAC297FDAB160" Guid="{B0B8DBD9-4095-4CC3-95DC-819DB8955621}">
+                <Component Id="cmpD5BBEF303960212C1F1FAC297FDAB160" Guid="{35B9DF28-6771-4012-B5C0-8C4B774A3A0A}">
                     <File Id="fil9F8980C77820444E0EFBE5D594BE141E" KeyPath="yes" Source="$(var.BasePath)\tap\tap0901.sys" />
                 </Component>
-                <Component Id="cmpC81EB15F964621781B1384D94C0D3240" Guid="{A95EE71B-C14B-4BBC-88A8-D40A32CEB478}">
+                <Component Id="cmpC81EB15F964621781B1384D94C0D3240" Guid="{106FB76F-15DA-4AE3-AC57-36B9854AA55B}">
                     <File Id="filC13C40F5B3247B447005BF78C913C5F0" KeyPath="yes" Source="$(var.BasePath)\tap\tapinstall.exe" />
                 </Component>
             </Directory>

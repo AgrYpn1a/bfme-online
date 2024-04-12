@@ -22,5 +22,6 @@ namespace BfmeOnline.Launcher.View.Components
         {
             InitializeComponent();
         }
+
     }
 }

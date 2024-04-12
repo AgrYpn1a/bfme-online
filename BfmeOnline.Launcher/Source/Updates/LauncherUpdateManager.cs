@@ -38,11 +38,11 @@ namespace BfmeOnline.Launcher.Source.Updates
             {
                 try
                 {
-                    var result = await client.GetAsync(NetworkAddresses.ADMIN_VERSION);
+                    var result = await client.GetAsync(NetworkAddresses.LAUNCHER_VERSION);
                     string body = await result.Content.ReadAsStringAsync();
 
-                    Model.WebResponse response = JsonConvert.DeserializeObject<Model.WebResponse>(body);
-                    AppVersion onlineVersion = JsonConvert.DeserializeObject<AppVersion>(response.Data.Message);
+                    Model.ND_LauncherVersion response = JsonConvert.DeserializeObject<Model.ND_LauncherVersion>(body);
+                    AppVersion onlineVersion = new AppVersion(response.Major, response.Minor, response.Patch);
                     AppVersion localVersion = Util.GetLocalVersion();
 
                     return !onlineVersion.Equals(localVersion);
@@ -71,11 +71,18 @@ namespace BfmeOnline.Launcher.Source.Updates
                 client.DownloadProgressChanged += Client_DownloadProgressChanged;
 
                 // Begin download
-                await client.DownloadFileTaskAsync(new Uri(NetworkAddresses.ADMIN_DOWNLOAD), DOWNLOAD_PATH);
+                try
+                {
+                    await client.DownloadFileTaskAsync(new Uri(NetworkAddresses.LAUNCHER_UPDATE), DOWNLOAD_PATH);
+                }
+                catch (Exception e)
+                {
+                    throw e;
+                }
             }
         }
 
-        private static void InstallUpdates()
+        public static void InstallUpdates()
         {
             Process process = new Process();
             process.StartInfo.FileName = "msiexec.exe";
@@ -106,14 +113,66 @@ namespace BfmeOnline.Launcher.Source.Updates
             InstallUpdates();
         }
 
-        public Task<bool> HasUpdates()
+        public async Task<bool> HasUpdates()
         {
-            throw new NotImplementedException();
+            using (var client = new HttpClient())
+            {
+                try
+                {
+                    var result = await client.GetAsync(NetworkAddresses.LAUNCHER_VERSION);
+                    string body = await result.Content.ReadAsStringAsync();
+
+                    Model.ND_LauncherVersion response = JsonConvert.DeserializeObject<Model.ND_LauncherVersion>(body);
+                    AppVersion onlineVersion = new AppVersion(response.Major, response.Minor, response.Patch);
+                    AppVersion localVersion = Util.GetLocalVersion();
+
+                    return !onlineVersion.Equals(localVersion);
+                }
+                catch (HttpRequestException e)
+                {
+                    MessageBox.Show(e.Message);
+                    return false;
+                }
+                catch (JsonReaderException e)
+                {
+                    MessageBox.Show("Something wrong with data received from the server.");
+                    return false;
+                }
+            }
         }
 
-        public Task Update()
+        public async Task Update()
         {
-            throw new NotImplementedException();
+            // Download updates
+            using (var client = new WebClient())
+            {
+                // Bind events
+                client.DownloadFileCompleted += Client_DownloadFileCompleted;
+                client.DownloadProgressChanged += Client_DownloadProgressChanged;
+
+                // Begin download
+                try
+                {
+                    await client.DownloadFileTaskAsync(new Uri(NetworkAddresses.LAUNCHER_UPDATE), DOWNLOAD_PATH);
+                }
+                catch (Exception e)
+                {
+                    throw e;
+                }
+            }
+
+            // Install updates
+            Process process = new Process();
+            process.StartInfo.FileName = "msiexec.exe";
+            process.StartInfo.Arguments = string.Format("/passive /i \"{0}\" ALLUSERS=1", System.IO.Path.Combine(System.IO.Path.GetTempPath(), "BfmeOnline.Launcher_Installer.msi"));
+            process.Exited += Process_Exited;
+            process.EnableRaisingEvents = true;
+
+            OnUpdatesBeginInstalling?.Invoke();
+
+            process.Start();
+            process.WaitForExit();
+            process.Close();
         }
 
         public static Action<int> OnDownloadProgressChange;

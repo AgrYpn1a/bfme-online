@@ -1,18 +1,15 @@
 ﻿using BfmeOnline.Launcher.Source.core;
 using BfmeOnline.Launcher.Source.model;
+using BfmeOnline.Launcher.Source.viewmodel;
 using System.Windows;
 
 namespace BfmeOnline.Launcher.Source.ViewModel
 {
-    public class MainViewModel
+    public class MainViewModel : AViewModel<MainViewModel, MainModel>
     {
-        public MainModel Model;
-
-        public MainViewModel()
+        public MainViewModel(Window window) : base(window)
         {
-            Model = new MainModel(this);
-
-            Model.OnlinePlayers = 0;
+            m_model.OnlinePlayers = 0;
 
             // Subscribe to events
             Core.Instance.OnLauncherStateChange += HandleStateChange;
@@ -24,6 +21,11 @@ namespace BfmeOnline.Launcher.Source.ViewModel
             Core.Instance.OnLauncherStateChange -= HandleStateChange;
         }
 
+        protected override MainModel GetModel()
+        {
+            return new MainModel(this);
+        }
+
         private void HandleStateChange(LauncherState newState)
         {
             logger.Logger.LogMessage("State change");
@@ -32,22 +34,22 @@ namespace BfmeOnline.Launcher.Source.ViewModel
                 case LauncherState.Default:
                     {
                         // Show
-                        Model.ShowHome = Visibility.Visible;
-                        Model.ShowUserTitleBar = Visibility.Visible;
+                        m_model.ShowHome = Visibility.Visible;
+                        m_model.ShowUserTitleBar = Visibility.Visible;
 
-                        Model.ShowInstall = Visibility.Collapsed;
-                        Model.ShowGameNotInstalled = Visibility.Collapsed;
+                        m_model.ShowInstall = Visibility.Collapsed;
+                        m_model.ShowGameNotInstalled = Visibility.Collapsed;
                         break;
                     }
 
                 case LauncherState.Game:
                     {
-                        Model.ShowPlayScreen = Visibility.Visible;
+                        m_model.ShowPlayScreen = Visibility.Visible;
 
-                        Model.ShowHome = Visibility.Collapsed;
-                        Model.ShowUserTitleBar = Visibility.Collapsed;
-                        Model.ShowInstall = Visibility.Collapsed;
-                        Model.ShowGameNotInstalled = Visibility.Collapsed;
+                        m_model.ShowHome = Visibility.Collapsed;
+                        m_model.ShowUserTitleBar = Visibility.Collapsed;
+                        m_model.ShowInstall = Visibility.Collapsed;
+                        m_model.ShowGameNotInstalled = Visibility.Collapsed;
                         break;
                     }
 
@@ -55,10 +57,10 @@ namespace BfmeOnline.Launcher.Source.ViewModel
                     {
                         logger.Logger.LogMessage($"State change {newState.ToString()}");
 
-                        Model.ShowInstall = Visibility.Visible;
-                        Model.ShowHome = Visibility.Collapsed;
-                        Model.ShowUserTitleBar = Visibility.Collapsed;
-                        Model.ShowGameNotInstalled = Visibility.Collapsed;
+                        m_model.ShowInstall = Visibility.Visible;
+                        m_model.ShowHome = Visibility.Collapsed;
+                        m_model.ShowUserTitleBar = Visibility.Collapsed;
+                        m_model.ShowGameNotInstalled = Visibility.Collapsed;
                         break;
                     }
 
@@ -66,10 +68,10 @@ namespace BfmeOnline.Launcher.Source.ViewModel
                     {
                         logger.Logger.LogMessage($"State change {newState.ToString()}");
 
-                        Model.ShowInstall = Visibility.Collapsed;
-                        Model.ShowHome = Visibility.Collapsed;
-                        Model.ShowUserTitleBar = Visibility.Collapsed;
-                        Model.ShowGameNotInstalled = Visibility.Visible;
+                        m_model.ShowInstall = Visibility.Collapsed;
+                        m_model.ShowHome = Visibility.Collapsed;
+                        m_model.ShowUserTitleBar = Visibility.Collapsed;
+                        m_model.ShowGameNotInstalled = Visibility.Visible;
                         break;
                     }
 
